@@ -15,8 +15,8 @@ const Navbar = () => {
             download="Mario's Resume"
             target="_blank"
           >
-            <button type="button" class="btn btn-success">
-              Download Resume
+            <button type="button" class="btn btn-outline-dark">
+              <i class="fa-solid fa-download"></i> Download Resume
             </button>
           </a>
           <div>
