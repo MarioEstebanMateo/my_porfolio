@@ -11,7 +11,7 @@ const Navbar = () => {
             My Portfolio
           </a>
           <a
-            href="https://my-porfolio-delta.vercel.app/src/assets/MarioEstebanMateoResume.pdf"
+            href="https://drive.google.com/file/d/1BHH-RQPzFLWcsbvBpX6dRKqUqQWniN8x/view?usp=share_link"
             download="Mario's Resume"
             target="_blank"
           >
