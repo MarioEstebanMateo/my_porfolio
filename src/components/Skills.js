@@ -4,7 +4,7 @@ import "./Skills.css";
 const Skills = () => {
   return (
     <>
-      <div className="container-fluid">
+      <div className="container-fluid skillsSection">
         <div>
           <h1 className="titleSkills">Skills</h1>
         </div>

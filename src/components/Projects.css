@@ -1,0 +1,41 @@
+.projectsSection {
+    background-color: #f5f9fd;
+}
+
+.titleProjects {
+    font-family: 'Courgette', cursive;
+    font-size: 30px;
+    margin-left: 10px;
+    font-weight: 900;
+    padding-top: 20px;
+}
+
+.projectsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.project1 img, .project2 img {
+    width: 250px;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.project1, .project2 {
+    width: 300px;
+    height: 350px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    padding: 10px;
+}
+
