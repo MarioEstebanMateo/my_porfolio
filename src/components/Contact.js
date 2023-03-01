@@ -39,7 +39,9 @@ const Contact = () => {
       <div className="contactForm">
         <form ref={form} onSubmit={sendEmail}>
           <div className="form-group">
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name" className="text-white">
+              Name
+            </label>
             <input
               type="text"
               className="form-control"
@@ -48,7 +50,9 @@ const Contact = () => {
               placeholder="Enter your name"
             />
 
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email" className="text-white">
+              Email
+            </label>
             <input
               type="email"
               className="form-control"
@@ -57,7 +61,9 @@ const Contact = () => {
               placeholder="Enter your email"
             />
 
-            <label htmlFor="message">Message</label>
+            <label htmlFor="message" className="text-white">
+              Message
+            </label>
             <textarea
               className="form-control"
               name="message"
