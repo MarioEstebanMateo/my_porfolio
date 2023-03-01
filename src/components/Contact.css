@@ -1,0 +1,51 @@
+.contactContainer {
+    background-color: #06223f;
+}
+
+.contactTitle {
+    font-family: 'Courgette', cursive;
+    font-size: 30px;
+    margin-left: 10px;
+    font-weight: 900;
+    padding-top: 20px;
+    color: white;
+    text-align: center;
+}
+
+.contactForm {
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+.formButtons {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contactInfo {
+    color: white;
+    text-align: center;
+}
+
+.contactInfo h2 {
+    font-family: 'Courgette', cursive;
+    font-size: 20px;
+    font-weight: 900;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contactInfoText {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.contactInfoText a {
+    color: white;
+    text-decoration: none;
+}

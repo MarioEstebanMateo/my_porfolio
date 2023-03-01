@@ -1,0 +1,11 @@
+.footer {
+    background-color: #b8cdf5;
+    padding: 20px;
+}
+
+.footerP {
+    font-size: 0.8rem;
+    color: black;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
