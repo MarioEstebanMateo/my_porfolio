@@ -5,8 +5,8 @@ const Footer = () => {
   return (
     <div className="footer">
       <p className="footerP">
-        &copy Todos los derechos reservados :: Desarrollado por Mario Esteban
-        Mateo (2023)
+        &copy; 2023 Todos los derechos reservados :: Desarrollado por Mario
+        Esteban Mateo
       </p>
     </div>
   );
