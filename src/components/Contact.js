@@ -38,7 +38,7 @@ const Contact = () => {
 
       <div className="contactForm">
         <form ref={form} onSubmit={sendEmail}>
-          <div className="form-group">
+          <div className="form-group col-6 mx-auto">
             <label htmlFor="name" className="text-white">
               Name
             </label>
