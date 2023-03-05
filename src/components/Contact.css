@@ -1,5 +1,6 @@
 .contactContainer {
-    background-color: #06223f;
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(247,247,247,1) 0%, rgba(249,252,252,1) 33%, rgba(189,209,244,1) 100%);
 }
 
 .contactTitle {
@@ -8,12 +9,8 @@
     margin-left: 10px;
     font-weight: 900;
     padding-top: 20px;
-    color: white;
+    color: #06223f;
     text-align: center;
-}
-
-.contactForm {
-
 }
 
 .formButtons {
@@ -26,7 +23,7 @@
 }
 
 .contactInfo {
-    color: white;
+    color: #06223f;
     text-align: center;
 }
 
@@ -38,13 +35,20 @@
     margin-bottom: 20px;
 }
 
-.contactInfoText {
+.contactInfo p {
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
-    font-weight: 400;
 }
 
 .contactInfoText a {
-    color: white;
+    color: #06223f;
     text-decoration: none;
+}
+
+.contactInfoText a:hover {
+    color: #b8cdf5;
+}
+
+.contactInfoText a:visited {
+    color: #06223f;
 }

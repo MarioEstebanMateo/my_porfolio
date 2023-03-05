@@ -12,7 +12,7 @@ import nucbaJavascript from "../img/nucbaJavaScript.jpg";
 const Certifications = () => {
   return (
     <>
-      <div className="container-fluid certificationSection">
+      <div className="container-fluid certificationsSection">
         <div>
           <h1 className="titleCertificationsh1">Certifications</h1>
           <p className="titleCertificationsP">

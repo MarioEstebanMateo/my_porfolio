@@ -33,13 +33,13 @@ const Contact = () => {
   };
 
   return (
-    <div className="contactContainer">
+    <div className="container-fluid contactContainer">
       <h1 className="contactTitle">Contact</h1>
 
       <div className="contactForm">
         <form ref={form} onSubmit={sendEmail}>
           <div className="form-group col-6 mx-auto">
-            <label htmlFor="name" className="text-white">
+            <label htmlFor="name" className="text-dark">
               Name
             </label>
             <input
@@ -50,7 +50,7 @@ const Contact = () => {
               placeholder="Enter your name"
             />
 
-            <label htmlFor="email" className="text-white">
+            <label htmlFor="email" className="text-dark">
               Email
             </label>
             <input
@@ -61,7 +61,7 @@ const Contact = () => {
               placeholder="Enter your email"
             />
 
-            <label htmlFor="message" className="text-white">
+            <label htmlFor="message" className="text-dark">
               Message
             </label>
             <textarea
@@ -73,11 +73,11 @@ const Contact = () => {
             />
 
             <div className="formButtons">
-              <button type="submit" className="btn btn-success">
+              <button type="submit" className="btn btn-outline-success">
                 <i class="fa-solid fa-share"></i> Send
               </button>
 
-              <button type="reset" className="btn btn-danger">
+              <button type="reset" className="btn btn-outline-danger">
                 <i class="fa-solid fa-trash"></i> Clear
               </button>
             </div>

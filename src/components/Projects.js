@@ -20,8 +20,8 @@ const Projects = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <button type="button" class="btn btn-outline-primary">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> View
+            <button type="button" className="btn btn-outline-primary">
+              <i className="fa-solid fa-arrow-up-right-from-square"></i> View
               Project
             </button>
           </a>
@@ -35,8 +35,8 @@ const Projects = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <button type="button" class="btn btn-outline-primary">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> View
+            <button type="button" className="btn btn-outline-primary">
+              <i className="fa-solid fa-arrow-up-right-from-square"></i> View
               Project
             </button>
           </a>

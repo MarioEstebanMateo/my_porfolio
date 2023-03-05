@@ -7,16 +7,14 @@ const Navbar = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
-            My Portfolio
-          </a>
+          <h3 className="navbarTitle">My Portfolio</h3>
           <a
             href="https://drive.google.com/file/d/1cqRw6fy-IY1McsoTDGL-Bl4DYQXRA2YK/view?usp=sharing"
             download="Mario's Resume"
             target="_blank"
             rel="noreferrer"
           >
-            <button type="button" class="btn btn-outline-dark">
+            <button type="button" className="btn btn-outline-dark">
               <i class="fa-solid fa-download"></i> Download Resume
             </button>
           </a>

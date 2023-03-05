@@ -2,6 +2,11 @@
     padding: 0;
 }
 
+.navbar {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(247,247,247,1) 0%, rgba(249,252,252,1) 33%, rgba(189,209,244,1) 100%);
+}
+
 .social-buttons {
     display: flex;
     margin-right: 10px;
@@ -24,9 +29,9 @@
     transform: scale(1.5);
 }
 
-.navbar-brand {
+.navbarTitle {
     font-family: 'Courgette', cursive;
-    font-size: 30px;
+    font-size: 1.5rem;
     margin-left: 10px;
     font-weight: 900;
 }
