@@ -3,6 +3,7 @@ import "./Projects.css";
 
 import disenoWeb from "../img/disenoWeb.png";
 import eCommerce from "../img/eCommerce.png";
+import blackJackGame from "../img/blackJack.png";
 
 const Projects = () => {
   return (
@@ -32,6 +33,21 @@ const Projects = () => {
           <p>HTML, CSS, JS, Bootstrap</p>
           <a
             href="https://proyecto-integrador-javascript-neon.vercel.app/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <button type="button" className="btn btn-outline-primary">
+              <i className="fa-solid fa-arrow-up-right-from-square"></i> View
+              Project
+            </button>
+          </a>
+        </div>
+        <div className="project3">
+          <img src={blackJackGame} alt="" />
+          <h6>BlackJack Game</h6>
+          <p>HTML, CSS, JS, Bootstrap</p>
+          <a
+            href="https://blackjack-drab.vercel.app/"
             target="_blank"
             rel="noreferrer"
           >
