@@ -6,8 +6,8 @@ import heroImage from "../img/heroImage.jpg";
 const Hero = () => {
   return (
     <>
-      <div className="container-fluid">
-        <img className="img-fluid" src={heroImage} alt="" />
+      <div className="containerHeroImg">
+        <img className="img-fluid heroImg" src={heroImage} alt="" />
       </div>
     </>
   );
