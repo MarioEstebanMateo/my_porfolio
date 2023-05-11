@@ -30,7 +30,7 @@
     margin-right: 10px;
 }
 
-.certification1, .certification2,  .certification3,  .certification4,  .certification5,  .certification6,  .certification7 {
+.certification1, .certification2,  .certification3,  .certification4,  .certification5,  .certification6,  .certification7, .certification8 {
     border: 1px solid black;
     width: 200px;
     height: 250px;
@@ -42,16 +42,16 @@
     padding: 10px;
 }
 
-.certification1 img, .certification2 img,  .certification3 img,  .certification4 img,  .certification5 img,  .certification6 img,  .certification7 img {
+.certification1 img, .certification2 img,  .certification3 img,  .certification4 img,  .certification5 img,  .certification6 img,  .certification7 img, .certification8 img {
     width: 150px;
     height: 100px;
 }
 
-.certification1 p, .certification2 p,  .certification3 p,  .certification4 p,  .certification5 p,  .certification6 p,  .certification7 p {
+.certification1 p, .certification2 p,  .certification3 p,  .certification4 p,  .certification5 p,  .certification6 p,  .certification7 p, .certification8 p {
     font-size: 12px;
 }
 
-.certification1 h6, .certification2 h6,  .certification3 h6,  .certification4 h6,  .certification5 h6,  .certification6 h6,  .certification7 h6 {
+.certification1 h6, .certification2 h6,  .certification3 h6,  .certification4 h6,  .certification5 h6,  .certification6 h6,  .certification7 h6, .certification8 h6 {
     margin-top: 10px;
     height: 70px;
     min-height: 70px;

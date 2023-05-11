@@ -8,6 +8,7 @@ import primerosPasos from "../img/primerosPasosFrontend.jpg";
 import seProgramar from "../img/seProgramar.jpg";
 import nucbaDisenoWeb from "../img/nucbaDisenoWeb.jpg";
 import nucbaJavascript from "../img/nucbaJavaScript.jpg";
+import nucbaReact from "../img/nucbaReact.jpg";
 
 const Certifications = () => {
   return (
@@ -82,6 +83,18 @@ const Certifications = () => {
 
           <div className="certification6">
             <a
+              href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1683770896/Mario%20Privado/Nucba_Certificado_React_d8kyov.jpg"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={nucbaReact} alt="" />
+            </a>
+            <h6>React</h6>
+            <p>NUCBA (2023)</p>
+          </div>
+
+          <div className="certification7">
+            <a
               href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1675955964/Mario%20Privado/argentina_programa_2022_1_vqkoyu.jpg"
               target="_blank"
               rel="noreferrer"
@@ -92,7 +105,7 @@ const Certifications = () => {
             <p>Argentina Programa 4.0 (2022)</p>
           </div>
 
-          <div className="certification7">
+          <div className="certification8">
             <a
               href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1675955035/Mario%20Privado/certificate-primerosPasosFrontend_tcvcn2.jpg"
               target="_blank"
