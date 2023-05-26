@@ -5,6 +5,7 @@ import disenoWeb from "../img/disenoWeb.png";
 import eCommerce from "../img/eCommerce.png";
 import blackJackGame from "../img/blackJack.png";
 import eCommerceReact from "../img/eCommerceReact.png";
+import eCommerceReactWithNodeBackEnd from "../img/eCommerceReactWithNodeBackEnd.png";
 
 const Projects = () => {
   return (
@@ -64,6 +65,23 @@ const Projects = () => {
           <p>HTML, CSS, JS, Bootstrap, React</p>
           <a
             href="https://proyecto-integrador-react-gamma.vercel.app/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <button type="button" className="btn btn-outline-primary">
+              <i className="fa-solid fa-arrow-up-right-from-square"></i> View
+              Project
+            </button>
+          </a>
+        </div>
+        <div className="project5">
+          <img src={eCommerceReactWithNodeBackEnd} alt="" />
+          <h6 className="mt-2">
+            eCommerce React with Express BackEnd and own API
+          </h6>
+          <p>HTML, CSS, JS, Bootstrap, React, Node, Express</p>
+          <a
+            href="https://proyecto-integrador-back-end.vercel.app/"
             target="_blank"
             rel="noreferrer"
           >
