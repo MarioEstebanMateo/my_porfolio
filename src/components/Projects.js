@@ -76,10 +76,8 @@ const Projects = () => {
         </div>
         <div className="project5">
           <img src={eCommerceReactWithNodeBackEnd} alt="" />
-          <h6 className="mt-2">
-            eCommerce React with Express BackEnd and own API
-          </h6>
-          <p>HTML, CSS, JS, Bootstrap, React, Node, Express</p>
+          <h6 className="mt-2">eCommerce BackEnd</h6>
+          <p>HTML, CSS, JS, React, Node, Express</p>
           <a
             href="https://proyecto-integrador-back-end.vercel.app/"
             target="_blank"
