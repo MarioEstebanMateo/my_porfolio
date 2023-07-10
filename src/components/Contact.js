@@ -34,7 +34,7 @@ const Contact = () => {
 
   return (
     <div className="container-fluid contactContainer">
-      <h1 className="contactTitle">Contact</h1>
+      <h1 className="contactTitle">Contact Me</h1>
 
       <div className="contactForm">
         <form ref={form} onSubmit={sendEmail}>

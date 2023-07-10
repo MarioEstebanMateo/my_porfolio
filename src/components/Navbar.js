@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className="container-fluid">
           <h3 className="navbarTitle">My Portfolio</h3>
           <a
-            href="https://drive.google.com/file/d/1jeXBZhHi29CI2Mr426SNdz2BsfRKKESW/view?usp=share_link"
+            href="https://drive.google.com/file/d/1rTWyW5goqtWAms6rzcZXwxvZhRJQwHPf/view?usp=sharing"
             download="Mario's Resume"
             target="_blank"
             rel="noreferrer"
