@@ -18,14 +18,14 @@
     margin-top: 20px;
 }
 
-.project1 img, .project2 img, .project3 img, .project4 img, .project5 img {
+.project1 img, .project2 img, .project3 img, .project4 img, .project5 img, .project6 img {
     width: 250px;
     height: 200px;
     border-radius: 10px;
     margin-bottom: 10px;
 }
 
-.project1, .project2, .project3, .project4, .project5 {
+.project1, .project2, .project3, .project4, .project5, .project6 {
     width: 300px;
     height: 350px;
     margin: 10px;
