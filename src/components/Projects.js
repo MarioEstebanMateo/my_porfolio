@@ -15,7 +15,7 @@ const Projects = () => {
         <h1 className="titleProjects">Projects</h1>
       </div>
       <div className="projectsContainer">
-        <div className="project1">
+        <div className="project">
           <img src={disenoWeb} alt="" />
           <h6 className="mt-2">Web Design</h6>
           <p>HTML, CSS, JS, Bootstrap</p>
@@ -30,7 +30,7 @@ const Projects = () => {
             </button>
           </a>
         </div>
-        <div className="project2">
+        <div className="project">
           <img src={eCommerce} alt="" />
           <h6 className="mt-2">eCommerce Vanilla JavaScript</h6>
           <p>HTML, CSS, JS, Bootstrap</p>
@@ -45,7 +45,7 @@ const Projects = () => {
             </button>
           </a>
         </div>
-        <div className="project3">
+        <div className="project">
           <img src={blackJackGame} alt="" />
           <h6 className="mt-2">BlackJack Game</h6>
           <p>HTML, CSS, JS, Bootstrap</p>
@@ -60,7 +60,7 @@ const Projects = () => {
             </button>
           </a>
         </div>
-        <div className="project4">
+        <div className="project">
           <img src={eCommerceReact} alt="" />
           <h6 className="mt-2">eCommerce React</h6>
           <p>HTML, CSS, JS, Bootstrap, React</p>
@@ -75,7 +75,7 @@ const Projects = () => {
             </button>
           </a>
         </div>
-        <div className="project5">
+        <div className="project">
           <img src={eCommerceReactWithNodeBackEnd} alt="" />
           <h6 className="mt-2">eCommerce BackEnd</h6>
           <p>HTML, CSS, JS, React, Node, Express</p>
@@ -90,7 +90,7 @@ const Projects = () => {
             </button>
           </a>
         </div>
-        <div className="project6">
+        <div className="project">
           <img src={pokeBatallaTCG} alt="" />
           <h6 className="mt-2">Poke Batalla TCG! Game</h6>
           <p>HTML, CSS, JS, Bootstrap, React</p>

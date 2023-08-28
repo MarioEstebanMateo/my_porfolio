@@ -11,6 +11,7 @@ import nucbaJavascript from "../img/nucbaJavaScript.jpg";
 import nucbaReact from "../img/nucbaReact.jpg";
 import nucbaBackEnd from "../img/nucbaBackEnd.jpg";
 import nucbaProgramacionFullStack from "../img/nucbaProgramacionFullStack.jpg";
+import certificateEnglish from "../img/certificateEnglish.jpg";
 
 const Certifications = () => {
   return (
@@ -23,7 +24,7 @@ const Certifications = () => {
           </p>
         </div>
         <div className="certificationsContainer">
-          <div className="certification1">
+          <div className="certification">
             <a
               href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1675053927/Mario%20Privado/Titulo_Analista_de_Sistemas_s2td7i.jpg"
               target="_blank"
@@ -35,7 +36,19 @@ const Certifications = () => {
             <p>Inst. Superior Nº5 Pergamino (2021)</p>
           </div>
 
-          <div className="certification2">
+          <div className="certification">
+            <a
+              href="https://www.efset.org/cert/qQdvD9"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={certificateEnglish} alt="" />
+            </a>
+            <h6>English Language C2 Level</h6>
+            <p>Academia Cultural Inglesa Olivos (1996)</p>
+          </div>
+
+          <div className="certification">
             <a
               href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1640478250/Mario%20Privado/Certificado_UTN_szkkzq.jpg"
               target="_blank"
@@ -47,7 +60,7 @@ const Certifications = () => {
             <p>UTN E-Learning (2021)</p>
           </div>
 
-          <div className="certification3">
+          <div className="certification">
             <a
               href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1675955964/Mario%20Privado/argentina_programa_2022_1_vqkoyu.jpg"
               target="_blank"
@@ -59,7 +72,7 @@ const Certifications = () => {
             <p>Argentina Programa 4.0 (2022)</p>
           </div>
 
-          <div className="certification4">
+          <div className="certification">
             <a
               href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1675955035/Mario%20Privado/certificate-primerosPasosFrontend_tcvcn2.jpg"
               target="_blank"
@@ -71,7 +84,7 @@ const Certifications = () => {
             <p>Argentina Programa 4.0 (2022)</p>
           </div>
 
-          <div className="certification5">
+          <div className="certification">
             <a
               href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1677092611/Mario%20Privado/Certificado_UTN_Dise%C3%B1o_Grafico_Digital_njle58.jpg"
               target="_blank"
@@ -83,7 +96,7 @@ const Certifications = () => {
             <p>UTN E-Learning (2023)</p>
           </div>
 
-          <div className="certification6">
+          <div className="certification">
             <a
               href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1675049773/Mario%20Privado/Nucba_Certificado_Dise%C3%B1o_Web_yrp9fa.jpg"
               target="_blank"
@@ -95,7 +108,7 @@ const Certifications = () => {
             <p>NUCBA (2023)</p>
           </div>
 
-          <div className="certification7">
+          <div className="certification">
             <a
               href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1677245111/Mario%20Privado/_storage_emulated_0_Android_data_com.adobe.reader_files_Pictures_Adobe_Acrobat_Exports_TemplateCertificado_1__0_1_fupjio.jpg"
               target="_blank"
@@ -107,7 +120,7 @@ const Certifications = () => {
             <p>NUCBA (2023)</p>
           </div>
 
-          <div className="certification8">
+          <div className="certification">
             <a
               href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1683770896/Mario%20Privado/Nucba_Certificado_React_d8kyov.jpg"
               target="_blank"
@@ -119,7 +132,7 @@ const Certifications = () => {
             <p>NUCBA (2023)</p>
           </div>
 
-          <div className="certification9">
+          <div className="certification">
             <a
               href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1689025360/Nucba_Certificado_Back_End_mri5xs.jpg"
               target="_blank"
@@ -131,7 +144,7 @@ const Certifications = () => {
             <p>NUCBA (2023)</p>
           </div>
 
-          <div className="certification10">
+          <div className="certification">
             <a
               href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1689025360/Nucba_Certificado_Programacion_Full_Stack_q8n6c6.jpg"
               target="_blank"

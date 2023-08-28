@@ -30,7 +30,7 @@
     margin-right: 10px;
 }
 
-.certification1, .certification2,  .certification3,  .certification4,  .certification5,  .certification6,  .certification7, .certification8, .certification9, .certification10 {
+.certification {
     border: 1px solid black;
     width: 200px;
     height: 250px;
@@ -42,7 +42,7 @@
     padding: 10px;
 }
 
-.certification1 img, .certification2 img,  .certification3 img,  .certification4 img,  .certification5 img,  .certification6 img,  .certification7 img, .certification8 img, .certification9 img, .certification10 img {
+.certification img {
     width: 150px;
     height: 100px;
 }
