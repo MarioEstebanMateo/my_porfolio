@@ -5,7 +5,10 @@ import "./Navbar.css";
 const Navbar = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav
+        className="navbar navbar-expand-lg navbar-light bg-light"
+        id="navbarSection"
+      >
         <div className="container-fluid">
           <h3 className="navbarTitle">My Portfolio</h3>
           <a

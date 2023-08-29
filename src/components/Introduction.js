@@ -47,7 +47,11 @@ const Introduction = () => {
         <br />
         If you're looking for a professional who can combine technical expertise
         with creative flair, let's chat. Feel free to reach out to me via email
-        down below in the contact section, or connect with me on LinkedIn{" "}
+        down below{" "}
+        <a href="#contactForm">
+          <i class="fa-solid fa-arrow-down"></i>
+        </a>{" "}
+        in the contact section, or connect with me on LinkedIn{" "}
         <span>
           <a
             href="https://www.linkedin.com/in/marioestebanmateo/"
@@ -57,7 +61,11 @@ const Introduction = () => {
             here
           </a>
         </span>
-        . My resume is available in the header section of this website.
+        . My resume is available above{" "}
+        <a href="#navbarSection">
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>{" "}
+        .
         <br />
         <br />
         Thank you for visiting my portfolio, and I look forward to the

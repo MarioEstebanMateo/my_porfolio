@@ -36,7 +36,7 @@ const Contact = () => {
     <div className="container-fluid contactContainer">
       <h1 className="contactTitle">Contact Me</h1>
 
-      <div className="contactForm">
+      <div className="contactForm" id="contactForm">
         <form ref={form} onSubmit={sendEmail}>
           <div className="form-group col-6 mx-auto">
             <label htmlFor="name" className="text-dark">
