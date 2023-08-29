@@ -40,10 +40,11 @@ const Introduction = () => {
         what I do. I'm dedicated to crafting digital interfaces that are not
         only visually appealing but also highly user-friendly. My designs are
         rooted in empathy and a deep understanding of user behavior, resulting
-        in intuitive and engaging user experiences. I'm always excited to take
-        on new challenges, collaborate on innovative projects, and connect with
-        like-minded individuals.
+        in intuitive and engaging user experiences.
         <br />
+        <br />
+        I'm always excited to take on new challenges, collaborate on innovative
+        projects, and connect with like-minded individuals.
         <br />
         If you're looking for a professional who can combine technical expertise
         with creative flair, let's chat. Feel free to reach out to me via email
