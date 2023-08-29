@@ -7,6 +7,7 @@ import Projects from "./components/Projects";
 import Confetti from "./components/Confetti";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Introduction from "./components/Introduction";
 
 import BackToUp from "@uiw/react-back-to-top";
 
@@ -16,6 +17,7 @@ function App() {
       <BackToUp className="backToTop">Top</BackToUp>
       <Navbar />
       <Hero />
+      <Introduction />
       <Skills />
       <Certifications />
       <Projects />

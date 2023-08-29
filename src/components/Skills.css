@@ -23,7 +23,7 @@
     margin-right: 10px;
 }
 
-.skillcard1, .skillcard2, .skillcard3, .skillcard4, .skillcard5, .skillcard6, .skillcard7 {
+.skillcard1, .skillcard2, .skillcard3, .skillcard4, .skillcard5, .skillcard6, .skillcard7, .skillcard8, .skillcard9, .skillcard10 {
     width: 200px;
     min-width: 200px;
     height: 50px;
@@ -36,31 +36,45 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
+    text-align: center;
+    padding: 10px;
 }
 
 .skillcard1 {
-    background-color: #F6E6C2;
+    background-color: #fbf8cc;
 }
 
 .skillcard2 {
-    background-color: #B9F3E4;
+    background-color: #fde4cf;
 }
 
 .skillcard3 {
-    background-color: #C9F4AA;
+    background-color: #ffcfd2;
 }
 .skillcard4 {
-    background-color: #93BFCF;
+    background-color: #f1c0e8;
 }
 
 .skillcard5 {
-    background-color: #D9ACF5;
+    background-color: #cfbaf0;
 }
 
 .skillcard6 {
-    background-color: #FFD4B2;
+    background-color: #a3c4f3;
 }
 
 .skillcard7 {
-    background-color: #FF9F9F;
+    background-color: #90dbf4;
+}
+
+.skillcard8 {
+    background-color: #8eecf5;
+}
+
+.skillcard9 {
+    background-color: #98f5e1;
+}
+
+.skillcard10 {
+    background-color: #b9fbc0;
 }
