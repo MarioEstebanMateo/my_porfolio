@@ -12,6 +12,7 @@ import nucbaReact from "../img/nucbaReact.jpg";
 import nucbaBackEnd from "../img/nucbaBackEnd.jpg";
 import nucbaProgramacionFullStack from "../img/nucbaProgramacionFullStack.jpg";
 import certificateEnglish from "../img/certificateEnglish.jpg";
+import procesamientoDeDatosConPython from "../img/procesamientoDeDatosConPython.jpg";
 
 const Certifications = () => {
   return (
@@ -142,6 +143,18 @@ const Certifications = () => {
             </a>
             <h6>Back End</h6>
             <p>NUCBA (2023)</p>
+          </div>
+
+          <div className="certification">
+            <a
+              href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1695159203/Argentina_Programa_4.0_-_Procesamiento_de_datos_con_Python_g1pj4j.jpg"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={procesamientoDeDatosConPython} alt="" />
+            </a>
+            <h6>Procesamiento de Datos con Python</h6>
+            <p>Argentina Programa 4.0 (2023)</p>
           </div>
 
           <div className="certification">

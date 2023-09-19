@@ -4,10 +4,10 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <div className="container-fluid footer">
-      <p className="footerP">
-        &copy; 2023 Todos los derechos reservados :: Desarrollado por Mario
+      <div className="footerP">
+        &copy; 2023 All rights reserved :: Designed and developed by Mario
         Esteban Mateo
-      </p>
+      </div>
     </div>
   );
 };
