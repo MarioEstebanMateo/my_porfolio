@@ -13,6 +13,7 @@ import nucbaBackEnd from "../img/nucbaBackEnd.jpg";
 import nucbaProgramacionFullStack from "../img/nucbaProgramacionFullStack.jpg";
 import certificateEnglish from "../img/certificateEnglish.jpg";
 import procesamientoDeDatosConPython from "../img/procesamientoDeDatosConPython.jpg";
+import nucbaUxUiDegree from "../img/nucbaUxUiDegree.jpg";
 
 const Certifications = () => {
   return (
@@ -167,6 +168,18 @@ const Certifications = () => {
             </a>
             <h6>Programacion Full Stack</h6>
             <p>NUCBA (2023)</p>
+          </div>
+
+          <div className="certification">
+            <a
+              href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1705439616/Mario%20Privado/Nucba_Certificado_Ux_Ui_Degree.jpg"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={nucbaUxUiDegree} alt="" />
+            </a>
+            <h6>Ux/Ui Degree</h6>
+            <p>NUCBA (2024)</p>
           </div>
         </div>
       </div>
