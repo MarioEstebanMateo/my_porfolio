@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="flex flex-col items-center">
       <div>
-        <h1 className="text-2xl">Mario Esteban Mateo´s Resume</h1>
+        <h1 className="text-2xl">Mario Esteban Mateo´s Portfolio</h1>
       </div>
       <div className="">
         <img src={updatingImg} alt="updating image" />
