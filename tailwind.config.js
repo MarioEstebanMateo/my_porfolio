@@ -2,7 +2,18 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    colors: {
+      primary: "#126699",
+      white: "#ffffff",
+      black: "#000000",
+    },
+    extend: {
+      fontFamily: {
+        opensans: ["Open Sans"],
+        robotoslab: ["Roboto Slab"],
+        leaguespartan: ["League Spartan"],
+      },
+    },
   },
   plugins: [],
 };
