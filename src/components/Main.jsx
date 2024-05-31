@@ -6,7 +6,7 @@ export const Main = () => {
       <div>
         <img src={heroImage} alt="" />
       </div>
-      <div className="text-center px-5 py-5 sm:px-20 bg-[#126699] text-white">
+      <div className="text-center px-5 py-5 sm:px-20 bg-primary text-white">
         <h1 className="font-robotoslab text-xl sm:text-2xl">
           Hi, I´m Mario. Nice to meet you!
         </h1>
