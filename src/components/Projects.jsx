@@ -40,7 +40,7 @@ export const Projects = () => {
           </p>
           <div className="mt-2">
             <a
-              href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1675053927/Mario%20Privado/Titulo_Analista_de_Sistemas_s2td7i.jpg"
+              href="https://proyecto-integrador-diseno-web-ten.vercel.app/"
               target="_blank"
               rel="noreferrer"
               className="font-opensans text-primary bg-transparent border border-solid border-primary hover:bg-primary hover:text-white active:bg-primary font-bold uppercase text-xs px-2 sm:px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
@@ -57,7 +57,7 @@ export const Projects = () => {
             className="w-40 h-30 mx-auto"
           />
           <h3 className="text-center text-primary font-bold mt-2 min-h-12">
-            Web Design
+            eCommerce Vanilla JavaScript
           </h3>
           <p className="text-center mt-2 min-h-12">
             Technologies used:
@@ -66,7 +66,7 @@ export const Projects = () => {
           </p>
           <div className="mt-2">
             <a
-              href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1675053927/Mario%20Privado/Titulo_Analista_de_Sistemas_s2td7i.jpg"
+              href="https://proyecto-integrador-javascript-neon.vercel.app/"
               target="_blank"
               rel="noreferrer"
               className="font-opensans text-primary bg-transparent border border-solid border-primary hover:bg-primary hover:text-white active:bg-primary font-bold uppercase text-xs px-2 sm:px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
@@ -83,16 +83,16 @@ export const Projects = () => {
             className="w-40 h-30 mx-auto"
           />
           <h3 className="text-center text-primary font-bold mt-2 min-h-12">
-            Web Design
+            eCommerce React using Local Storage
           </h3>
           <p className="text-center mt-2 min-h-12">
             Technologies used:
             <br />
-            HTML, CSS, JS, Bootstrap
+            HTML, CSS, Bootstrap, React
           </p>
           <div className="mt-2">
             <a
-              href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1675053927/Mario%20Privado/Titulo_Analista_de_Sistemas_s2td7i.jpg"
+              href="https://proyecto-integrador-react-gamma.vercel.app/"
               target="_blank"
               rel="noreferrer"
               className="font-opensans text-primary bg-transparent border border-solid border-primary hover:bg-primary hover:text-white active:bg-primary font-bold uppercase text-xs px-2 sm:px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
@@ -109,16 +109,16 @@ export const Projects = () => {
             className="w-40 h-30 mx-auto"
           />
           <h3 className="text-center text-primary font-bold mt-2 min-h-12">
-            Web Design
+            eCommerce with BackEnd using Node and Express
           </h3>
           <p className="text-center mt-2 min-h-12">
             Technologies used:
             <br />
-            HTML, CSS, JS, Bootstrap
+            HTML, CSS, React, Node, Express
           </p>
           <div className="mt-2">
             <a
-              href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1675053927/Mario%20Privado/Titulo_Analista_de_Sistemas_s2td7i.jpg"
+              href="https://proyecto-integrador-back-end.vercel.app/"
               target="_blank"
               rel="noreferrer"
               className="font-opensans text-primary bg-transparent border border-solid border-primary hover:bg-primary hover:text-white active:bg-primary font-bold uppercase text-xs px-2 sm:px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
@@ -135,7 +135,7 @@ export const Projects = () => {
             className="w-40 h-30 mx-auto"
           />
           <h3 className="text-center text-primary font-bold mt-2 min-h-12">
-            Web Design
+            BlackJack Game
           </h3>
           <p className="text-center mt-2 min-h-12">
             Technologies used:
@@ -144,7 +144,7 @@ export const Projects = () => {
           </p>
           <div className="mt-2">
             <a
-              href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1675053927/Mario%20Privado/Titulo_Analista_de_Sistemas_s2td7i.jpg"
+              href="https://blackjack-drab.vercel.app/"
               target="_blank"
               rel="noreferrer"
               className="font-opensans text-primary bg-transparent border border-solid border-primary hover:bg-primary hover:text-white active:bg-primary font-bold uppercase text-xs px-2 sm:px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
@@ -161,16 +161,16 @@ export const Projects = () => {
             className="w-40 h-30 mx-auto"
           />
           <h3 className="text-center text-primary font-bold mt-2 min-h-12">
-            Web Design
+            Poke Batalla TCG! Game
           </h3>
           <p className="text-center mt-2 min-h-12">
             Technologies used:
             <br />
-            HTML, CSS, JS, Bootstrap
+            HTML, CSS, React
           </p>
           <div className="mt-2">
             <a
-              href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1675053927/Mario%20Privado/Titulo_Analista_de_Sistemas_s2td7i.jpg"
+              href="https://poke-tcg-card-game.vercel.app/"
               target="_blank"
               rel="noreferrer"
               className="font-opensans text-primary bg-transparent border border-solid border-primary hover:bg-primary hover:text-white active:bg-primary font-bold uppercase text-xs px-2 sm:px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
