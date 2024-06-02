@@ -24,7 +24,7 @@ export const Projects = () => {
       {/* Projects container*/}
       <div className="mt-5 flex flex-wrap justify-center gap-10">
         {/* Project */}
-        <div className="relative max-w-60 min-w-60 min-h-72 max-h-72 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
+        <div className="relative max-w-60 min-w-60 min-h-80 max-h-80 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
           <img
             src={disenoWeb}
             alt="Web Design image"
@@ -33,7 +33,7 @@ export const Projects = () => {
           <h3 className="text-center text-primary font-bold mt-2 min-h-12">
             Web Design
           </h3>
-          <p className="text-center mt-2 min-h-12">
+          <p className="text-center mt-2 min-h-20">
             Technologies used:
             <br />
             HTML, CSS, JS, Bootstrap
@@ -50,7 +50,7 @@ export const Projects = () => {
           </div>
         </div>
         {/* Project */}
-        <div className="relative max-w-60 min-w-60 min-h-72 max-h-72 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
+        <div className="relative max-w-60 min-w-60 min-h-80 max-h-80 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
           <img
             src={eCommerce}
             alt="eCommerce image"
@@ -59,7 +59,7 @@ export const Projects = () => {
           <h3 className="text-center text-primary font-bold mt-2 min-h-12">
             eCommerce Vanilla JavaScript
           </h3>
-          <p className="text-center mt-2 min-h-12">
+          <p className="text-center mt-2 min-h-20">
             Technologies used:
             <br />
             HTML, CSS, JS, Bootstrap
@@ -76,7 +76,7 @@ export const Projects = () => {
           </div>
         </div>
         {/* Project */}
-        <div className="relative max-w-60 min-w-60 min-h-72 max-h-72 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
+        <div className="relative max-w-60 min-w-60 min-h-80 max-h-80 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
           <img
             src={eCommerceReact}
             alt="eCommerce React image"
@@ -85,7 +85,7 @@ export const Projects = () => {
           <h3 className="text-center text-primary font-bold mt-2 min-h-12">
             eCommerce React using Local Storage
           </h3>
-          <p className="text-center mt-2 min-h-12">
+          <p className="text-center mt-2 min-h-20">
             Technologies used:
             <br />
             HTML, CSS, Bootstrap, React
@@ -102,7 +102,7 @@ export const Projects = () => {
           </div>
         </div>
         {/* Project */}
-        <div className="relative max-w-60 min-w-60 min-h-72 max-h-72 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
+        <div className="relative max-w-60 min-w-60 min-h-80 max-h-80 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
           <img
             src={eCommerceReactWithNodeBackEnd}
             alt="eCommerce React with Node BackEnd image"
@@ -111,7 +111,7 @@ export const Projects = () => {
           <h3 className="text-center text-primary font-bold mt-2 min-h-12">
             eCommerce with BackEnd using Node and Express
           </h3>
-          <p className="text-center mt-2 min-h-12">
+          <p className="text-center mt-2 min-h-20">
             Technologies used:
             <br />
             HTML, CSS, React, Node, Express
@@ -128,7 +128,7 @@ export const Projects = () => {
           </div>
         </div>
         {/* Project */}
-        <div className="relative max-w-60 min-w-60 min-h-72 max-h-72 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
+        <div className="relative max-w-60 min-w-60 min-h-80 max-h-80 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
           <img
             src={blackJack}
             alt="Black Jack game image"
@@ -137,7 +137,7 @@ export const Projects = () => {
           <h3 className="text-center text-primary font-bold mt-2 min-h-12">
             BlackJack Game
           </h3>
-          <p className="text-center mt-2 min-h-12">
+          <p className="text-center mt-2 min-h-20">
             Technologies used:
             <br />
             HTML, CSS, JS, Bootstrap
@@ -154,7 +154,7 @@ export const Projects = () => {
           </div>
         </div>
         {/* Project */}
-        <div className="relative max-w-60 min-w-60 min-h-72 max-h-72 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
+        <div className="relative max-w-60 min-w-60 min-h-80 max-h-80 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
           <img
             src={pokeBatallaTCG}
             alt="Pokemon Battle TCG image"
@@ -163,7 +163,7 @@ export const Projects = () => {
           <h3 className="text-center text-primary font-bold mt-2 min-h-12">
             Poke Batalla TCG! Game
           </h3>
-          <p className="text-center mt-2 min-h-12">
+          <p className="text-center mt-2 min-h-20">
             Technologies used:
             <br />
             HTML, CSS, React
