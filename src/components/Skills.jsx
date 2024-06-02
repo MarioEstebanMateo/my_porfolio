@@ -196,7 +196,7 @@ export const Skills = () => {
         {/* Certifications container*/}
         <div className="mt-5 flex flex-wrap justify-center gap-10">
           {/* Certification*/}
-          <div className="relative max-w-60 min-w-60 min-h-72 max-h-72 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
+          <div className="relative max-w-60 min-w-60 min-h-80 max-h-80 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
             <img
               src={certificateEnglish}
               alt="Analista d"
@@ -207,8 +207,8 @@ export const Skills = () => {
               <br />
               (C2 Level issued by EF SET)
             </h3>
-            <p className="text-center mt-2">
-              8 years - ACIO - Bs As, Argentina
+            <p className="text-center mt-2 min-h-16">
+              8 years - ACIO <br /> Buenos Aires, Argentina
             </p>
             <div className="mt-2">
               <a

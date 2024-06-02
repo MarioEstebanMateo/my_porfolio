@@ -6,7 +6,7 @@ export const Navbar = () => {
   return (
     <div className="flex justify-between items-center pt-5 pb-5 shadow-sm">
       <div className="ml-1 sm:ml-5 hover:scale-110 ease-in-out duration-300">
-        <h1 className="font-robotoslab text-primary font-bold text-xs sm:text-lg">
+        <h1 className="font-robotoslab text-primary font-bold text-sm sm:text-lg">
           Mario´s Portfolio
         </h1>
       </div>

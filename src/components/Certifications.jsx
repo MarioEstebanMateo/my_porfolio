@@ -15,7 +15,7 @@ export const Certifications = () => {
       {/* Certifications container*/}
       <div className="mt-5 flex flex-wrap justify-center gap-10">
         {/* Certification*/}
-        <div className="relative max-w-60 min-w-60 min-h-72 max-h-72 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
+        <div className="relative max-w-60 min-w-60 min-h-80 max-h-50 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
           <img
             src={analista}
             alt="Systems Analist certificate"
@@ -24,10 +24,10 @@ export const Certifications = () => {
           <h3 className="text-center text-primary font-bold mt-2 min-h-12">
             Systems Analist
           </h3>
-          <p className="text-center mt-2 min-h-12">
+          <p className="text-center mt-2 min-h-16">
             2018-2021 - ISFDyT Nº5
             <br />
-            Pergamino
+            Pergamino, Argentina
           </p>
           <div className="mt-2">
             <a
@@ -41,7 +41,7 @@ export const Certifications = () => {
           </div>
         </div>
         {/* Certification*/}
-        <div className="relative max-w-60 min-w-60 min-h-72 max-h-72 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
+        <div className="relative max-w-60 min-w-60 min-h-80 max-h-50 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
           <img
             src={utnDiplomaturaEnProgramacionWeb}
             alt="Full Stack Diploma with React JS"
@@ -50,8 +50,8 @@ export const Certifications = () => {
           <h3 className="text-center text-primary font-bold mt-2 min-h-12">
             Full Stack Diploma with React JS
           </h3>
-          <p className="text-center mt-2 min-h-12">
-            (2021) E-Learning UTN <br /> Buenos Aires
+          <p className="text-center mt-2 min-h-16">
+            (2021) E-Learning UTN <br /> Buenos Aires, Argentina
           </p>
           <div className="mt-2">
             <a
@@ -65,7 +65,7 @@ export const Certifications = () => {
           </div>
         </div>
         {/* Certification*/}
-        <div className="relative max-w-60 min-w-60 min-h-72 max-h-72 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
+        <div className="relative max-w-60 min-w-60 min-h-80 max-h-50 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
           <img
             src={nucbaProgramacionFullStack}
             alt="Full Stack Developer certificate"
@@ -74,8 +74,8 @@ export const Certifications = () => {
           <h3 className="text-center text-primary font-bold mt-2 min-h-12">
             Full Stack Developer
           </h3>
-          <p className="text-center mt-2 min-h-12">
-            (2022-2023) - NUCBA <br /> Buenos Aires
+          <p className="text-center mt-2 min-h-16">
+            (2022-2023) - NUCBA <br /> Buenos Aires, Argentina
           </p>
           <div className="mt-2">
             <a
@@ -89,7 +89,7 @@ export const Certifications = () => {
           </div>
         </div>
         {/* Certification*/}
-        <div className="relative max-w-60 min-w-60 min-h-72 max-h-72 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
+        <div className="relative max-w-60 min-w-60 min-h-80 max-h-50 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
           <img
             src={utnDisenoGraficoDigital}
             alt="Digital Graphic Designer certificate"
@@ -98,8 +98,8 @@ export const Certifications = () => {
           <h3 className="text-center text-primary font-bold mt-2 min-h-12">
             Digital Graphic Designer
           </h3>
-          <p className="text-center mt-2 min-h-12">
-            (2023) E-Learning UTN <br /> Buenos Aires
+          <p className="text-center mt-2 min-h-16">
+            (2023) E-Learning UTN <br /> Buenos Aires, Argentina
           </p>
           <div className="mt-2">
             <a
@@ -113,7 +113,7 @@ export const Certifications = () => {
           </div>
         </div>
         {/* Certification*/}
-        <div className="relative max-w-60 min-w-60 min-h-72 max-h-72 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
+        <div className="relative max-w-60 min-w-60 min-h-80 max-h-50 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
           <img
             src={nucbaUXUI}
             alt="UX/UI Designer Degree certificate"
@@ -122,8 +122,8 @@ export const Certifications = () => {
           <h3 className="text-center text-primary font-bold mt-2 min-h-12">
             UX/UI Designer Degree
           </h3>
-          <p className="text-center mt-2 min-h-12">
-            (2023-2024) - NUCBA <br /> Buenos Aires
+          <p className="text-center mt-2 min-h-16">
+            (2023-2024) - NUCBA <br /> Buenos Aires, Argentina
           </p>
           <div className="mt-2">
             <a

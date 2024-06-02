@@ -133,25 +133,23 @@ export const Contact = () => {
             Send
           </button>
         </div>
-        <div className="flex justify-center items-center gap-3 mt-5">
+        <div className="flex text-center mt-5">
           <div>
             <p className="text-lg font-semibold text-center text-primary font-opensans">
               You can also contact me through my email:{" "}
+              <a
+                href="mailto:memateo@gmail.com"
+                className="text-lg font-semibold text-center text-primary font-opensans underline hover:text-black"
+                target="_blank"
+                rel="noreferrer"
+              >
+                memateo@gmail.com
+              </a>
             </p>
-          </div>
-          <div>
-            <a
-              href="mailto:memateo@gmail.com"
-              className="text-lg font-semibold text-center text-primary font-opensans underline hover:text-black"
-              target="_blank"
-              rel="noreferrer"
-            >
-              memateo@gmail.com
-            </a>
           </div>
         </div>
         <div>
-          <p className="text-lg font-semibold text-center text-primary font-opensans">
+          <p className="text-lg font-semibold text-center text-primary font-opensans mb-3">
             I´ll be in touch with you as soon as possible!
           </p>
         </div>
