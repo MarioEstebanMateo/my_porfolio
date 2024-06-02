@@ -52,8 +52,8 @@ export const Projects = () => {
         {/* Project */}
         <div className="relative max-w-60 min-w-60 min-h-72 max-h-72 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
           <img
-            src={disenoWeb}
-            alt="Web Design image"
+            src={eCommerce}
+            alt="eCommerce image"
             className="w-40 h-30 mx-auto"
           />
           <h3 className="text-center text-primary font-bold mt-2 min-h-12">
@@ -78,8 +78,8 @@ export const Projects = () => {
         {/* Project */}
         <div className="relative max-w-60 min-w-60 min-h-72 max-h-72 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
           <img
-            src={disenoWeb}
-            alt="Web Design image"
+            src={eCommerceReact}
+            alt="eCommerce React image"
             className="w-40 h-30 mx-auto"
           />
           <h3 className="text-center text-primary font-bold mt-2 min-h-12">
@@ -104,8 +104,8 @@ export const Projects = () => {
         {/* Project */}
         <div className="relative max-w-60 min-w-60 min-h-72 max-h-72 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
           <img
-            src={disenoWeb}
-            alt="Web Design image"
+            src={eCommerceReactWithNodeBackEnd}
+            alt="eCommerce React with Node BackEnd image"
             className="w-40 h-30 mx-auto"
           />
           <h3 className="text-center text-primary font-bold mt-2 min-h-12">
@@ -130,8 +130,8 @@ export const Projects = () => {
         {/* Project */}
         <div className="relative max-w-60 min-w-60 min-h-72 max-h-72 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
           <img
-            src={disenoWeb}
-            alt="Web Design image"
+            src={blackJack}
+            alt="Black Jack game image"
             className="w-40 h-30 mx-auto"
           />
           <h3 className="text-center text-primary font-bold mt-2 min-h-12">
@@ -156,8 +156,8 @@ export const Projects = () => {
         {/* Project */}
         <div className="relative max-w-60 min-w-60 min-h-72 max-h-72 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
           <img
-            src={disenoWeb}
-            alt="Web Design image"
+            src={pokeBatallaTCG}
+            alt="Pokemon Battle TCG image"
             className="w-40 h-30 mx-auto"
           />
           <h3 className="text-center text-primary font-bold mt-2 min-h-12">
