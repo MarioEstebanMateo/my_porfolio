@@ -141,14 +141,14 @@ export const Contact = () => {
               You can also contact me through my email:{" "}
             </p>
           </div>
-          <div className="hover:scale-125 ease-in-out duration-300">
+          <div>
             <a
-              href="mailto:memateo@gmail.com
-"
+              href="mailto:memateo@gmail.com"
+              className="text-lg font-semibold text-center text-primary font-opensans underline hover:text-black"
               target="_blank"
               rel="noreferrer"
             >
-              <img src={logoGmail} alt="logo Gmail" />
+              memateo@gmail.com
             </a>
           </div>
         </div>
