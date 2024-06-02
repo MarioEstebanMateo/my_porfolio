@@ -1,4 +1,35 @@
+import Swal from "sweetalert2";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
+
 export const Contact = () => {
+  const form = useRef();
+
+  const resetForm = () => {
+    form.current.reset();
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault(); // prevents the page from reloading when you hit “Send”
+
+    emailjs
+      .sendForm(
+        "service_sjlrcbd",
+        "template_arfivr6",
+        form.current,
+        "xXzOmG9VfMv9FXXgy"
+      )
+      .then(
+        () => {
+          Swal.fire("Success!", "Your message has been sent.", "success");
+          resetForm();
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
+
   return (
     <div className="m-5">
       <div>
@@ -12,40 +43,67 @@ export const Contact = () => {
         </p>
       </div>
       {/* Contact form */}
-      <form className="flex flex-col items-center gap-5 mt-5">
-        <input
-          type="text"
-          placeholder="Name"
-          className="border-2 border-primary p-2 rounded-lg w-60 sm:w-80"
-          required
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          className="border-2 border-primary p-2 rounded-lg w-60 sm:w-80"
-          required
-        />
-        <textarea
-          placeholder="Message"
-          className="border-2 border-primary p-2 rounded-lg w-60 sm:w-80"
-          required
-        />
-        <button
-          type="submit"
-          className="font-opensans text-primary bg-transparent border-2 border-solid border-primary hover:bg-primary hover:text-white active:bg-primary font-bold uppercase text-xs px-2 sm:px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 w-60 sm:w-80"
-        >
-          Send
-        </button>
+      <form
+        ref={form}
+        onSubmit={sendEmail}
+        className="flex flex-col items-center justify-center w-full mt-10"
+      >
+        <div className="flex flex-col items-center justify-center w-3/4 md:w-1/2">
+          <label
+            htmlFor="name"
+            className="text-primary text-lg font-semibold font-opensans"
+          >
+            Name
+          </label>
+          <input
+            type="text"
+            className="w-full p-2 mt-2 border border-primary rounded-md"
+            name="name"
+            id="name"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+        <div className="flex flex-col items-center justify-center w-3/4 md:w-1/2 mt-5">
+          <label
+            htmlFor="email"
+            className="text-primary text-lg font-semibold font-opensans"
+          >
+            Email
+          </label>
+          <input
+            type="email"
+            className="w-full p-2 mt-2 border border-primary rounded-md"
+            name="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+        <div className="flex flex-col items-center justify-center w-3/4 md:w-1/2 mt-5">
+          <label
+            htmlFor="message"
+            className="text-primary text-lg font-semibold font-opensans"
+          >
+            Message
+          </label>
+          <textarea
+            className="w-full p-2 mt-2 border border-primary rounded-md"
+            name="message"
+            id="message"
+            placeholder="Enter your message"
+            required
+          ></textarea>
+        </div>
+        <div className="flex flex-col items-center justify-center w-3/4 md:w-1/2 mt-5">
+          <button
+            type="submit"
+            className="w-full p-2 text-lg font-semibold text-white bg-primary rounded-md font-opensans"
+          >
+            Send
+          </button>
+        </div>
       </form>
     </div>
   );
 };
-
-{
-  /* <button
-                type="submit"
-                className="font-opensans text-primary bg-transparent border border-solid border-primary hover:bg-primary hover:text-white active:bg-primary font-bold uppercase text-xs px-2 sm:px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-              >
-                Send
-              </button> */
-}
