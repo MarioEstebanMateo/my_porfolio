@@ -4,8 +4,6 @@ import { useRef } from "react";
 import { useState } from "react";
 import ConfettiExplosion from "react-confetti-explosion";
 
-import logoGmail from "../assets/icons/logoGmail.svg";
-
 import wandIcon from "../assets/icons/wand.svg";
 
 export const Contact = () => {
