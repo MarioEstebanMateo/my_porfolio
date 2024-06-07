@@ -125,7 +125,7 @@ export const Contact = () => {
             required
           ></textarea>
         </div>
-        <div className="flex flex-col items-center justify-center w-3/4 md:w-1/2 mt-5">
+        <div className="flex flex-col items-center justify-center w-3/4 md:w-1/2 mt-10 mb-5">
           <button
             type="submit"
             className="font-opensans text-primary bg-transparent border-2 border-solid border-primary hover:bg-primary hover:text-white active:bg-primary font-bold uppercase text-lg px-2 sm:px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 w-full"
@@ -133,7 +133,7 @@ export const Contact = () => {
             Send
           </button>
         </div>
-        <div className="flex text-center mt-5">
+        <div className="flex text-center mt-">
           <div>
             <p className="text-lg font-semibold text-center text-primary font-opensans">
               You can also contact me through my email:{" "}
