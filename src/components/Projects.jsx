@@ -161,7 +161,7 @@ export const Projects = () => {
             className="w-40 h-30 mx-auto"
           />
           <h3 className="text-center text-primary font-bold mt-2 min-h-12">
-            Poke Batalla TCG! Game
+          Juego de Cartas Coleccionables
           </h3>
           <p className="text-center mt-2 min-h-20">
             Technologies used:
