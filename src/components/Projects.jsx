@@ -3,7 +3,7 @@ import eCommerce from "../assets/img/eCommerce.png";
 import eCommerceReact from "../assets/img/eCommerceReact.png";
 import eCommerceReactWithNodeBackEnd from "../assets/img/eCommerceReactWithNodeBackEnd.png";
 import blackJack from "../assets/img/blackJack.png";
-import pokeBatallaTCG from "../assets/img/pokeBatallaTCG.png";
+import juegoDeCartasColeccionables from "../assets/img/juegoDeCartasColeccionables.png";
 
 export const Projects = () => {
   return (
@@ -156,8 +156,8 @@ export const Projects = () => {
         {/* Project */}
         <div className="relative max-w-60 min-w-60 min-h-80 max-h-80 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
           <img
-            src={pokeBatallaTCG}
-            alt="Pokemon Battle TCG image"
+            src={juegoDeCartasColeccionables}
+            alt="Juego de Cartas Coleccionables image"
             className="w-40 h-30 mx-auto"
           />
           <h3 className="text-center text-primary font-bold mt-2 min-h-12">
