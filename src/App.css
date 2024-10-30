@@ -40,3 +40,15 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Add this to your index.css or App.css */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: Add this if you want to disable smooth scroll for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
