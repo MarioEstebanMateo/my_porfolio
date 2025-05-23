@@ -9,6 +9,7 @@ import wandIcon from "../assets/icons/wand.svg";
 export const Contact = () => {
   const form = useRef();
   const [isExploding, setIsExploding] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
   const props = {
     force: 2.0,
@@ -22,7 +23,8 @@ export const Contact = () => {
   };
 
   const sendEmail = (e) => {
-    e.preventDefault(); // prevents the page from reloading when you hit “Send”
+    e.preventDefault(); // prevents the page from reloading when you hit "Send"
+    setIsSending(true);
 
     emailjs
       .sendForm(
@@ -33,11 +35,14 @@ export const Contact = () => {
       )
       .then(
         () => {
+          setIsSending(false);
           Swal.fire("Success!", "Your message has been sent.", "success");
           resetForm();
         },
         (error) => {
+          setIsSending(false);
           console.log("FAILED...", error.text);
+          Swal.fire("Error!", "Failed to send message. Please try again.", "error");
         }
       );
   };
@@ -128,9 +133,10 @@ export const Contact = () => {
         <div className="flex flex-col items-center justify-center w-3/4 md:w-1/2 mt-10 mb-5">
           <button
             type="submit"
+            disabled={isSending}
             className="font-opensans text-primary bg-transparent border-2 border-solid border-primary hover:bg-primary hover:text-white active:bg-primary font-bold uppercase text-lg px-2 sm:px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 w-full"
           >
-            Send
+            {isSending ? "Sending..." : "Send"}
           </button>
         </div>
         <div className="flex text-center mt-">
