@@ -26,7 +26,7 @@ export const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_sjlrcbd",
+        "service_ssgigsf",
         "template_arfivr6",
         form.current,
         "xXzOmG9VfMv9FXXgy"
