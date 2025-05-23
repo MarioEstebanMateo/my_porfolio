@@ -10,8 +10,20 @@ import { useInView } from "./hooks/useInView";
 import { useEffect } from "react";
 
 // AnimatedSection component to wrap each section
-const AnimatedSection = ({ children, id }) => {
+const AnimatedSection = ({ children, id, direction = 'up' }) => {
   const [ref, isVisible] = useInView();
+
+  const getTransformClass = () => {
+    switch (direction) {
+      case 'left':
+        return isVisible ? 'translate-x-0' : '-translate-x-10';
+      case 'right':
+        return isVisible ? 'translate-x-0' : 'translate-x-10';
+      case 'up':
+      default:
+        return isVisible ? 'translate-y-0' : 'translate-y-10';
+    }
+  };
 
   return (
     <section 
@@ -19,9 +31,9 @@ const AnimatedSection = ({ children, id }) => {
       ref={ref}
       className={`transition-all duration-1000 transform ${
         isVisible 
-          ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 translate-y-10'
-      } scroll-mt-20`}
+          ? 'opacity-100' 
+          : 'opacity-0'
+      } ${getTransformClass()} scroll-mt-20`}
     >
       {children}
     </section>
@@ -63,16 +75,16 @@ function App() {
         <section id="main" className="scroll-mt-20">
           <Main />
         </section>
-        <AnimatedSection id="skills">
+        <AnimatedSection id="skills" direction="left">
           <Skills />
         </AnimatedSection>
-        <AnimatedSection id="certifications">
+        <AnimatedSection id="certifications" direction="right">
           <Certifications />
         </AnimatedSection>
-        <AnimatedSection id="projects">
+        <AnimatedSection id="projects" direction="up">
           <Projects />
         </AnimatedSection>
-        <AnimatedSection id="contact">
+        <AnimatedSection id="contact" direction="left">
           <Contact />
         </AnimatedSection>
       </main>
