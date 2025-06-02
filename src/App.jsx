@@ -8,6 +8,7 @@ import { Footer } from "./components/Footer";
 import { BackToTop } from "./components/BackToTop";
 import { useInView } from "./hooks/useInView";
 import { useEffect } from "react";
+import { Freelance } from "./components/Freelance";
 
 // AnimatedSection component to wrap each section
 const AnimatedSection = ({ children, id, direction = 'up' }) => {
@@ -84,7 +85,10 @@ function App() {
         <AnimatedSection id="projects" direction="up">
           <Projects />
         </AnimatedSection>
-        <AnimatedSection id="contact" direction="left">
+        <AnimatedSection id="freelance" direction="left">
+          <Freelance />
+        </AnimatedSection>
+        <AnimatedSection id="contact" direction="right">
           <Contact />
         </AnimatedSection>
       </main>
