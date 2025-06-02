@@ -10,9 +10,10 @@ export const Navbar = () => {
   const navigationLinks = [
     { name: "Home", href: "#main" },
     { name: "Skills", href: "#skills" },
-    { name: "Languages", href: "#languages" }, // Add this new link
+    { name: "Languages", href: "#languages" },
     { name: "Certifications", href: "#certifications" },
     { name: "Projects", href: "#projects" },
+    { name: "Freelance", href: "#freelance" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -42,8 +43,8 @@ export const Navbar = () => {
     <nav className="relative">
       {/* Main Navbar */}
       <div className="flex justify-between items-center pt-5 pb-5 shadow-sm bg-white">
-        <div className="ml-1 sm:ml-5 hover:scale-110 ease-in-out duration-300">
-          <h1 className="font-robotoslab text-primary font-bold text-sm sm:text-lg">
+        <div className="ml-1 sm:ml-5">
+          <h1 className="font-robotoslab text-primary font-bold text-sm sm:text-lg inline-block relative transition-all duration-300 transform hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-primary hover:via-blue-500 hover:to-primary hover:scale-105">
             Mario´s Portfolio
           </h1>
         </div>
@@ -54,7 +55,7 @@ export const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className="font-opensans text-primary hover:text-primary/80 font-semibold text-sm transition-colors duration-200"
+              className="font-opensans text-primary font-semibold text-sm relative after:absolute after:bg-primary after:h-0.5 after:w-0 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full hover:text-primary"
             >
               {link.name}
             </a>
@@ -107,7 +108,7 @@ export const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 onClick={handleNavClick}
-                className="font-opensans text-primary hover:text-primary/80 font-semibold text-sm transition-colors duration-200"
+                className="font-opensans text-primary font-semibold text-sm relative inline-block transition-transform duration-300 hover:translate-x-1 hover:text-primary after:absolute after:bg-primary after:h-0.5 after:w-0 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
               >
                 {link.name}
               </a>
