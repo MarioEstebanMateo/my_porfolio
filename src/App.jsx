@@ -1,6 +1,7 @@
 import { Navbar } from "./components/Navbar";
 import { Main } from "./components/Main";
 import { Skills } from "./components/Skills";
+import { Languages } from "./components/Languages";
 import { Certifications } from "./components/Certifications";
 import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
@@ -79,10 +80,13 @@ function App() {
         <AnimatedSection id="skills" direction="left">
           <Skills />
         </AnimatedSection>
-        <AnimatedSection id="certifications" direction="right">
+        <AnimatedSection id="languages" direction="right">
+          <Languages />
+        </AnimatedSection>
+        <AnimatedSection id="certifications" direction="left">
           <Certifications />
         </AnimatedSection>
-        <AnimatedSection id="projects" direction="up">
+        <AnimatedSection id="projects" direction="right">
           <Projects />
         </AnimatedSection>
         <AnimatedSection id="freelance" direction="left">

@@ -10,6 +10,7 @@ export const Navbar = () => {
   const navigationLinks = [
     { name: "Home", href: "#main" },
     { name: "Skills", href: "#skills" },
+    { name: "Languages", href: "#languages" }, // Add this new link
     { name: "Certifications", href: "#certifications" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
