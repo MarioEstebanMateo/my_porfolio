@@ -1,22 +1,10 @@
 import Swal from "sweetalert2";
 import emailjs from "@emailjs/browser";
-import { useRef } from "react";
-import { useState } from "react";
-import ConfettiExplosion from "react-confetti-explosion";
-
-import wandIcon from "../assets/icons/wand.svg";
+import { useRef, useState } from "react";
 
 export const Contact = () => {
   const form = useRef();
-  const [isExploding, setIsExploding] = useState(false);
   const [isSending, setIsSending] = useState(false);
-
-  const props = {
-    force: 2.0,
-    duration: 10000,
-    particleCount: 500,
-    width: 1920,
-  };
 
   const resetForm = () => {
     form.current.reset();
@@ -47,26 +35,8 @@ export const Contact = () => {
       );
   };
 
-  const handleConfetti = () => {
-    setIsExploding(true);
-    setTimeout(() => {
-      setIsExploding(false);
-    }, 10000);
-  };
-
   return (
     <div className="m-5">
-      <div className="flex items-center justify-center">
-        <button
-          className="bg-primary text-white p-2 rounded-md my-5 flex items-center justify-center font-opensans font-semibold text-lg hover:bg-black"
-          onClick={handleConfetti}
-        >
-          <img src={wandIcon} alt="Wand Icon" className="mx-2 h-6" />
-          Click Me!!
-          <img src={wandIcon} alt="Wand Icon" className="mx-2 h-6" />
-        </button>
-        {isExploding && <ConfettiExplosion {...props} />}
-      </div>
       <div>
         <h2 className="text-3xl font-bold text-center text-primary sm:text-4xl font-opensans">
           Contact
