@@ -16,7 +16,7 @@ import certificateEnglish from "../assets/img/certificateEnglish.jpg";
 export const Skills = () => {
   return (
     <>
-      <div className="m-5">
+      <div className="m-10">
         <div>
           <h2 className="text-3xl font-bold text-center text-primary sm:text-4xl font-opensans">
             Technical Skills

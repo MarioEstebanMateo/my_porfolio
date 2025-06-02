@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Add this to prevent horizontal scrolling */
+body {
+  overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Make sure all elements respect the container boundaries */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Fix potential image overflow issues */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* You could modify this to ensure it doesn't force horizontal scrolling */
+#root {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+}

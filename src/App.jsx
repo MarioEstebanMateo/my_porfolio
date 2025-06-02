@@ -30,7 +30,7 @@ const AnimatedSection = ({ children, id, direction = 'up' }) => {
     <section 
       id={id}
       ref={ref}
-      className={`transition-all duration-1000 transform ${
+      className={`transition-all duration-1000 transform mb-10 ${
         isVisible 
           ? 'opacity-100' 
           : 'opacity-0'
