@@ -11,18 +11,10 @@ export const Main = () => {
           Hi, I´m Mario. Nice to meet you!
         </h1>
         <p className="mt-1 mb-3 font-opensans text-sm sm:text-lg">
-          I´m Professional with a solid 20-year career in administrative roles,
-          now focused on a new career as a Systems Analyst, Full Stack Developer
-          and UX/UI Designer.
+          As a professional with over 13 years of experience at my current company, I have developed strong skills in administration, billing, and data analysis. My primary focus has been optimizing internal processes and ensuring efficient management in the administrative area.
         </p>
         <p className="mt-3 mb-3 font-opensans text-sm sm:text-lg">
-          With a passion for technology and continuous learning, I am committed
-          to applying my newly acquired skills and previous experience to
-          contribute to the development of innovative solutions.
-        </p>
-        <p className="mt-3 mb-3 font-opensans text-sm sm:text-lg">
-          I am seeking opportunities that allow me to grow professionally and
-          continue acquiring new knowledge in the field of software development.
+          In parallel, I have expanded my skills in technology and IT development, completing training programs in Full Stack development, UX/UI design, and systems analysis. I am excited to combine my administrative experience with my technological expertise to deliver innovative solutions and enhance the user experience.
         </p>
       </div>
     </div>
