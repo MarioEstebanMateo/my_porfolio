@@ -6,6 +6,7 @@ import logoNode from "../assets/icons/logoNodejs.svg";
 import logoExpress from "../assets/icons/logoExpress.svg";
 import logoMySQL from "../assets/icons/logoMysql.svg";
 import logoMongoDB from "../assets/icons/logoMongodb.svg";
+import logoSupabase from "../assets/icons/logoSupabase.svg";
 import logoGit from "../assets/icons/logoGit.svg";
 import logoGithub from "../assets/icons/logoGithub.svg";
 import logoFigma from "../assets/icons/logoFigma.svg";
@@ -116,6 +117,16 @@ export const Skills = () => {
               />
               <p className="text-sm font-semibold sm:text-lg text-black">
                 MongoDB
+              </p>
+            </div>
+            <div className="flex items-center gap-2 mt-5">
+              <img
+                src={logoSupabase}
+                alt="logo Supabase"
+                className="w-8 h-8 sm:w-16 sm:h-16"
+              />
+              <p className="text-sm font-semibold sm:text-lg text-black">
+                Supabase
               </p>
             </div>
           </div>
