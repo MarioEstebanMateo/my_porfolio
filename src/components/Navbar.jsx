@@ -194,7 +194,7 @@ export const Navbar = () => {
             : "max-h-0 opacity-0"
         }`}
       >
-        <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg border-t border-gray-200 dark:border-slate-700">
+        <div className="bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-slate-700">
           <div className="p-6 space-y-6">
             {/* Mobile Navigation Links */}
             <div className="flex flex-col gap-3">
