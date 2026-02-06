@@ -142,13 +142,49 @@ export const Navbar = () => {
               rel="noreferrer"
               className="group relative p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-all duration-300 hover:scale-110"
             >
-              <img src={link.img} alt={link.alt} className="w-6 h-6" />
+              <img 
+                src={link.img} 
+                alt={link.alt} 
+                className={`w-6 h-6 ${link.alt.includes('GitHub') ? 'dark:invert dark:brightness-0 dark:contrast-200' : ''}`}
+              />
             </a>
           ))}
         </div>
 
         {/* Mobile Hamburger Menu */}
         <div className="lg:hidden flex items-center gap-2">
+          {/* Mobile Dark/Language Buttons (visible when menu is closed) */}
+          {!isMenuOpen && (
+            <>
+              {/* Dark Mode Toggle */}
+              <button
+                onClick={toggleDarkMode}
+                className="relative p-2 rounded-lg hover:bg-primary-50 dark:hover:bg-slate-800 transition-all duration-300"
+                title={isDarkMode ? 'Light Mode' : 'Dark Mode'}
+              >
+                {isDarkMode ? (
+                  <Sun className="w-5 h-5 text-yellow-500" />
+                ) : (
+                  <Moon className="w-5 h-5 text-primary-600" />
+                )}
+              </button>
+
+              {/* Language Switcher */}
+              <button
+                onClick={toggleLanguage}
+                className="relative p-2 rounded-lg hover:bg-primary-50 dark:hover:bg-slate-800 transition-all duration-300"
+                title={language === 'en' ? 'Cambiar a Español' : 'Switch to English'}
+              >
+                <div className="flex items-center gap-1">
+                  <Languages className="w-5 h-5 text-primary-600 dark:text-accent-400" />
+                  <span className="text-xs font-bold text-primary-600 dark:text-accent-400">
+                    {language === 'en' ? 'ES' : 'EN'}
+                  </span>
+                </div>
+              </button>
+            </>
+          )}
+          
           {/* Hamburger Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -242,7 +278,11 @@ export const Navbar = () => {
                   rel="noreferrer"
                   className="p-3 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-all duration-300 hover:scale-110"
                 >
-                  <img src={link.img} alt={link.alt} className="w-6 h-6" />
+                  <img 
+                    src={link.img} 
+                    alt={link.alt} 
+                    className={`w-6 h-6 ${link.alt.includes('GitHub') ? 'dark:invert dark:brightness-0 dark:contrast-200' : ''}`}
+                  />
                 </a>
               ))}
             </div>
