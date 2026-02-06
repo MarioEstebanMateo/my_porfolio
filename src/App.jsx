@@ -71,7 +71,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen relative bg-white dark:bg-slate-900 transition-colors duration-300">
+    <div className="min-h-screen relative bg-white dark:bg-slate-900 transition-colors duration-300 overflow-x-hidden">
       <Navbar />
       <main className="pt-[72px]">
         <section id="main" className="scroll-mt-[72px]">
