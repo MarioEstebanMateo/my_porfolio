@@ -21,7 +21,7 @@ export const Languages = () => {
     }
   }, [isVisible, hasAnimated]);
   return (
-    <div className="py-16 px-5 bg-gradient-to-b from-white to-gray-50 dark:from-slate-900 dark:to-slate-900">
+    <div className="pb-16 px-5 bg-gradient-to-b from-white to-gray-50 dark:from-slate-900 dark:to-slate-900">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">

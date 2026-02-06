@@ -72,6 +72,7 @@ export const translations = {
       institution: "Institution",
       year: "Year",
       location: "Location",
+      comingSoon: "Coming Soon",
     },
     projects: {
       title: "Featured Projects",
@@ -251,6 +252,7 @@ export const translations = {
       institution: "Institución",
       year: "Año",
       location: "Ubicación",
+      comingSoon: "Próximamente",
     },
     projects: {
       title: "Proyectos Destacados",

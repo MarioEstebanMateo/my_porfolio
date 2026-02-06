@@ -56,10 +56,19 @@ export const Certifications = () => {
       link: "https://res.cloudinary.com/dwxoq8n2m/image/upload/v1705439616/Mario%20Privado/Nucba_Certificado_Ux_Ui_Degree.jpg",
       color: "from-indigo-500 to-purple-500",
     },
+    {
+      title: "AI Engineering",
+      institution: "NUCBA",
+      year: "2026",
+      location: "Buenos Aires, Argentina",
+      image: "",
+      link: "#",
+      color: "from-teal-500 to-cyan-500",
+    },
   ];
 
   return (
-    <div className="py-16 px-5 bg-gradient-to-b from-gray-50 to-white dark:from-slate-900 dark:to-slate-900">
+    <div className="pb-16 px-5 bg-gradient-to-b from-gray-50 to-white dark:from-slate-900 dark:to-slate-900">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -90,13 +99,26 @@ export const Certifications = () => {
               <div className="relative bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full flex flex-col">
                 {/* Image Container */}
                 <div className="relative h-48 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-slate-700 dark:to-slate-600">
-                  <img
-                    src={cert.image}
-                    alt={cert.title}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                  />
-                  {/* Overlay */}
-                  <div className={`absolute inset-0 bg-gradient-to-t ${cert.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
+                  {cert.image ? (
+                    <>
+                      <img
+                        src={cert.image}
+                        alt={cert.title}
+                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                      />
+                      {/* Overlay */}
+                      <div className={`absolute inset-0 bg-gradient-to-t ${cert.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
+                    </>
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <div className="text-center">
+                        <Award className={`w-16 h-16 mx-auto mb-3 bg-gradient-to-r ${cert.color} bg-clip-text text-transparent`} />
+                        <p className={`text-lg font-bold bg-gradient-to-r ${cert.color} bg-clip-text text-transparent`}>
+                          {t.comingSoon}
+                        </p>
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Content */}
@@ -121,15 +143,23 @@ export const Certifications = () => {
                   </div>
 
                   {/* Button */}
-                  <a
-                    href={cert.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={`flex items-center justify-center gap-2 bg-gradient-to-r ${cert.color} text-white px-4 py-2 rounded-lg font-semibold text-sm hover:shadow-lg transform hover:scale-105 transition-all duration-300 mt-auto`}
-                  >
-                    {t.viewCertificate}
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
+                  {cert.link && cert.link !== "#" ? (
+                    <a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={`flex items-center justify-center gap-2 bg-gradient-to-r ${cert.color} text-white px-4 py-2 rounded-lg font-semibold text-sm hover:shadow-lg transform hover:scale-105 transition-all duration-300 mt-auto`}
+                    >
+                      {t.viewCertificate}
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  ) : (
+                    <div
+                      className={`flex items-center justify-center gap-2 bg-gradient-to-r ${cert.color} text-white px-4 py-2 rounded-lg font-semibold text-sm mt-auto opacity-60 cursor-not-allowed`}
+                    >
+                      {t.comingSoon}
+                    </div>
+                  )}
                 </div>
 
                 {/* Bottom gradient line */}
