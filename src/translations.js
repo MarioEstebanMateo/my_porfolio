@@ -73,6 +73,14 @@ export const translations = {
       year: "Year",
       location: "Location",
       comingSoon: "Coming Soon",
+      items: {
+        systemsAnalyst: "Systems Analyst",
+        fullStackDiploma: "Full Stack Diploma with React JS",
+        fullStackDeveloper: "Full Stack Developer",
+        digitalGraphicDesigner: "Digital Graphic Designer",
+        uxUiDesigner: "UX/UI Designer Degree",
+        aiEngineering: "AI Engineering",
+      },
     },
     projects: {
       title: "Featured Projects",
@@ -253,6 +261,14 @@ export const translations = {
       year: "Año",
       location: "Ubicación",
       comingSoon: "Próximamente",
+      items: {
+        systemsAnalyst: "Analista de Sistemas",
+        fullStackDiploma: "Diplomatura Full Stack con React JS",
+        fullStackDeveloper: "Desarrollador Full Stack",
+        digitalGraphicDesigner: "Diseñador Gráfico Digital",
+        uxUiDesigner: "Carrera de Diseñador UX/UI",
+        aiEngineering: "Ingeniería en IA",
+      },
     },
     projects: {
       title: "Proyectos Destacados",

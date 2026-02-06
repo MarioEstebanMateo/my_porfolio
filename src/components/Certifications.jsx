@@ -12,7 +12,7 @@ export const Certifications = () => {
   const t = translations[language].certifications;
   const certifications = [
     {
-      title: "Systems Analyst",
+      titleKey: "systemsAnalyst",
       institution: "ISFDyT Nº5",
       year: "2018-2021",
       location: "Pergamino, Argentina",
@@ -21,7 +21,7 @@ export const Certifications = () => {
       color: "from-blue-500 to-cyan-500",
     },
     {
-      title: "Full Stack Diploma with React JS",
+      titleKey: "fullStackDiploma",
       institution: "E-Learning UTN",
       year: "2021",
       location: "Buenos Aires, Argentina",
@@ -30,7 +30,7 @@ export const Certifications = () => {
       color: "from-green-500 to-emerald-500",
     },
     {
-      title: "Full Stack Developer",
+      titleKey: "fullStackDeveloper",
       institution: "NUCBA",
       year: "2022-2023",
       location: "Buenos Aires, Argentina",
@@ -39,7 +39,7 @@ export const Certifications = () => {
       color: "from-purple-500 to-pink-500",
     },
     {
-      title: "Digital Graphic Designer",
+      titleKey: "digitalGraphicDesigner",
       institution: "E-Learning UTN",
       year: "2023",
       location: "Buenos Aires, Argentina",
@@ -48,7 +48,7 @@ export const Certifications = () => {
       color: "from-orange-500 to-red-500",
     },
     {
-      title: "UX/UI Designer Degree",
+      titleKey: "uxUiDesigner",
       institution: "NUCBA",
       year: "2023-2024",
       location: "Buenos Aires, Argentina",
@@ -57,7 +57,7 @@ export const Certifications = () => {
       color: "from-indigo-500 to-purple-500",
     },
     {
-      title: "AI Engineering",
+      titleKey: "aiEngineering",
       institution: "NUCBA",
       year: "2026",
       location: "Buenos Aires, Argentina",
@@ -103,7 +103,7 @@ export const Certifications = () => {
                     <>
                       <img
                         src={cert.image}
-                        alt={cert.title}
+                        alt={t.items[cert.titleKey]}
                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                       />
                       {/* Overlay */}
@@ -126,7 +126,7 @@ export const Certifications = () => {
                   <div className="flex items-start gap-2 mb-3">
                     <Award className={`w-5 h-5 flex-shrink-0 mt-1 bg-gradient-to-r ${cert.color} bg-clip-text text-transparent`} />
                     <h3 className="text-lg font-bold text-gray-800 dark:text-gray-200 font-robotoslab leading-tight">
-                      {cert.title}
+                      {t.items[cert.titleKey]}
                     </h3>
                   </div>
 
