@@ -4,6 +4,7 @@ import eCommerceReact from "../assets/img/eCommerceReact.png";
 import eCommerceReactWithNodeBackEnd from "../assets/img/eCommerceReactWithNodeBackEnd.png";
 import blackJack from "../assets/img/blackJack.png";
 import juegoDeCartasColeccionables from "../assets/img/juegoDeCartasColeccionables.png";
+import proyectoFinalAiEngineering from "../assets/img/proyectoFinalAiEngineering.png";
 import { ExternalLink, Github, Sparkles } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../translations";
@@ -61,6 +62,15 @@ export const Projects = () => {
       technologies: ["HTML", "CSS", "React"],
       link: "https://poke-tcg-card-game.vercel.app/",
       github: "#",
+    },
+    {
+      title: t.items.aiEngineering.title,
+      image: proyectoFinalAiEngineering,
+      description: t.items.aiEngineering.description,
+      technologies: ["React", "AI", "Grok", "Vite"],
+      link: "https://proyecto-final-ai-engineering-mateo.vercel.app/",
+      github: "#",
+      featured: true,
     },
   ];
 

@@ -19,7 +19,7 @@ export const translations = {
       projectsCompleted: "Projects Completed",
       clientSatisfaction: "Client Satisfaction",
       description1:
-        "As a seasoned professional with over 13 years of experience, I've mastered the art of administration, billing, and data analysis. My expertise lies in optimizing internal processes and ensuring efficient management.",
+        "As a seasoned professional with over 13 years of experience, I specialize in administration, billing, and data analysis. My expertise lies in optimizing internal processes and ensuring efficient management. Recently, I've leveraged this administrative knowledge to design and develop custom applications that solve specific challenges in my current workplace.",
       description2:
         "I've evolved into a Full Stack Developer specialized in modern web technologies. Combining administrative excellence with cutting-edge tech skills in React, Node.js, and cloud solutions, I deliver innovative digital experiences that drive results.",
       getInTouch: "Get In Touch",
@@ -114,7 +114,13 @@ export const translations = {
         },
         cardGame: {
           title: "Collectable Card Game",
-          description: "Interactive Pokemon TCG card game built with React",
+          description:
+            "Interactive Pokemon TCG card game built with React (API no longer available)",
+        },
+        aiEngineering: {
+          title: "AI Engineering Final Project",
+          description:
+            "Advanced AI-powered application showcasing modern AI engineering practices and implementations",
         },
       },
     },
@@ -206,7 +212,7 @@ export const translations = {
       projectsCompleted: "Proyectos Completados",
       clientSatisfaction: "Satisfacción del Cliente",
       description1:
-        "Como profesional experimentado con más de 13 años de experiencia, he dominado el arte de la administración, facturación y análisis de datos. Mi experiencia radica en optimizar procesos internos y asegurar una gestión eficiente.",
+        "Como profesional experimentado con más de 13 años de experiencia, me especializo en administración, facturación y análisis de datos. Mi experiencia radica en optimizar procesos internos y asegurar una gestión eficiente. Últimamente, he utilizado estos conocimientos administrativos para diseñar y desarrollar aplicaciones personalizadas que solucionan problemas puntuales en mi empleo actual.",
       description2:
         "He evolucionado como Desarrollador Full Stack especializado en tecnologías web modernas. Combinando excelencia administrativa con habilidades tecnológicas de vanguardia en React, Node.js y soluciones en la nube, entrego experiencias digitales innovadoras que generan resultados.",
       getInTouch: "Contáctame",
@@ -305,7 +311,12 @@ export const translations = {
         cardGame: {
           title: "Juego de Cartas Coleccionables",
           description:
-            "Juego de cartas interactivo de Pokemon TCG construido con React",
+            "Juego de cartas interactivo de Pokemon TCG construido con React (API ya no disponible)",
+        },
+        aiEngineering: {
+          title: "Proyecto Final AI Engineering",
+          description:
+            "Aplicación avanzada potenciada por IA que demuestra prácticas modernas de ingeniería de IA",
         },
       },
     },

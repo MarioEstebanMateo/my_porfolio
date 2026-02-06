@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import mariophoto from "../assets/img/mariophoto.png";
 import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
@@ -37,6 +38,12 @@ const CounterStat = ({ end, suffix = "", duration = 2000 }) => {
       {count}{suffix}
     </span>
   );
+};
+
+CounterStat.propTypes = {
+  end: PropTypes.number.isRequired,
+  suffix: PropTypes.string,
+  duration: PropTypes.number
 };
 
 export const Main = () => {
