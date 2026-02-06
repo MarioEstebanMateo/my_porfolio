@@ -9,27 +9,27 @@ export const Freelance = () => {
   const t = translations[language].freelance;
   const freelanceProjects = [
     {
-      title: "App Pedidos La Fe",
+      title: t.items.appLaFe.title,
       image: appLafe,
-      description: "Order management application helping franchises streamline their ordering process with real-time updates",
+      description: t.items.appLaFe.description,
       technologies: ["React", "Tailwind", "Vite", "Supabase"],
       link: "https://pedidos-la-fe.vercel.app/",
       client: "La Fe S.A.",
-      impact: "50% faster ordering",
+      impact: t.items.appLaFe.impact,
     },
     {
-      title: "App Pedidos La Fe Con Stock",
+      title: t.items.appLaFeStock.title,
       image: appLaFeConStock,
-      description: "Advanced inventory management system integrated with order processing for better stock control",
+      description: t.items.appLaFeStock.description,
       technologies: ["React", "Tailwind", "Vite", "Supabase"],
       link: "https://pedidos-la-fe-con-stock.vercel.app/",
       client: "La Fe S.A.",
-      impact: "Real-time inventory",
+      impact: t.items.appLaFeStock.impact,
     },
   ];
 
   return (
-    <div className="py-16 px-5 bg-gradient-to-b from-white to-gray-50">
+    <div className="py-16 px-5 bg-gradient-to-b from-white to-gray-50 dark:from-slate-900 dark:to-slate-900">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -40,7 +40,7 @@ export const Freelance = () => {
           <h2 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600 font-robotoslab mb-4">
             {t.title}
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 font-opensans max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 font-opensans max-w-3xl mx-auto">
             {t.subtitle}
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto mt-4 rounded-full"></div>
@@ -57,15 +57,15 @@ export const Freelance = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-3xl blur-lg opacity-25 group-hover:opacity-75 transition duration-1000"></div>
               
               {/* Card */}
-              <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+              <div className="relative bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 h-full flex flex-col">
                 {/* Client Badge */}
-                <div className="absolute top-4 right-4 z-20 backdrop-blur-sm bg-white/90 px-3 py-1 rounded-full text-xs font-bold text-green-700 shadow-lg border border-green-200">
+                <div className="absolute top-4 right-4 z-20 backdrop-blur-sm bg-white/90 dark:bg-slate-700/90 px-3 py-1 rounded-full text-xs font-bold text-green-700 dark:text-green-400 shadow-lg border border-green-200 dark:border-green-600">
                   <Star className="w-3 h-3 inline mr-1 fill-green-500 text-green-500" />
                   {project.client}
                 </div>
 
                 {/* Image Container */}
-                <div className="relative h-56 overflow-hidden bg-gradient-to-br from-green-50 to-emerald-50">
+                <div className="relative h-56 overflow-hidden bg-gradient-to-br from-green-50 to-emerald-50 dark:from-slate-700 dark:to-slate-600">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -81,11 +81,11 @@ export const Freelance = () => {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-3 font-robotoslab group-hover:text-green-600 transition-colors">
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-3 font-robotoslab group-hover:text-green-600 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
 
@@ -94,7 +94,7 @@ export const Freelance = () => {
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-3 py-1 bg-gradient-to-r from-green-50 to-emerald-50 text-green-700 text-xs font-semibold rounded-full border border-green-200"
+                        className="px-3 py-1 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 text-green-700 dark:text-green-400 text-xs font-semibold rounded-full border border-green-200 dark:border-green-700"
                       >
                         {tech}
                       </span>
@@ -106,7 +106,7 @@ export const Freelance = () => {
                     href={project.link}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-emerald-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+                    className="flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-emerald-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 mt-auto"
                   >
                     {t.viewApplication}
                     <ExternalLink className="w-4 h-4" />

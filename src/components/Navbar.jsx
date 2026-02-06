@@ -2,14 +2,16 @@ import { useState, useEffect } from "react";
 import logoGitHub from "../assets/icons/logoGithub.svg";
 import logoLinkedIn from "../assets/icons/logoLinkedin.svg";
 import logoGmail from "../assets/icons/logoGmail.svg";
-import { Menu, X, Download, Sparkles, Languages } from "lucide-react";
+import { Menu, X, Download, Sparkles, Languages, Moon, Sun } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
+import { useDarkMode } from "../context/DarkModeContext";
 import { translations } from "../translations";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { language, toggleLanguage } = useLanguage();
+  const { isDarkMode, toggleDarkMode } = useDarkMode();
   const t = translations[language].navbar;
 
   useEffect(() => {
@@ -55,8 +57,8 @@ export const Navbar = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? "bg-white/80 backdrop-blur-lg shadow-lg" 
-        : "bg-white shadow-sm"
+        ? "bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg shadow-lg" 
+        : "bg-white dark:bg-slate-900 shadow-sm"
     }`}>
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 py-4">
@@ -80,9 +82,9 @@ export const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className="relative font-opensans text-gray-700 font-medium text-sm group"
+              className="relative font-opensans text-gray-700 dark:text-gray-300 font-medium text-sm group"
             >
-              <span className="relative z-10 group-hover:text-primary-600 transition-colors">
+              <span className="relative z-10 group-hover:text-primary-600 dark:group-hover:text-accent-400 transition-colors">
                 {link.name}
               </span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 group-hover:w-full transition-all duration-300"></span>
@@ -92,15 +94,28 @@ export const Navbar = () => {
 
         {/* Desktop Resume Button & Social Links */}
         <div className="hidden lg:flex items-center gap-4">
+          {/* Dark Mode Toggle */}
+          <button
+            onClick={toggleDarkMode}
+            className="group relative p-2.5 rounded-full hover:bg-gradient-to-r hover:from-primary-50 hover:to-accent-50 dark:hover:from-slate-800 dark:hover:to-slate-700 transition-all duration-300 hover:scale-110 border-2 border-gray-200 dark:border-slate-700 hover:border-primary-400 dark:hover:border-accent-400"
+            title={isDarkMode ? 'Light Mode' : 'Dark Mode'}
+          >
+            {isDarkMode ? (
+              <Sun className="w-4 h-4 text-yellow-500" />
+            ) : (
+              <Moon className="w-4 h-4 text-primary-600" />
+            )}
+          </button>
+
           {/* Language Switcher Button */}
           <button
             onClick={toggleLanguage}
-            className="group relative p-2.5 rounded-full hover:bg-gradient-to-r hover:from-primary-50 hover:to-accent-50 transition-all duration-300 hover:scale-110 border-2 border-gray-200 hover:border-primary-400"
+            className="group relative p-2.5 rounded-full hover:bg-gradient-to-r hover:from-primary-50 hover:to-accent-50 dark:hover:from-slate-800 dark:hover:to-slate-700 transition-all duration-300 hover:scale-110 border-2 border-gray-200 dark:border-slate-700 hover:border-primary-400 dark:hover:border-accent-400"
             title={language === 'en' ? 'Cambiar a Español' : 'Switch to English'}
           >
             <div className="flex items-center gap-1.5">
-              <Languages className="w-4 h-4 text-primary-600" />
-              <span className="text-sm font-bold text-primary-600">
+              <Languages className="w-4 h-4 text-primary-600 dark:text-accent-400" />
+              <span className="text-sm font-bold text-primary-600 dark:text-accent-400">
                 {language === 'en' ? 'ES' : 'EN'}
               </span>
             </div>
@@ -125,24 +140,37 @@ export const Navbar = () => {
               href={link.href} 
               target="_blank" 
               rel="noreferrer"
-              className="group relative p-2 rounded-full hover:bg-gray-100 transition-all duration-300 hover:scale-110"
+              className="group relative p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-all duration-300 hover:scale-110"
             >
               <img src={link.img} alt={link.alt} className="w-6 h-6" />
             </a>
           ))}
         </div>
 
-        {/* Mobile Language Switcher & Hamburger Menu */}
+        {/* Mobile Dark Mode, Language Switcher & Hamburger Menu */}
         <div className="lg:hidden flex items-center gap-2">
+          {/* Mobile Dark Mode Toggle */}
+          <button
+            onClick={toggleDarkMode}
+            className="relative p-2 rounded-lg hover:bg-primary-50 dark:hover:bg-slate-800 transition-all duration-300 border border-gray-200 dark:border-slate-700"
+            title={isDarkMode ? 'Light Mode' : 'Dark Mode'}
+          >
+            {isDarkMode ? (
+              <Sun className="w-4 h-4 text-yellow-500" />
+            ) : (
+              <Moon className="w-4 h-4 text-primary-600" />
+            )}
+          </button>
+
           {/* Mobile Language Switcher */}
           <button
             onClick={toggleLanguage}
-            className="relative p-2 rounded-lg hover:bg-primary-50 transition-all duration-300 border border-gray-200"
+            className="relative p-2 rounded-lg hover:bg-primary-50 dark:hover:bg-slate-800 transition-all duration-300 border border-gray-200 dark:border-slate-700"
             title={language === 'en' ? 'Cambiar a Español' : 'Switch to English'}
           >
             <div className="flex items-center gap-1">
-              <Languages className="w-4 h-4 text-primary-600" />
-              <span className="text-xs font-bold text-primary-600">
+              <Languages className="w-4 h-4 text-primary-600 dark:text-accent-400" />
+              <span className="text-xs font-bold text-primary-600 dark:text-accent-400">
                 {language === 'en' ? 'ES' : 'EN'}
               </span>
             </div>
@@ -151,7 +179,7 @@ export const Navbar = () => {
           {/* Hamburger Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="relative p-2 text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-300"
+            className="relative p-2 text-primary-600 dark:text-accent-400 hover:bg-primary-50 dark:hover:bg-slate-800 rounded-lg transition-all duration-300"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -166,7 +194,7 @@ export const Navbar = () => {
             : "max-h-0 opacity-0"
         }`}
       >
-        <div className="bg-white/95 backdrop-blur-lg border-t border-gray-200">
+        <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg border-t border-gray-200 dark:border-slate-700">
           <div className="p-6 space-y-6">
             {/* Mobile Navigation Links */}
             <div className="flex flex-col gap-3">
@@ -175,18 +203,18 @@ export const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   onClick={handleNavClick}
-                  className="group flex items-center justify-between px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-primary-50 hover:to-accent-50 transition-all duration-300"
+                  className="group flex items-center justify-between px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-primary-50 hover:to-accent-50 dark:hover:from-slate-800 dark:hover:to-slate-700 transition-all duration-300"
                 >
-                  <span className="font-opensans text-gray-700 font-medium group-hover:text-primary-600 transition-colors">
+                  <span className="font-opensans text-gray-700 dark:text-gray-300 font-medium group-hover:text-primary-600 dark:group-hover:text-accent-400 transition-colors">
                     {link.name}
                   </span>
-                  <span className="w-2 h-2 rounded-full bg-primary-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                  <span className="w-2 h-2 rounded-full bg-primary-400 dark:bg-accent-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                 </a>
               ))}
             </div>
 
             {/* Divider */}
-            <div className="border-t border-gray-200"></div>
+            <div className="border-t border-gray-200 dark:border-slate-700"></div>
 
             {/* Mobile Resume Button */}
             <a
@@ -207,7 +235,7 @@ export const Navbar = () => {
                   href={link.href} 
                   target="_blank" 
                   rel="noreferrer"
-                  className="p-3 rounded-full hover:bg-gray-100 transition-all duration-300 hover:scale-110"
+                  className="p-3 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-all duration-300 hover:scale-110"
                 >
                   <img src={link.img} alt={link.alt} className="w-6 h-6" />
                 </a>

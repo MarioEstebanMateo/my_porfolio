@@ -79,6 +79,35 @@ export const translations = {
       viewLive: "View Live",
       viewCode: "View Code",
       myWork: "My Work",
+      items: {
+        webDesign: {
+          title: "Web Design",
+          description:
+            "Modern responsive website with stunning design and smooth animations",
+        },
+        eCommerceVanilla: {
+          title: "eCommerce Vanilla JavaScript",
+          description:
+            "Full-featured eCommerce platform built with vanilla JavaScript",
+        },
+        eCommerceReact: {
+          title: "eCommerce React with Local Storage",
+          description:
+            "React-based shopping cart with persistent local storage",
+        },
+        eCommerceNode: {
+          title: "eCommerce with Node Backend",
+          description: "Full-stack eCommerce with Node.js and Express backend",
+        },
+        blackjack: {
+          title: "BlackJack Game",
+          description: "Classic blackjack card game with smooth animations",
+        },
+        cardGame: {
+          title: "Collectable Card Game",
+          description: "Interactive Pokemon TCG card game built with React",
+        },
+      },
     },
     freelance: {
       title: "Freelance Services",
@@ -101,12 +130,29 @@ export const translations = {
       helpBusinesses:
         "I help businesses streamline their operations with custom web applications tailored to their needs",
       letsWorkTogether: "Let's Work Together",
+      items: {
+        appLaFe: {
+          title: "App Pedidos La Fe",
+          description:
+            "Order management application helping franchises streamline their ordering process with real-time updates",
+          impact: "50% faster ordering",
+        },
+        appLaFeStock: {
+          title: "App Pedidos La Fe Con Stock",
+          description:
+            "Advanced inventory management system integrated with order processing for better stock control",
+          impact: "Real-time inventory",
+        },
+      },
     },
     contact: {
       title: "Let's Connect",
       subtitle: "Get In Touch",
       description:
         "Have a project in mind or want to discuss opportunities? I'd love to hear from you!",
+      nameLabel: "Your Name",
+      emailLabel: "Email Address",
+      messageLabel: "Your Message",
       namePlaceholder: "Your Name",
       emailPlaceholder: "Your Email",
       messagePlaceholder: "Your Message",
@@ -119,6 +165,8 @@ export const translations = {
       letsTalk: "Let's talk about your project",
       reachOut:
         "Feel free to reach out through the form or connect with me on social media.",
+      orEmailDirectly: "Or email me directly at",
+      responseTime: "I'll get back to you within 24 hours!",
     },
     footer: {
       builtWith: "Built with",
@@ -210,6 +258,38 @@ export const translations = {
       subtitle: "Mi Trabajo Reciente",
       viewLive: "Ver Demo",
       viewCode: "Ver Código",
+      items: {
+        webDesign: {
+          title: "Diseño Web",
+          description:
+            "Sitio web moderno y responsivo con diseño impresionante y animaciones suaves",
+        },
+        eCommerceVanilla: {
+          title: "eCommerce Vanilla JavaScript",
+          description:
+            "Plataforma de comercio electrónico completa construida con JavaScript puro",
+        },
+        eCommerceReact: {
+          title: "eCommerce React con Local Storage",
+          description:
+            "Carrito de compras basado en React con almacenamiento local persistente",
+        },
+        eCommerceNode: {
+          title: "eCommerce con Backend Node",
+          description:
+            "Comercio electrónico full-stack con backend de Node.js y Express",
+        },
+        blackjack: {
+          title: "Juego BlackJack",
+          description:
+            "Juego de cartas de blackjack clásico con animaciones suaves",
+        },
+        cardGame: {
+          title: "Juego de Cartas Coleccionables",
+          description:
+            "Juego de cartas interactivo de Pokemon TCG construido con React",
+        },
+      },
     },
     freelance: {
       title: "Servicios Freelance",
@@ -232,12 +312,29 @@ export const translations = {
       helpBusinesses:
         "Ayudo a las empresas a optimizar sus operaciones con aplicaciones web personalizadas adaptadas a sus necesidades",
       letsWorkTogether: "Trabajemos Juntos",
+      items: {
+        appLaFe: {
+          title: "App Pedidos La Fe",
+          description:
+            "Aplicación de gestión de pedidos que ayuda a las franquicias a optimizar su proceso de pedidos con actualizaciones en tiempo real",
+          impact: "50% más rápido",
+        },
+        appLaFeStock: {
+          title: "App Pedidos La Fe Con Stock",
+          description:
+            "Sistema avanzado de gestión de inventario integrado con procesamiento de pedidos para un mejor control de stock",
+          impact: "Inventario en tiempo real",
+        },
+      },
     },
     contact: {
       title: "Conectemos",
       subtitle: "Ponte en Contacto",
       description:
         "¿Tienes un proyecto en mente o quieres discutir oportunidades? ¡Me encantaría saber de ti!",
+      nameLabel: "Tu Nombre",
+      emailLabel: "Dirección de Email",
+      messageLabel: "Tu Mensaje",
       namePlaceholder: "Tu Nombre",
       emailPlaceholder: "Tu Email",
       messagePlaceholder: "Tu Mensaje",
@@ -251,6 +348,8 @@ export const translations = {
       letsTalk: "Hablemos sobre tu proyecto",
       reachOut:
         "No dudes en contactarme a través del formulario o conectar conmigo en redes sociales.",
+      orEmailDirectly: "O escríbeme directamente a",
+      responseTime: "¡Te responderé en menos de 24 horas!",
     },
     footer: {
       builtWith: "Construido con",

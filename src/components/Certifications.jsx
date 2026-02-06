@@ -59,7 +59,7 @@ export const Certifications = () => {
   ];
 
   return (
-    <div className="py-16 px-5 bg-gradient-to-b from-gray-50 to-white">
+    <div className="py-16 px-5 bg-gradient-to-b from-gray-50 to-white dark:from-slate-900 dark:to-slate-900">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -70,7 +70,7 @@ export const Certifications = () => {
           <h2 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 font-robotoslab mb-4">
             {t.title}
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 font-opensans">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 font-opensans">
             {t.continuousLearning}
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-4 rounded-full"></div>
@@ -87,9 +87,9 @@ export const Certifications = () => {
               <div className={`absolute -inset-0.5 bg-gradient-to-r ${cert.color} rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200`}></div>
               
               {/* Card */}
-              <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full flex flex-col">
+              <div className="relative bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full flex flex-col">
                 {/* Image Container */}
-                <div className="relative h-48 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
+                <div className="relative h-48 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-slate-700 dark:to-slate-600">
                   <img
                     src={cert.image}
                     alt={cert.title}
@@ -103,19 +103,19 @@ export const Certifications = () => {
                 <div className="p-6 flex-1 flex flex-col">
                   <div className="flex items-start gap-2 mb-3">
                     <Award className={`w-5 h-5 flex-shrink-0 mt-1 bg-gradient-to-r ${cert.color} bg-clip-text text-transparent`} />
-                    <h3 className="text-lg font-bold text-gray-800 font-robotoslab leading-tight">
+                    <h3 className="text-lg font-bold text-gray-800 dark:text-gray-200 font-robotoslab leading-tight">
                       {cert.title}
                     </h3>
                   </div>
 
                   <div className="space-y-2 mb-4 flex-1">
-                    <p className="text-sm text-gray-600 font-opensans">
+                    <p className="text-sm text-gray-600 dark:text-gray-300 font-opensans">
                       <span className="font-semibold">{t.institution}:</span> {cert.institution}
                     </p>
-                    <p className="text-sm text-gray-600 font-opensans">
+                    <p className="text-sm text-gray-600 dark:text-gray-300 font-opensans">
                       <span className="font-semibold">{t.year}:</span> {cert.year}
                     </p>
-                    <p className="text-sm text-gray-600 font-opensans">
+                    <p className="text-sm text-gray-600 dark:text-gray-300 font-opensans">
                       <span className="font-semibold">{t.location}:</span> {cert.location}
                     </p>
                   </div>

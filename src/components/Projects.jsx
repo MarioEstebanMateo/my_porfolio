@@ -13,51 +13,51 @@ export const Projects = () => {
   const t = translations[language].projects;
   const projects = [
     {
-      title: "Web Design",
+      title: t.items.webDesign.title,
       image: disenoWeb,
-      description: "Modern responsive website with stunning design and smooth animations",
+      description: t.items.webDesign.description,
       technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
       link: "https://proyecto-integrador-diseno-web-ten.vercel.app/",
       github: "#",
       featured: true,
     },
     {
-      title: "eCommerce Vanilla JavaScript",
+      title: t.items.eCommerceVanilla.title,
       image: eCommerce,
-      description: "Full-featured eCommerce platform built with vanilla JavaScript",
+      description: t.items.eCommerceVanilla.description,
       technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
       link: "https://proyecto-integrador-javascript-neon.vercel.app/",
       github: "#",
     },
     {
-      title: "eCommerce React with Local Storage",
+      title: t.items.eCommerceReact.title,
       image: eCommerceReact,
-      description: "React-based shopping cart with persistent local storage",
+      description: t.items.eCommerceReact.description,
       technologies: ["HTML", "CSS", "Bootstrap", "React"],
       link: "https://proyecto-integrador-react-gamma.vercel.app/",
       github: "#",
     },
     {
-      title: "eCommerce with Node Backend",
+      title: t.items.eCommerceNode.title,
       image: eCommerceReactWithNodeBackEnd,
-      description: "Full-stack eCommerce with Node.js and Express backend",
+      description: t.items.eCommerceNode.description,
       technologies: ["React", "Node.js", "Express", "CSS"],
       link: "https://proyecto-integrador-back-end.vercel.app/",
       github: "#",
       featured: true,
     },
     {
-      title: "BlackJack Game",
+      title: t.items.blackjack.title,
       image: blackJack,
-      description: "Classic blackjack card game with smooth animations",
+      description: t.items.blackjack.description,
       technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
       link: "https://blackjack-drab.vercel.app/",
       github: "#",
     },
     {
-      title: "Collectable Card Game",
+      title: t.items.cardGame.title,
       image: juegoDeCartasColeccionables,
-      description: "Interactive Pokemon TCG card game built with React",
+      description: t.items.cardGame.description,
       technologies: ["HTML", "CSS", "React"],
       link: "https://poke-tcg-card-game.vercel.app/",
       github: "#",
@@ -65,7 +65,7 @@ export const Projects = () => {
   ];
 
   return (
-    <div className="py-16 px-5 bg-gradient-to-b from-gray-50 to-white">
+    <div className="py-16 px-5 bg-gradient-to-b from-gray-50 to-white dark:from-slate-900 dark:to-slate-900">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -76,7 +76,7 @@ export const Projects = () => {
           <h2 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-600 font-robotoslab mb-4">
             {t.title}
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 font-opensans max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 font-opensans max-w-2xl mx-auto">
             {t.subtitle}
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto mt-4 rounded-full"></div>
@@ -87,7 +87,7 @@ export const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+              className="group relative bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col h-full"
             >
               {/* Featured Badge */}
               {project.featured && (
@@ -97,7 +97,7 @@ export const Projects = () => {
               )}
 
               {/* Image Container */}
-              <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary-100 to-accent-100">
+              <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary-100 to-accent-100 dark:from-slate-700 dark:to-slate-600">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -108,11 +108,11 @@ export const Projects = () => {
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-800 mb-2 font-robotoslab group-hover:text-primary-600 transition-colors">
+              <div className="p-6 flex-1 flex flex-col">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2 font-robotoslab group-hover:text-primary-600 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2">
                   {project.description}
                 </p>
 
@@ -121,7 +121,7 @@ export const Projects = () => {
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 bg-gradient-to-r from-primary-50 to-accent-50 text-primary-700 text-xs font-semibold rounded-full border border-primary-200"
+                      className="px-3 py-1 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/30 dark:to-accent-900/30 text-primary-700 dark:text-primary-400 text-xs font-semibold rounded-full border border-primary-200 dark:border-primary-700"
                     >
                       {tech}
                     </span>
@@ -129,7 +129,7 @@ export const Projects = () => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-3">
+                <div className="flex gap-3 mt-auto">
                   <a
                     href={project.link}
                     target="_blank"

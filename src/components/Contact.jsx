@@ -51,7 +51,7 @@ export const Contact = () => {
   };
 
   return (
-    <div className="py-16 px-5 bg-gradient-to-b from-gray-50 to-white">
+    <div className="py-16 px-5 bg-gradient-to-b from-gray-50 to-white dark:from-slate-900 dark:to-slate-900">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -62,7 +62,7 @@ export const Contact = () => {
           <h2 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 font-robotoslab mb-4">
             {t.title}
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 font-opensans">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 font-opensans">
             {t.description}
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mt-4 rounded-full"></div>
@@ -77,21 +77,21 @@ export const Contact = () => {
           <form
             ref={form}
             onSubmit={sendEmail}
-            className="relative bg-white rounded-3xl p-8 sm:p-12 shadow-xl"
+            className="relative bg-white dark:bg-slate-800 rounded-3xl p-8 sm:p-12 shadow-xl"
           >
             <div className="space-y-6">
               {/* Name Field */}
               <div className="relative">
                 <label
                   htmlFor="name"
-                  className="text-gray-700 text-sm font-semibold font-opensans flex items-center gap-2 mb-2"
+                  className="text-gray-700 dark:text-gray-300 text-sm font-semibold font-opensans flex items-center gap-2 mb-2"
                 >
                   <User className="w-4 h-4 text-purple-600" />
-                  Your Name
+                  {t.nameLabel}
                 </label>
                 <input
                   type="text"
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors font-opensans"
+                  className="w-full px-4 py-3 border-2 border-gray-200 dark:border-slate-600 dark:bg-slate-700 dark:text-white rounded-xl focus:border-purple-500 focus:outline-none transition-colors font-opensans"
                   name="name"
                   id="name"
                   placeholder={t.namePlaceholder}
@@ -103,14 +103,14 @@ export const Contact = () => {
               <div className="relative">
                 <label
                   htmlFor="email"
-                  className="text-gray-700 text-sm font-semibold font-opensans flex items-center gap-2 mb-2"
+                  className="text-gray-700 dark:text-gray-300 text-sm font-semibold font-opensans flex items-center gap-2 mb-2"
                 >
                   <Mail className="w-4 h-4 text-purple-600" />
-                  Email Address
+                  {t.emailLabel}
                 </label>
                 <input
                   type="email"
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors font-opensans"
+                  className="w-full px-4 py-3 border-2 border-gray-200 dark:border-slate-600 dark:bg-slate-700 dark:text-white rounded-xl focus:border-purple-500 focus:outline-none transition-colors font-opensans"
                   name="email"
                   id="email"
                   placeholder={t.emailPlaceholder}
@@ -122,13 +122,13 @@ export const Contact = () => {
               <div className="relative">
                 <label
                   htmlFor="message"
-                  className="text-gray-700 text-sm font-semibold font-opensans flex items-center gap-2 mb-2"
+                  className="text-gray-700 dark:text-gray-300 text-sm font-semibold font-opensans flex items-center gap-2 mb-2"
                 >
                   <MessageSquare className="w-4 h-4 text-purple-600" />
-                  Your Message
+                  {t.messageLabel}
                 </label>
                 <textarea
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors font-opensans min-h-[150px] resize-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 dark:border-slate-600 dark:bg-slate-700 dark:text-white rounded-xl focus:border-purple-500 focus:outline-none transition-colors font-opensans min-h-[150px] resize-none"
                   name="message"
                   id="message"
                   placeholder={t.messagePlaceholder}
@@ -157,9 +157,9 @@ export const Contact = () => {
             </div>
 
             {/* Alternative Contact */}
-            <div className="mt-8 pt-8 border-t border-gray-200 text-center">
-              <p className="text-gray-600 font-opensans">
-                Or email me directly at{" "}
+            <div className="mt-8 pt-8 border-t border-gray-200 dark:border-slate-700 text-center">
+              <p className="text-gray-600 dark:text-gray-300 font-opensans">
+                {t.orEmailDirectly}{" "}
                 <a
                   href="mailto:memateo@gmail.com"
                   className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 font-semibold hover:underline"
@@ -167,8 +167,8 @@ export const Contact = () => {
                   memateo@gmail.com
                 </a>
               </p>
-              <p className="text-sm text-gray-500 mt-2 font-opensans">
-                I'll get back to you within 24 hours!
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 font-opensans">
+                {t.responseTime}
               </p>
             </div>
           </form>

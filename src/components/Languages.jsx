@@ -21,7 +21,7 @@ export const Languages = () => {
     }
   }, [isVisible, hasAnimated]);
   return (
-    <div className="py-16 px-5 bg-gradient-to-b from-white to-gray-50">
+    <div className="py-16 px-5 bg-gradient-to-b from-white to-gray-50 dark:from-slate-900 dark:to-slate-900">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -32,7 +32,7 @@ export const Languages = () => {
           <h2 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600 font-robotoslab mb-4">
             {t.title}
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 font-opensans">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 font-opensans">
             {t.fluentCommunication}
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mt-4 rounded-full"></div>
@@ -45,7 +45,7 @@ export const Languages = () => {
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl blur-lg opacity-25 group-hover:opacity-75 transition duration-1000"></div>
             
             {/* Card */}
-            <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500">
+            <div className="relative bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500">
               {/* Badge */}
               <div className="absolute top-4 right-4 z-20 backdrop-blur-sm bg-gradient-to-r from-amber-400 to-orange-500 px-3 py-1 rounded-full text-xs font-bold text-white shadow-lg">
                 <Award className="w-3 h-3 inline mr-1" />
@@ -53,7 +53,7 @@ export const Languages = () => {
               </div>
 
               {/* Image Container */}
-              <div className="relative h-64 overflow-hidden bg-gradient-to-br from-blue-50 to-cyan-50">
+                <div className="relative h-64 overflow-hidden bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-slate-700 dark:to-slate-600">
                 <img
                   src={certificateEnglish}
                   alt="English Language Certificate"
@@ -66,7 +66,7 @@ export const Languages = () => {
                 <div className="flex items-center gap-3 mb-4">
                   <Globe className="w-8 h-8 text-blue-600" />
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-800 font-robotoslab">
+                    <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 font-robotoslab">
                       {t.englishLanguage}
                     </h3>
                     <p className="text-sm text-blue-600 font-semibold">{t.c2LevelCertified}</p>
@@ -74,27 +74,27 @@ export const Languages = () => {
                 </div>
 
                 <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-3 text-gray-600">
+                  <div className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
                     <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <p className="font-opensans"><span className="font-semibold">{t.duration}:</span> {t.durationYears}</p>
+                    <p className="font-opensans"><span className="font-semibold dark:text-gray-300">{t.duration}:</span> {t.durationYears}</p>
                   </div>
-                  <div className="flex items-center gap-3 text-gray-600">
+                  <div className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
                     <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <p className="font-opensans"><span className="font-semibold">{t.institution}:</span> ACIO</p>
+                    <p className="font-opensans"><span className="font-semibold dark:text-gray-300">{t.institution}:</span> ACIO</p>
                   </div>
-                  <div className="flex items-center gap-3 text-gray-600">
+                  <div className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
                     <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <p className="font-opensans"><span className="font-semibold">{t.location}:</span> {t.locationBuenosAires}</p>
+                    <p className="font-opensans"><span className="font-semibold dark:text-gray-300">{t.location}:</span> {t.locationBuenosAires}</p>
                   </div>
                 </div>
 
                 {/* Proficiency Bar */}
                 <div className="mb-6" ref={barRef}>
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-sm font-semibold text-gray-700">{t.proficiencyLevel}</span>
+                    <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">{t.proficiencyLevel}</span>
                     <span className="text-sm font-bold text-blue-600">{t.c2Mastery}</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                  <div className="w-full bg-gray-200 dark:bg-slate-700 rounded-full h-3 overflow-hidden">
                     <div 
                       className="h-full bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full transition-all duration-1000 ease-out" 
                       style={{width: `${barWidth}%`}}

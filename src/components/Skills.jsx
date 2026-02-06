@@ -44,18 +44,18 @@ const SkillBar = ({ skill, gradient }) => {
           />
         </div>
         <div className="flex-1">
-          <p className="text-sm font-semibold text-gray-800">
+          <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
             {skill.name}
           </p>
           {/* Progress Bar */}
-          <div className="w-full bg-gray-200 rounded-full h-1.5 mt-1 overflow-hidden">
+          <div className="w-full bg-gray-200 dark:bg-slate-700 rounded-full h-1.5 mt-1 overflow-hidden">
             <div
               className={`h-full bg-gradient-to-r ${gradient} rounded-full transition-all duration-1000 ease-out`}
               style={{ width: `${width}%` }}
             ></div>
           </div>
         </div>
-        <span className="text-xs font-bold text-gray-500">
+        <span className="text-xs font-bold text-gray-500 dark:text-gray-400">
           {skill.level}%
         </span>
       </div>
@@ -113,14 +113,14 @@ export const Skills = () => {
   ];
 
   return (
-    <div className="py-16 px-5 bg-gradient-to-b from-white to-gray-50">
+    <div className="py-16 px-5 bg-gradient-to-b from-white to-gray-50 dark:from-slate-900 dark:to-slate-900">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-600 font-robotoslab mb-4">
             {t.title}
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 font-opensans">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 font-opensans">
             {t.subtitle}
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto mt-4 rounded-full"></div>
@@ -139,7 +139,7 @@ export const Skills = () => {
                 <div className={`absolute -inset-0.5 bg-gradient-to-r ${category.gradient} rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200`}></div>
                 
                 {/* Card */}
-                <div className="relative bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 h-full">
+                <div className="relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-slate-700 h-full">
                   {/* Header */}
                   <div className="flex items-center justify-between mb-6">
                     <h3 className={`text-lg font-bold font-opensans bg-gradient-to-r ${category.gradient} bg-clip-text text-transparent`}>
