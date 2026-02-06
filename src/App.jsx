@@ -73,8 +73,8 @@ function App() {
   return (
     <div className="min-h-screen relative">
       <Navbar />
-      <main>
-        <section id="main" className="scroll-mt-20">
+      <main className="pt-[72px]">
+        <section id="main" className="scroll-mt-[72px]">
           <Main />
         </section>
         <AnimatedSection id="skills" direction="left">
@@ -101,5 +101,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

@@ -1,39 +1,122 @@
+import { useState, useEffect } from "react";
 import certificateEnglish from "../assets/img/certificateEnglish.jpg";
+import { Globe, Award, ExternalLink } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../translations";
+import { useInView } from "../hooks/useInView";
 
 export const Languages = () => {
+  const { language } = useLanguage();
+  const t = translations[language].languages;
+  const [barWidth, setBarWidth] = useState(0);
+  const [barRef, isVisible] = useInView({ threshold: 0.2 });
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    if (isVisible && !hasAnimated) {
+      setHasAnimated(true);
+      setTimeout(() => {
+        setBarWidth(95);
+      }, 100);
+    }
+  }, [isVisible, hasAnimated]);
   return (
-    <div className="m-10">
-      <div>
-        <h2 className="text-3xl font-bold text-center text-primary sm:text-4xl font-opensans">
-          Languages
-        </h2>
-      </div>
-      {/* Certifications container*/}
-      <div className="mt-5 flex flex-wrap justify-center gap-10">
-        {/* Certification*/}
-        <div className="relative max-w-60 min-w-60 min-h-80 max-h-80 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
-          <img
-            src={certificateEnglish}
-            alt="English Language Certificate"
-            className="w-40 h-30 mx-auto"
-          />
-          <h3 className="text-center text-primary font-bold mt-2 min-h-12">
-            English Language
-            <br />
-            (C2 Level issued by EF SET)
-          </h3>
-          <p className="text-center mt-2 min-h-16">
-            8 years - ACIO <br /> Buenos Aires, Argentina
+    <div className="py-16 px-5 bg-gradient-to-b from-white to-gray-50">
+      <div className="max-w-5xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-full mb-4">
+            <Globe className="w-5 h-5 text-blue-600" />
+            <span className="text-sm font-semibold text-blue-600">{t.multilingual}</span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600 font-robotoslab mb-4">
+            {t.title}
+          </h2>
+          <p className="text-lg sm:text-xl text-gray-600 font-opensans">
+            {t.fluentCommunication}
           </p>
-          <div className="mt-2">
-            <a
-              href="https://cert.efset.org/qQdvD9"
-              target="_blank"
-              rel="noreferrer"
-              className="font-opensans text-primary bg-transparent border border-solid border-primary hover:bg-primary hover:text-white active:bg-primary font-bold uppercase text-xs px-2 sm:px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-            >
-              Link to certificate
-            </a>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        {/* Language Card */}
+        <div className="max-w-2xl mx-auto">
+          <div className="group relative">
+            {/* Glow effect */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl blur-lg opacity-25 group-hover:opacity-75 transition duration-1000"></div>
+            
+            {/* Card */}
+            <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500">
+              {/* Badge */}
+              <div className="absolute top-4 right-4 z-20 backdrop-blur-sm bg-gradient-to-r from-amber-400 to-orange-500 px-3 py-1 rounded-full text-xs font-bold text-white shadow-lg">
+                <Award className="w-3 h-3 inline mr-1" />
+                C2 Level
+              </div>
+
+              {/* Image Container */}
+              <div className="relative h-64 overflow-hidden bg-gradient-to-br from-blue-50 to-cyan-50">
+                <img
+                  src={certificateEnglish}
+                  alt="English Language Certificate"
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <Globe className="w-8 h-8 text-blue-600" />
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-800 font-robotoslab">
+                      {t.englishLanguage}
+                    </h3>
+                    <p className="text-sm text-blue-600 font-semibold">{t.c2LevelCertified}</p>
+                  </div>
+                </div>
+
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center gap-3 text-gray-600">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <p className="font-opensans"><span className="font-semibold">{t.duration}:</span> {t.durationYears}</p>
+                  </div>
+                  <div className="flex items-center gap-3 text-gray-600">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <p className="font-opensans"><span className="font-semibold">{t.institution}:</span> ACIO</p>
+                  </div>
+                  <div className="flex items-center gap-3 text-gray-600">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <p className="font-opensans"><span className="font-semibold">{t.location}:</span> {t.locationBuenosAires}</p>
+                  </div>
+                </div>
+
+                {/* Proficiency Bar */}
+                <div className="mb-6" ref={barRef}>
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-sm font-semibold text-gray-700">{t.proficiencyLevel}</span>
+                    <span className="text-sm font-bold text-blue-600">{t.c2Mastery}</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                    <div 
+                      className="h-full bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full transition-all duration-1000 ease-out" 
+                      style={{width: `${barWidth}%`}}
+                    ></div>
+                  </div>
+                </div>
+
+                {/* Button */}
+                <a
+                  href="https://cert.efset.org/qQdvD9"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+                >
+                  {t.viewCertificate}
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+
+              {/* Bottom gradient line */}
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-500"></div>
+            </div>
           </div>
         </div>
       </div>

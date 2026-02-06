@@ -3,138 +3,140 @@ import utnDiplomaturaEnProgramacionWeb from "../assets/img/utnDiplomaturaEnProgr
 import nucbaProgramacionFullStack from "../assets/img/nucbaProgramacionFullStack.jpg";
 import utnDisenoGraficoDigital from "../assets/img/utnDisenoGraficoDigital.jpg";
 import nucbaUXUI from "../assets/img/nucbaUXUI.jpg";
+import { Award, ExternalLink, GraduationCap } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../translations";
 
 export const Certifications = () => {
+  const { language } = useLanguage();
+  const t = translations[language].certifications;
+  const certifications = [
+    {
+      title: "Systems Analyst",
+      institution: "ISFDyT Nº5",
+      year: "2018-2021",
+      location: "Pergamino, Argentina",
+      image: analista,
+      link: "https://res.cloudinary.com/dwxoq8n2m/image/upload/v1675053927/Mario%20Privado/Titulo_Analista_de_Sistemas_s2td7i.jpg",
+      color: "from-blue-500 to-cyan-500",
+    },
+    {
+      title: "Full Stack Diploma with React JS",
+      institution: "E-Learning UTN",
+      year: "2021",
+      location: "Buenos Aires, Argentina",
+      image: utnDiplomaturaEnProgramacionWeb,
+      link: "https://res.cloudinary.com/dwxoq8n2m/image/upload/v1640478250/Mario%20Privado/Certificado_UTN_szkkzq.jpg",
+      color: "from-green-500 to-emerald-500",
+    },
+    {
+      title: "Full Stack Developer",
+      institution: "NUCBA",
+      year: "2022-2023",
+      location: "Buenos Aires, Argentina",
+      image: nucbaProgramacionFullStack,
+      link: "https://res.cloudinary.com/dwxoq8n2m/image/upload/v1689025360/Mario%20Privado/Nucba_Certificado_Programacion_Full_Stack_q8n6c6.jpg",
+      color: "from-purple-500 to-pink-500",
+    },
+    {
+      title: "Digital Graphic Designer",
+      institution: "E-Learning UTN",
+      year: "2023",
+      location: "Buenos Aires, Argentina",
+      image: utnDisenoGraficoDigital,
+      link: "https://res.cloudinary.com/dwxoq8n2m/image/upload/v1677092611/Mario%20Privado/Certificado_UTN_Dise%C3%B1o_Grafico_Digital_njle58.jpg",
+      color: "from-orange-500 to-red-500",
+    },
+    {
+      title: "UX/UI Designer Degree",
+      institution: "NUCBA",
+      year: "2023-2024",
+      location: "Buenos Aires, Argentina",
+      image: nucbaUXUI,
+      link: "https://res.cloudinary.com/dwxoq8n2m/image/upload/v1705439616/Mario%20Privado/Nucba_Certificado_Ux_Ui_Degree.jpg",
+      color: "from-indigo-500 to-purple-500",
+    },
+  ];
+
   return (
-    <div className="m-10">
-      <div>
-        <h2 className="text-3xl font-bold text-center text-primary sm:text-4xl font-opensans">
-          Certifications
-        </h2>
-      </div>
-      {/* Certifications container*/}
-      <div className="mt-5 flex flex-wrap justify-center gap-10">
-        {/* Certification*/}
-        <div className="relative max-w-60 min-w-60 min-h-80 max-h-50 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
-          <img
-            src={analista}
-            alt="Systems Analist certificate"
-            className="w-40 h-30 mx-auto"
-          />
-          <h3 className="text-center text-primary font-bold mt-2 min-h-12">
-            Systems Analist
-          </h3>
-          <p className="text-center mt-2 min-h-16">
-            2018-2021 - ISFDyT Nº5
-            <br />
-            Pergamino, Argentina
-          </p>
-          <div className="mt-2">
-            <a
-              href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1675053927/Mario%20Privado/Titulo_Analista_de_Sistemas_s2td7i.jpg"
-              target="_blank"
-              rel="noreferrer"
-              className="font-opensans text-primary bg-transparent border border-solid border-primary hover:bg-primary hover:text-white active:bg-primary font-bold uppercase text-xs px-2 sm:px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-            >
-              Link to certificate
-            </a>
+    <div className="py-16 px-5 bg-gradient-to-b from-gray-50 to-white">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-100 to-purple-100 rounded-full mb-4">
+            <GraduationCap className="w-5 h-5 text-indigo-600" />
+            <span className="text-sm font-semibold text-indigo-600">{t.subtitle}</span>
           </div>
+          <h2 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 font-robotoslab mb-4">
+            {t.title}
+          </h2>
+          <p className="text-lg sm:text-xl text-gray-600 font-opensans">
+            {t.continuousLearning}
+          </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-4 rounded-full"></div>
         </div>
-        {/* Certification*/}
-        <div className="relative max-w-60 min-w-60 min-h-80 max-h-50 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
-          <img
-            src={utnDiplomaturaEnProgramacionWeb}
-            alt="Full Stack Diploma with React JS"
-            className="w-40 h-30 mx-auto"
-          />
-          <h3 className="text-center text-primary font-bold mt-2 min-h-12">
-            Full Stack Diploma with React JS
-          </h3>
-          <p className="text-center mt-2 min-h-16">
-            (2021) E-Learning UTN <br /> Buenos Aires, Argentina
-          </p>
-          <div className="mt-2">
-            <a
-              href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1640478250/Mario%20Privado/Certificado_UTN_szkkzq.jpg"
-              target="_blank"
-              rel="noreferrer"
-              className="font-opensans text-primary bg-transparent border border-solid border-primary hover:bg-primary hover:text-white active:bg-primary font-bold uppercase text-xs px-2 sm:px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+
+        {/* Certifications Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {certifications.map((cert, index) => (
+            <div
+              key={index}
+              className="group relative"
             >
-              Link to certificate
-            </a>
-          </div>
-        </div>
-        {/* Certification*/}
-        <div className="relative max-w-60 min-w-60 min-h-80 max-h-50 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
-          <img
-            src={nucbaProgramacionFullStack}
-            alt="Full Stack Developer certificate"
-            className="w-40 h-30 mx-auto"
-          />
-          <h3 className="text-center text-primary font-bold mt-2 min-h-12">
-            Full Stack Developer
-          </h3>
-          <p className="text-center mt-2 min-h-16">
-            (2022-2023) - NUCBA <br /> Buenos Aires, Argentina
-          </p>
-          <div className="mt-2">
-            <a
-              href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1689025360/Mario%20Privado/Nucba_Certificado_Programacion_Full_Stack_q8n6c6.jpg"
-              target="_blank"
-              rel="noreferrer"
-              className="font-opensans text-primary bg-transparent border border-solid border-primary hover:bg-primary hover:text-white active:bg-primary font-bold uppercase text-xs px-2 sm:px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-            >
-              Link to certificate
-            </a>
-          </div>
-        </div>
-        {/* Certification*/}
-        <div className="relative max-w-60 min-w-60 min-h-80 max-h-50 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
-          <img
-            src={utnDisenoGraficoDigital}
-            alt="Digital Graphic Designer certificate"
-            className="w-40 h-30 mx-auto"
-          />
-          <h3 className="text-center text-primary font-bold mt-2 min-h-12">
-            Digital Graphic Designer
-          </h3>
-          <p className="text-center mt-2 min-h-16">
-            (2023) E-Learning UTN <br /> Buenos Aires, Argentina
-          </p>
-          <div className="mt-2">
-            <a
-              href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1677092611/Mario%20Privado/Certificado_UTN_Dise%C3%B1o_Grafico_Digital_njle58.jpg"
-              target="_blank"
-              rel="noreferrer"
-              className="font-opensans text-primary bg-transparent border border-solid border-primary hover:bg-primary hover:text-white active:bg-primary font-bold uppercase text-xs px-2 sm:px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-            >
-              Link to certificate
-            </a>
-          </div>
-        </div>
-        {/* Certification*/}
-        <div className="relative max-w-60 min-w-60 min-h-80 max-h-50 border-2 border-primary p-3 rounded-lg shadow-2xl text-center">
-          <img
-            src={nucbaUXUI}
-            alt="UX/UI Designer Degree certificate"
-            className="w-40 h-30 mx-auto"
-          />
-          <h3 className="text-center text-primary font-bold mt-2 min-h-12">
-            UX/UI Designer Degree
-          </h3>
-          <p className="text-center mt-2 min-h-16">
-            (2023-2024) - NUCBA <br /> Buenos Aires, Argentina
-          </p>
-          <div className="mt-2">
-            <a
-              href="https://res.cloudinary.com/dwxoq8n2m/image/upload/v1705439616/Mario%20Privado/Nucba_Certificado_Ux_Ui_Degree.jpg"
-              target="_blank"
-              rel="noreferrer"
-              className="font-opensans text-primary bg-transparent border border-solid border-primary hover:bg-primary hover:text-white active:bg-primary font-bold uppercase text-xs px-2 sm:px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-            >
-              Link to certificate
-            </a>
-          </div>
+              {/* Glow effect */}
+              <div className={`absolute -inset-0.5 bg-gradient-to-r ${cert.color} rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200`}></div>
+              
+              {/* Card */}
+              <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full flex flex-col">
+                {/* Image Container */}
+                <div className="relative h-48 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
+                  <img
+                    src={cert.image}
+                    alt={cert.title}
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  {/* Overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-t ${cert.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
+                </div>
+
+                {/* Content */}
+                <div className="p-6 flex-1 flex flex-col">
+                  <div className="flex items-start gap-2 mb-3">
+                    <Award className={`w-5 h-5 flex-shrink-0 mt-1 bg-gradient-to-r ${cert.color} bg-clip-text text-transparent`} />
+                    <h3 className="text-lg font-bold text-gray-800 font-robotoslab leading-tight">
+                      {cert.title}
+                    </h3>
+                  </div>
+
+                  <div className="space-y-2 mb-4 flex-1">
+                    <p className="text-sm text-gray-600 font-opensans">
+                      <span className="font-semibold">{t.institution}:</span> {cert.institution}
+                    </p>
+                    <p className="text-sm text-gray-600 font-opensans">
+                      <span className="font-semibold">{t.year}:</span> {cert.year}
+                    </p>
+                    <p className="text-sm text-gray-600 font-opensans">
+                      <span className="font-semibold">{t.location}:</span> {cert.location}
+                    </p>
+                  </div>
+
+                  {/* Button */}
+                  <a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`flex items-center justify-center gap-2 bg-gradient-to-r ${cert.color} text-white px-4 py-2 rounded-lg font-semibold text-sm hover:shadow-lg transform hover:scale-105 transition-all duration-300 mt-auto`}
+                  >
+                    {t.viewCertificate}
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
+
+                {/* Bottom gradient line */}
+                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${cert.color}`}></div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
