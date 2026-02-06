@@ -89,6 +89,13 @@ export const Projects = () => {
           <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 font-opensans max-w-2xl mx-auto">
             {t.subtitle}
           </p>
+          <div className="mt-6 mb-4 max-w-3xl mx-auto">
+            <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 text-sm sm:text-base text-gray-700 dark:text-gray-300 font-opensans">
+              <p className="leading-relaxed">
+                {t.learningNote}
+              </p>
+            </div>
+          </div>
           <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto mt-4 rounded-full"></div>
         </div>
 

@@ -85,6 +85,8 @@ export const translations = {
     projects: {
       title: "Featured Projects",
       subtitle: "My Recent Work",
+      learningNote:
+        "These projects showcase my learning journey and evolution as a developer. For professional work, visit the Freelance section.",
       viewLive: "View Live",
       viewCode: "View Code",
       myWork: "My Work",
@@ -280,6 +282,8 @@ export const translations = {
       title: "Proyectos Destacados",
       myWork: "Mi Trabajo",
       subtitle: "Mi Trabajo Reciente",
+      learningNote:
+        "Estos proyectos reflejan mi proceso de aprendizaje y evolución como desarrollador. Para ver trabajos profesionales, visita la sección Freelance.",
       viewLive: "Ver Demo",
       viewCode: "Ver Código",
       items: {
