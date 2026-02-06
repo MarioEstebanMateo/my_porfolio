@@ -147,35 +147,8 @@ export const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile Dark Mode, Language Switcher & Hamburger Menu */}
+        {/* Mobile Hamburger Menu */}
         <div className="lg:hidden flex items-center gap-2">
-          {/* Mobile Dark Mode Toggle */}
-          <button
-            onClick={toggleDarkMode}
-            className="relative p-2 rounded-lg hover:bg-primary-50 dark:hover:bg-slate-800 transition-all duration-300 border border-gray-200 dark:border-slate-700"
-            title={isDarkMode ? 'Light Mode' : 'Dark Mode'}
-          >
-            {isDarkMode ? (
-              <Sun className="w-4 h-4 text-yellow-500" />
-            ) : (
-              <Moon className="w-4 h-4 text-primary-600" />
-            )}
-          </button>
-
-          {/* Mobile Language Switcher */}
-          <button
-            onClick={toggleLanguage}
-            className="relative p-2 rounded-lg hover:bg-primary-50 dark:hover:bg-slate-800 transition-all duration-300 border border-gray-200 dark:border-slate-700"
-            title={language === 'en' ? 'Cambiar a Español' : 'Switch to English'}
-          >
-            <div className="flex items-center gap-1">
-              <Languages className="w-4 h-4 text-primary-600 dark:text-accent-400" />
-              <span className="text-xs font-bold text-primary-600 dark:text-accent-400">
-                {language === 'en' ? 'ES' : 'EN'}
-              </span>
-            </div>
-          </button>
-
           {/* Hamburger Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -190,12 +163,44 @@ export const Navbar = () => {
       <div
         className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
           isMenuOpen
-            ? "max-h-[500px] opacity-100"
+            ? "max-h-[700px] opacity-100"
             : "max-h-0 opacity-0"
         }`}
       >
         <div className="bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-slate-700">
           <div className="p-6 space-y-6">
+            {/* Mobile Settings Buttons */}
+            <div className="flex gap-3 justify-center">
+              {/* Mobile Dark Mode Toggle */}
+              <button
+                onClick={toggleDarkMode}
+                className="flex-1 flex items-center justify-center gap-2 p-3 rounded-lg bg-gray-100 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 transition-all duration-300 hover:scale-105"
+              >
+                {isDarkMode ? (
+                  <Sun className="w-5 h-5 text-yellow-500" />
+                ) : (
+                  <Moon className="w-5 h-5 text-primary-600" />
+                )}
+                <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+                  {isDarkMode ? 'Light' : 'Dark'}
+                </span>
+              </button>
+
+              {/* Mobile Language Switcher */}
+              <button
+                onClick={toggleLanguage}
+                className="flex-1 flex items-center justify-center gap-2 p-3 rounded-lg bg-gray-100 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 transition-all duration-300 hover:scale-105"
+              >
+                <Languages className="w-5 h-5 text-primary-600 dark:text-accent-400" />
+                <span className="text-sm font-bold text-primary-600 dark:text-accent-400">
+                  {language === 'en' ? 'ES' : 'EN'}
+                </span>
+              </button>
+            </div>
+
+            {/* Divider */}
+            <div className="border-t border-gray-200 dark:border-slate-700"></div>
+
             {/* Mobile Navigation Links */}
             <div className="flex flex-col gap-3">
               {navigationLinks.map((link) => (
