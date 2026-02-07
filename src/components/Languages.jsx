@@ -38,14 +38,79 @@ export const Languages = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mt-4 rounded-full"></div>
         </div>
 
-        {/* Language Card */}
-        <div className="max-w-2xl mx-auto">
+        {/* Language Cards */}
+        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {/* Spanish - Native Language Card */}
+          <div className="group relative">
+            {/* Glow effect */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-sky-400 via-cyan-400 to-blue-400 rounded-3xl blur-lg opacity-25 group-hover:opacity-75 transition duration-1000"></div>
+            
+            {/* Card */}
+            <div className="relative bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 h-full">
+              {/* Badge */}
+              <div className="absolute top-4 right-4 z-20 backdrop-blur-sm bg-gradient-to-r from-emerald-400 to-teal-500 px-3 py-1 rounded-full text-xs font-bold text-white shadow-lg">
+                <Award className="w-3 h-3 inline mr-1" />
+                {t.nativeLanguage}
+              </div>
+
+              {/* Decorative Header - No Image */}
+              <div className="relative h-48 overflow-hidden bg-gradient-to-br from-sky-100 via-cyan-50 to-blue-100 dark:from-slate-700 dark:to-slate-600">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <Globe className="w-20 h-20 text-sky-500 dark:text-sky-400 mx-auto mb-3 animate-pulse" />
+                    <div className="text-6xl font-bold text-sky-500 dark:text-sky-400 opacity-20">ES</div>
+                  </div>
+                </div>
+                {/* Pattern overlay */}
+                <div className="absolute inset-0 opacity-10">
+                  <div className="grid grid-cols-8 h-full">
+                    {[...Array(64)].map((_, i) => (
+                      <div key={i} className="border border-sky-400"></div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <Globe className="w-8 h-8 text-sky-600" />
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 font-robotoslab">
+                      {t.spanishLanguage}
+                    </h3>
+                    <p className="text-sm text-sky-600 dark:text-sky-400 font-semibold">{t.motherTongue}</p>
+                  </div>
+                </div>
+
+                <div className="mb-6">
+                  <p className="text-gray-600 dark:text-gray-300 font-opensans leading-relaxed">
+                    {t.myMotherTongue}
+                  </p>
+                </div>
+
+                {/* Native indicator */}
+                <div className="pt-4 border-t border-gray-200 dark:border-slate-700">
+                  <div className="flex items-center justify-center gap-2 text-sky-600 dark:text-sky-400 font-semibold">
+                    <div className="w-2 h-2 bg-sky-500 rounded-full animate-pulse"></div>
+                    <span className="text-lg">{t.nativeSpeaker}</span>
+                    <div className="w-2 h-2 bg-sky-500 rounded-full animate-pulse"></div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom gradient line */}
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-sky-400 via-cyan-400 to-blue-400"></div>
+            </div>
+          </div>
+
+          {/* English Language Card */}
           <div className="group relative">
             {/* Glow effect */}
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl blur-lg opacity-25 group-hover:opacity-75 transition duration-1000"></div>
             
             {/* Card */}
-            <div className="relative bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500">
+            <div className="relative bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 h-full">
               {/* Badge */}
               <div className="absolute top-4 right-4 z-20 backdrop-blur-sm bg-gradient-to-r from-amber-400 to-orange-500 px-3 py-1 rounded-full text-xs font-bold text-white shadow-lg">
                 <Award className="w-3 h-3 inline mr-1" />
@@ -53,7 +118,7 @@ export const Languages = () => {
               </div>
 
               {/* Image Container */}
-                <div className="relative h-64 overflow-hidden bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-slate-700 dark:to-slate-600">
+              <div className="relative h-48 overflow-hidden bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-slate-700 dark:to-slate-600">
                 <img
                   src={certificateEnglish}
                   alt="English Language Certificate"

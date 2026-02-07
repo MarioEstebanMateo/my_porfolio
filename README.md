@@ -144,7 +144,12 @@ Interactive skill cards with proficiency indicators for:
 
 ### 3. Languages
 
-Language proficiency showcase with certifications.
+Bilingual proficiency display featuring:
+
+- **Spanish** - Native language card with decorative design
+- **English** - C2 Level certification with EF SET credentials
+
+Both cards are displayed side-by-side in a responsive grid layout.
 
 ### 4. Certifications
 
