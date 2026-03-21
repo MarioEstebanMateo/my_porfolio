@@ -12,16 +12,18 @@ A modern, fully responsive portfolio website showcasing my work as a Full Stack 
 - **🎨 Modern UI/UX** - Clean, professional design with sophisticated animations and micro-interactions
 - **🌓 Dark Mode (Default)** - Dark theme enabled by default with light mode toggle and persistent storage
 - **🌍 Bilingual Support** - Full English/Spanish support with language persistence and context API
-- **📱 Fully Responsive** - Mobile-first design optimized for all devices (mobile, tablet, desktop)
-- **✨ Advanced Animations** - Staggered fade-in animations on grids, smooth scroll detection, hover effects
+- **📱 Fully Responsive** - Mobile-first design optimized for all devices with 2-level navbar (logo/controls + navigation tabs)
+- **✨ Advanced Animations** - Staggered fade-in animations on grids, smooth scroll detection, hover effects, animated hamburger menu
 - **🧮 Animated Statistics** - CounterStat component with smooth number animations on scroll
 - **🎯 Skill Tooltips** - Interactive tooltips showing years of experience on skill hover
 - **📧 Contact Form** - Integrated with EmailJS for direct communication
 - **🔗 GitHub Integration** - Direct links to each project on GitHub
-- **📄 Smart CV/Resume** - Language-aware CV/Resume downloads (English → Resume, Spanish → CV)
+- **📄 Smart CV/Resume** - Language-aware CV/Resume downloads (English → RESUME, Spanish → CV)
 - **⚡ Performance Optimized** - Built with Vite for lightning-fast load times and HMR
 - **🔍 SEO Optimized** - Complete meta tags, Open Graph, Twitter Cards, and structured data
 - **♿ Accessible** - PropTypes validation, semantic HTML, and WCAG compliance
+- **👤 About Section** - Professional timeline, highlights, and developer biography with journey showcase
+- **🍔 Animated Navigation** - Modern navbar with centered navigation tabs and animated hamburger menu for mobile
 
 ## 🛠️ Tech Stack
 
@@ -49,13 +51,14 @@ my_portfolio/
 │   │   └── img/        # Images
 │   ├── components/     # React components
 │   │   ├── Main.jsx           # Hero section
+│   │   ├── About.jsx          # About section with timeline and developer biography
 │   │   ├── Skills.jsx         # Skills showcase
 │   │   ├── Languages.jsx      # Language proficiency
 │   │   ├── Certifications.jsx # Professional certifications
 │   │   ├── Projects.jsx       # Project portfolio
 │   │   ├── Freelance.jsx      # Freelance work
 │   │   ├── Contact.jsx        # Contact form
-│   │   ├── Navbar.jsx         # Navigation bar
+│   │   ├── Navbar.jsx         # Navigation bar with 2-level layout
 │   │   ├── Footer.jsx         # Footer section
 │   │   ├── BackToTop.jsx      # Scroll to top button
 │   │   └── common/            # Reusable components
@@ -132,7 +135,43 @@ The portfolio uses a carefully selected color scheme:
 
 Additional gradients and colors are used throughout for visual hierarchy and emphasis.
 
-## 🌟 Key Sections
+## 🧭 Navigation Architecture
+
+### Navbar - Modern Two-Level Layout
+
+The navigation has been redesigned with a modern two-level structure for optimal UX:
+
+**Level 1: Logo & Controls**
+
+- Logo: "Mario's Portfolio" (in English) / "Portfolio de Mario" (in Spanish) - with responsive sizing (text-xs on mobile, text-sm on desktop)
+- Right-aligned controls:
+  - Dark Mode Toggle (Sun/Moon icon)
+  - Language Switcher (EN/ES button)
+  - Resume/CV Button (text only, no icon for cleaner look)
+  - Social Media Links (Gmail, LinkedIn, GitHub)
+
+**Level 2: Navigation Tabs**
+
+- Centered navigation with 8 links:
+  - Home, About, Skills, Languages, Certifications, Projects, Freelance, Contact
+- Modern underline animation on hover
+- Responsive design with proper spacing
+
+**Mobile Optimization:**
+
+- Hamburger button with smooth animated transformation (hamburger → X)
+- Slide-out menu with staggered animations for each link
+- Settings buttons (Dark/Language) in mobile menu
+- Touch-friendly spacing and sizing
+- Same great UX as desktop version
+
+**Features:**
+
+- Backdrop blur effect on modal overlay
+- Smooth transitions and animations
+- Full bilingual support with context API
+- Dark mode compatible throughout
+- Fixed positioning with proper z-index management
 
 ### 1. Hero (Main)
 
@@ -145,7 +184,27 @@ Additional gradients and colors are used throughout for visual hierarchy and emp
 - Social media links with icon transitions
 - Full dark mode integration with smooth gradient transitions
 
-### 2. Skills
+### 2. About
+
+Complete developer biography section featuring:
+
+- **Professional Subtitle** - Systems Analyst, Full Stack Developer, UX/UI Designer & AI Engineer
+- **Introduction** - Personal approach to development and passion
+- **Four Highlight Cards** with icons:
+  - Full Stack Development expertise
+  - AI & Machine Learning experience
+  - Performance Focused approach
+  - Continuous Learning mindset
+- **Development Journey Timeline** - 5 key milestones from 2018-2025:
+  - Started with Web Design (2018)
+  - JavaScript Mastery (2020)
+  - React Era (2021)
+  - Full Stack Expansion (2022)
+  - AI Engineering (2025)
+- **"What Drives Me" Section** - Passion statement about creating impactful applications and freelance excellence
+- Full responsive design with staggered animations
+
+### 3. Skills
 
 Interactive skill cards with proficiency indicators and experience tooltips for:
 
@@ -157,7 +216,7 @@ Interactive skill cards with proficiency indicators and experience tooltips for:
 
 Each skill displays years of experience on hover with animated progress bars and staggered animations.
 
-### 3. Languages
+### 4. Languages
 
 Bilingual proficiency display featuring:
 
@@ -166,26 +225,32 @@ Bilingual proficiency display featuring:
 
 Both cards are displayed side-by-side in a responsive grid layout.
 
-### 4. Certifications
+### 5. Certifications
 
 Professional certifications and degrees with clickable certificates.
 
-### 5. Projects
+### 6. Projects
 
-Portfolio of 7+ projects with:
+Portfolio of 7+ projects displayed as elegant, interactive cards with:
 
-- Featured/badge indicators
-- Technology tags for each project
-- Live demo and GitHub links per project
+- **Project Cards** - Clean, professional cards showcasing:
+  - Project thumbnail image
+  - Project title and description
+  - Technology stack with skill badges
+  - Live demo and GitHub source code links
+  - Featured project indicators
 - Staggered fade-in animations on scroll (0.1s delays)
 - Hover effects with shadow elevation and upward translation
-- Responsive card layout (1 col mobile, 2 tablets, 3 desktop)
+- Responsive card layout (1 col mobile, 2 cols tablets, 3 cols desktop)
+- Smooth transitions and interactive states
+- Dark mode compatible throughout
+- Direct navigation to live projects and source code
 
-### 6. Freelance
+### 7. Freelance
 
 Showcase of real-world client projects and applications.
 
-### 7. Contact
+### 8. Contact
 
 Fully functional contact form integrated with EmailJS.
 

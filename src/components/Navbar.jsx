@@ -28,6 +28,7 @@ export const Navbar = () => {
 
   const navigationLinks = [
     { name: t.home, href: "#main" },
+    { name: t.about, href: "#about" },
     { name: t.skills, href: "#skills" },
     { name: t.languages, href: "#languages" },
     { name: t.certifications, href: "#certifications" },
@@ -61,199 +62,147 @@ export const Navbar = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? "bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg shadow-lg" 
+        ? "bg-white/85 dark:bg-slate-900/85 backdrop-blur-xl shadow-lg" 
         : "bg-white dark:bg-slate-900 shadow-sm"
     }`}>
-      {/* Main Navbar */}
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 py-4">
-        {/* Logo */}
-        <div className="group">
-          <a href="#main" className="flex items-center gap-2">
-            <div className={`transition-all duration-300 ${
-              isScrolled ? "scale-90" : "scale-100"
-            }`}>
-              <Sparkles className="w-5 h-5 text-accent-600 group-hover:animate-spin" />
-            </div>
-            <h1 className="font-robotoslab text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-600 font-bold text-lg sm:text-xl transition-all duration-300 group-hover:scale-105">
-              Mario&apos;s Portfolio
-            </h1>
-          </a>
-        </div>
+      {/* Header with Logo */}
+      <div className="border-b border-gray-200 dark:border-slate-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+          {/* Logo */}
+          <div className="group flex items-center gap-2 flex-shrink-0">
+            <a href="#main" className="flex items-center gap-2">
+              <Sparkles className="w-6 h-6 text-accent-600 group-hover:animate-spin" />
+              <span className="font-robotoslab text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-600 font-bold text-xs sm:text-sm whitespace-nowrap">
+                {t.logo}
+              </span>
+            </a>
+          </div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-8">
+          {/* Desktop Controls */}
+          <div className="hidden sm:flex items-center gap-4">
+            {/* Dark Mode Toggle */}
+            <button
+              onClick={toggleDarkMode}
+              className="relative p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition-all duration-300"
+              title={isDarkMode ? 'Light Mode' : 'Dark Mode'}
+            >
+              {isDarkMode ? (
+                <Sun className="w-5 h-5 text-yellow-500" />
+              ) : (
+                <Moon className="w-5 h-5 text-primary-600" />
+              )}
+            </button>
+
+            {/* Language Switcher */}
+            <button
+              onClick={toggleLanguage}
+              className="relative p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition-all duration-300 text-primary-600 dark:text-accent-400 font-bold text-xs"
+              title={language === 'en' ? 'Cambiar a Español' : 'Switch to English'}
+            >
+              {language === 'en' ? 'ES' : 'EN'}
+            </button>
+
+            {/* Resume Button */}
+            <a
+              href={resumeUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="bg-gradient-to-r from-primary-600 to-accent-600 text-white px-4 py-2 rounded-lg font-bold text-sm hover:shadow-lg transition-all duration-300"
+            >
+              {t.resume}
+            </a>
+
+            {/* Social Links */}
+            <div className="flex gap-2">
+              {socialLinks.map((link, index) => (
+                <a 
+                  key={index}
+                  href={link.href} 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition-all duration-300"
+                >
+                  <img 
+                    src={link.img} 
+                    alt={link.alt} 
+                    className={`w-5 h-5 ${link.alt.includes('GitHub') ? 'dark:invert dark:brightness-0 dark:contrast-200' : ''}`}
+                  />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile Hamburger */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="sm:hidden relative p-2 text-primary-600 dark:text-accent-400"
+          >
+            <div className="relative w-6 h-5 flex flex-col justify-between items-center">
+              <span
+                className={`w-6 h-0.5 bg-gradient-to-r from-primary-600 to-accent-600 dark:from-accent-400 transition-all duration-500 origin-center ${
+                  isMenuOpen ? "rotate-45 absolute top-1/2 -translate-y-1/2" : ""
+                }`}
+              />
+              <span
+                className={`w-5 h-0.5 bg-gradient-to-r from-primary-600 to-accent-600 dark:from-accent-400 transition-all duration-500 ${
+                  isMenuOpen ? "opacity-0" : "opacity-100"
+                }`}
+              />
+              <span
+                className={`w-6 h-0.5 bg-gradient-to-r from-primary-600 to-accent-600 dark:from-accent-400 transition-all duration-500 origin-center ${
+                  isMenuOpen ? "-rotate-45 absolute top-1/2 -translate-y-1/2" : ""
+                }`}
+              />
+            </div>
+          </button>
+        </div>
+      </div>
+
+      {/* Centered Navigation Tabs */}
+      <div className="hidden sm:block border-b border-gray-200 dark:border-slate-700">
+        <div className="max-w-7xl mx-auto px-4 flex justify-center items-center overflow-x-auto">
           {navigationLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="relative font-opensans text-gray-700 dark:text-gray-300 font-medium text-sm group"
+              className="relative px-4 py-3 font-opensans text-gray-700 dark:text-gray-300 font-medium text-sm group whitespace-nowrap"
             >
-              <span className="relative z-10 group-hover:text-primary-600 dark:group-hover:text-accent-400 transition-colors">
+              <span className="group-hover:text-primary-600 dark:group-hover:text-accent-400 transition-colors">
                 {link.name}
               </span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 group-hover:w-full transition-all duration-300"></span>
+              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
             </a>
           ))}
-        </div>
-
-        {/* Desktop Resume Button & Social Links */}
-        <div className="hidden lg:flex items-center gap-4">
-          {/* Dark Mode Toggle */}
-          <button
-            onClick={toggleDarkMode}
-            className="group relative p-2.5 rounded-full hover:bg-gradient-to-r hover:from-primary-50 hover:to-accent-50 dark:hover:from-slate-800 dark:hover:to-slate-700 transition-all duration-300 hover:scale-110 border-2 border-gray-200 dark:border-slate-700 hover:border-primary-400 dark:hover:border-accent-400"
-            title={isDarkMode ? 'Light Mode' : 'Dark Mode'}
-          >
-            {isDarkMode ? (
-              <Sun className="w-4 h-4 text-yellow-500" />
-            ) : (
-              <Moon className="w-4 h-4 text-primary-600" />
-            )}
-          </button>
-
-          {/* Language Switcher Button */}
-          <button
-            onClick={toggleLanguage}
-            className="group relative p-2.5 rounded-full hover:bg-gradient-to-r hover:from-primary-50 hover:to-accent-50 dark:hover:from-slate-800 dark:hover:to-slate-700 transition-all duration-300 hover:scale-110 border-2 border-gray-200 dark:border-slate-700 hover:border-primary-400 dark:hover:border-accent-400"
-            title={language === 'en' ? 'Cambiar a Español' : 'Switch to English'}
-          >
-            <div className="flex items-center gap-1.5">
-              <Languages className="w-4 h-4 text-primary-600 dark:text-accent-400" />
-              <span className="text-sm font-bold text-primary-600 dark:text-accent-400">
-                {language === 'en' ? 'ES' : 'EN'}
-              </span>
-            </div>
-          </button>
-
-          <a
-            href={resumeUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="group relative overflow-hidden bg-gradient-to-r from-primary-600 to-accent-600 text-white px-5 py-2.5 rounded-full font-bold text-sm transition-all duration-300 hover:shadow-lg hover:scale-105"
-          >
-            <span className="relative z-10 flex items-center gap-2">
-              <Download className="w-4 h-4" />
-              {t.resume}
-            </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-accent-600 to-primary-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </a>
-          
-          {socialLinks.map((link, index) => (
-            <a 
-              key={index}
-              href={link.href} 
-              target="_blank" 
-              rel="noreferrer"
-              className="group relative p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-all duration-300 hover:scale-110"
-            >
-              <img 
-                src={link.img} 
-                alt={link.alt} 
-                className={`w-6 h-6 ${link.alt.includes('GitHub') ? 'dark:invert dark:brightness-0 dark:contrast-200' : ''}`}
-              />
-            </a>
-          ))}
-        </div>
-
-        {/* Mobile Hamburger Menu */}
-        <div className="lg:hidden flex items-center gap-2">
-          {/* Mobile Dark/Language Buttons (visible when menu is closed) */}
-          {!isMenuOpen && (
-            <>
-              {/* Dark Mode Toggle */}
-              <button
-                onClick={toggleDarkMode}
-                className="relative p-2 rounded-lg hover:bg-primary-50 dark:hover:bg-slate-800 transition-all duration-300"
-                title={isDarkMode ? 'Light Mode' : 'Dark Mode'}
-              >
-                {isDarkMode ? (
-                  <Sun className="w-5 h-5 text-yellow-500" />
-                ) : (
-                  <Moon className="w-5 h-5 text-primary-600" />
-                )}
-              </button>
-
-              {/* Language Switcher */}
-              <button
-                onClick={toggleLanguage}
-                className="relative p-2 rounded-lg hover:bg-primary-50 dark:hover:bg-slate-800 transition-all duration-300"
-                title={language === 'en' ? 'Cambiar a Español' : 'Switch to English'}
-              >
-                <div className="flex items-center gap-1">
-                  <Languages className="w-5 h-5 text-primary-600 dark:text-accent-400" />
-                  <span className="text-xs font-bold text-primary-600 dark:text-accent-400">
-                    {language === 'en' ? 'ES' : 'EN'}
-                  </span>
-                </div>
-              </button>
-            </>
-          )}
-          
-          {/* Hamburger Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="relative p-2 text-primary-600 dark:text-accent-400 hover:bg-primary-50 dark:hover:bg-slate-800 rounded-lg transition-all duration-300"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`sm:hidden overflow-hidden transition-all duration-500 ease-in-out ${
           isMenuOpen
-            ? "max-h-[700px] opacity-100"
+            ? "max-h-[600px] opacity-100"
             : "max-h-0 opacity-0"
         }`}
       >
         <div className="bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-slate-700">
-          <div className="p-6 space-y-6">
-            {/* Mobile Settings Buttons */}
-            <div className="flex gap-3 justify-center">
-              {/* Mobile Dark Mode Toggle */}
-              <button
-                onClick={toggleDarkMode}
-                className="flex-1 flex items-center justify-center gap-2 p-3 rounded-lg bg-gray-100 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 transition-all duration-300 hover:scale-105"
-              >
-                {isDarkMode ? (
-                  <Sun className="w-5 h-5 text-yellow-500" />
-                ) : (
-                  <Moon className="w-5 h-5 text-primary-600" />
-                )}
-                <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
-                  {isDarkMode ? 'Light' : 'Dark'}
-                </span>
-              </button>
-
-              {/* Mobile Language Switcher */}
-              <button
-                onClick={toggleLanguage}
-                className="flex-1 flex items-center justify-center gap-2 p-3 rounded-lg bg-gray-100 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 transition-all duration-300 hover:scale-105"
-              >
-                <Languages className="w-5 h-5 text-primary-600 dark:text-accent-400" />
-                <span className="text-sm font-bold text-primary-600 dark:text-accent-400">
-                  {language === 'en' ? 'ES' : 'EN'}
-                </span>
-              </button>
-            </div>
-
-            {/* Divider */}
-            <div className="border-t border-gray-200 dark:border-slate-700"></div>
-
+          <div className="p-4 space-y-4">
             {/* Mobile Navigation Links */}
-            <div className="flex flex-col gap-3">
-              {navigationLinks.map((link) => (
+            <div className="flex flex-col gap-2">
+              {navigationLinks.map((link, index) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={handleNavClick}
-                  className="group flex items-center justify-between px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-primary-50 hover:to-accent-50 dark:hover:from-slate-800 dark:hover:to-slate-700 transition-all duration-300"
+                  className={`group flex items-center justify-between px-4 py-2.5 rounded-lg hover:bg-primary-50 dark:hover:bg-slate-800 transition-all transform duration-500 ${
+                    isMenuOpen 
+                      ? "translate-x-0 opacity-100" 
+                      : "translate-x-4 opacity-0"
+                  }`}
+                  style={{ transitionDelay: isMenuOpen ? `${100 + index * 40}ms` : "0ms" }}
                 >
-                  <span className="font-opensans text-gray-700 dark:text-gray-300 font-medium group-hover:text-primary-600 dark:group-hover:text-accent-400 transition-colors">
+                  <span className="font-opensans text-gray-700 dark:text-gray-300 font-medium text-sm group-hover:text-primary-600 dark:group-hover:text-accent-400">
                     {link.name}
                   </span>
-                  <span className="w-2 h-2 rounded-full bg-primary-400 dark:bg-accent-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                 </a>
               ))}
             </div>
@@ -261,26 +210,47 @@ export const Navbar = () => {
             {/* Divider */}
             <div className="border-t border-gray-200 dark:border-slate-700"></div>
 
+            {/* Mobile Controls */}
+            <div className="flex gap-3 justify-center">
+              <button
+                onClick={toggleDarkMode}
+                className="flex-1 flex items-center justify-center gap-2 p-2.5 rounded-lg bg-gray-100 dark:bg-slate-800 transition-all"
+              >
+                {isDarkMode ? (
+                  <Sun className="w-5 h-5 text-yellow-500" />
+                ) : (
+                  <Moon className="w-5 h-5 text-primary-600" />
+                )}
+                <span className="text-xs font-bold">{isDarkMode ? 'Light' : 'Dark'}</span>
+              </button>
+
+              <button
+                onClick={toggleLanguage}
+                className="flex-1 flex items-center justify-center gap-2 p-2.5 rounded-lg bg-gray-100 dark:bg-slate-800 transition-all text-primary-600 dark:text-accent-400 font-bold"
+              >
+                {language === 'en' ? 'ES' : 'EN'}
+              </button>
+            </div>
+
             {/* Mobile Resume Button */}
             <a
               href={resumeUrl}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center justify-center gap-2 bg-gradient-to-r from-primary-600 to-accent-600 text-white px-6 py-3 rounded-full font-bold text-sm hover:shadow-lg transition-all duration-300 w-full"
+              className="flex items-center justify-center bg-gradient-to-r from-primary-600 to-accent-600 text-white px-6 py-3 rounded-lg font-bold text-sm w-full"
             >
-              <Download className="w-4 h-4" />
               {t.resume}
             </a>
 
             {/* Mobile Social Links */}
-            <div className="flex justify-center items-center gap-6">
+            <div className="flex justify-center gap-4">
               {socialLinks.map((link, index) => (
                 <a 
                   key={index}
                   href={link.href} 
                   target="_blank" 
                   rel="noreferrer"
-                  className="p-3 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-all duration-300 hover:scale-110"
+                  className="p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition-all"
                 >
                   <img 
                     src={link.img} 

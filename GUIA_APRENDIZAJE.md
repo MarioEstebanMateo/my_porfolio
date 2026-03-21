@@ -1,4 +1,4 @@
-# 📚 Guía de Aprendizaje - Mi Portfolio React v2 (Actualizado)
+# 📚 Guía de Aprendizaje - Mi Portfolio React v2 (Actualizado - Marzo 2026)
 
 ## Índice
 
@@ -11,12 +11,14 @@
 7. [LocalStorage](#localstorage)
 8. [Animaciones Avanzadas](#animaciones-avanzadas)
 9. [Componentes Complejos](#componentes-complejos)
-10. [Layout Responsive](#layout-responsive)
-11. [Navegación Suave](#navegación-suave)
-12. [Internacionalización (i18n)](#internacionalización)
-13. [EmailJS](#emailjs)
-14. [Micro-interacciones](#micro-interacciones)
-15. [Optimización SEO](#optimización-seo)
+10. [Componentes Modales](#componentes-modales)
+11. [Layout Responsive](#layout-responsive)
+12. [Navegación Suave](#navegación-suave)
+13. [Internacionalización (i18n)](#internacionalización)
+14. [EmailJS](#emailjs)
+15. [Micro-interacciones](#micro-interacciones)
+16. [Optimización SEO](#optimización-seo)
+17. [Novedades v2.1](#novedades-v21)
 
 ---
 
@@ -40,7 +42,9 @@ Este portfolio fue desarrollado con **React 18**, **Vite** y **Tailwind CSS 3.4*
 ✅ Bilingual (English + Spanish) con persistencia en localStorage  
 ✅ Dark Mode por defecto con toggle persistente  
 ✅ Animaciones staggered en grillas (Skills, Projects, Certifications)  
-✅ Responsive design mobile-first (sm: 640px, lg: 1024px)  
+✅ About section con timeline profesional e información biográfica  
+✅ Responsive design mobile-first con navbar de dos niveles  
+✅ Navbar moderno con navegación centrada y hamburguesa animada  
 ✅ CounterStat para animación de números al scroll  
 ✅ Tooltips en skills mostrando años de experiencia  
 ✅ GitHub links específicos por proyecto  
@@ -543,6 +547,137 @@ CounterStat.defaultProps = {
   duration: 2000,
 };
 ```
+
+---
+
+## Componentes Modales
+
+> **📝 NOTA**: El componente ProjectModal fue parte del portfolio en versiones anteriores pero ha sido removido. Se mantiene esta documentación como referencia educativa sobre cómo crear componentes modales reutilizables en React.
+
+### ProjectModal - Modal Interactivo para Proyectos [REMOVIDO]
+
+Componente reutilizable que muestra detalles completos de un proyecto en un modal/lightbox sin necesidad de navegación.
+
+**Ubicación**: `src/components/common/ProjectModal.jsx`
+
+**Props Esperados:**
+
+```javascript
+{
+  project: {
+    title: string,           // Título del proyecto
+    image: string,           // URL o import de imagen
+    description: string,     // Descripción del proyecto
+    technologies: array,     // Array de tecnologías usadas
+    link: string,           // URL para "View Live"
+    github: string,         // URL para "View Source Code"
+    featured?: boolean      // (Opcional) Mostrar badge "Featured"
+  },
+  isOpen: boolean,          // Control de visibilidad
+  onClose: function,        // Callback para cerrar
+  language: string          // "en" o "es" para traducciones
+}
+```
+
+**Características:**
+
+1. **Backdrop con Blur** - Fondo oscuro con efecto blur que cierra al hacer click
+2. **Animaciones Suaves** - Fade-in y scale animations al abrirse
+3. **Imagen Destacada** - Muestra la imagen del proyecto con featured badge
+4. **Contenido Completo** - Descripción, tecnologías, y información detallada
+5. **Botones de Acción** - Links a "View Live" y "GitHub"
+6. **Copiar Link** - Botón para copiar la URL del proyecto al portapapeles
+7. **Dark Mode** - Completamente compatible con dark mode
+8. **PropTypes** - Validación completa de props
+9. **Cierre Flexible** - Cerrar con botón X o click en backdrop
+
+**Ejemplo de Implementación (Projects.jsx):**
+
+```jsx
+import { ProjectModal } from "./common/ProjectModal";
+
+export const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+  const { language } = useLanguage();
+
+  return (
+    <>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {projects.map((project) => (
+          <div
+            key={project.title}
+            onClick={() => setSelectedProject(project)}
+            className="cursor-pointer"
+          >
+            {/* Project Card Content */}
+          </div>
+        ))}
+      </div>
+
+      {/* Modal */}
+      <ProjectModal
+        project={selectedProject}
+        isOpen={!!selectedProject}
+        onClose={() => setSelectedProject(null)}
+        language={language}
+      />
+    </>
+  );
+};
+```
+
+**Estructura del Modal:**
+
+```jsx
+// Backdrop que captura clicks y cierra
+<div className="backdrop-blur-sm bg-black/50" onClick={onClose}>
+  {/* Modal Container */}
+  <div className="relative bg-white dark:bg-slate-800 rounded-2xl">
+    {/* Close Button */}
+    <button onClick={onClose}>
+      <X className="w-6 h-6" />
+    </button>
+
+    {/* Project Image */}
+    <div className="h-64 overflow-hidden">
+      <img src={project.image} alt={project.title} />
+      {project.featured && <span className="pulse">⭐ Featured</span>}
+    </div>
+
+    {/* Content Section */}
+    <div className="p-6">
+      <h2>{project.title}</h2>
+      <p>{project.description}</p>
+
+      {/* Technologies Grid */}
+      <div className="flex flex-wrap gap-2">
+        {project.technologies.map((tech) => (
+          <span className="px-3 py-1 bg-primary-100">{tech}</span>
+        ))}
+      </div>
+
+      {/* Action Buttons */}
+      <a href={project.link} target="_blank">
+        View Live
+      </a>
+      <a href={project.github} target="_blank">
+        Source Code
+      </a>
+      <button onClick={copyLink}>Copy Link</button>
+    </div>
+  </div>
+</div>
+```
+
+**Ventajas del Pattern Modal:**
+
+✅ Evita navegación innecesaria  
+✅ Experiencia fluid sin cargar nuevas páginas  
+✅ Perfecto para portfolios y galerías  
+✅ Mejora SEO (contenido en la misma página)  
+✅ Experiencia mobile-friendly  
+✅ Animaciones profesionales  
+✅ Facilita exploración de múltiples proyectos
 
 ---
 

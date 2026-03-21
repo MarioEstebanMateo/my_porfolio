@@ -1,7 +1,9 @@
 export const translations = {
   en: {
     navbar: {
+      logo: "Mario's Portfolio",
       home: "Home",
+      about: "About",
       skills: "Skills",
       languages: "Languages",
       certifications: "Certifications",
@@ -21,7 +23,7 @@ export const translations = {
       description1:
         "As a seasoned professional with over 13 years of experience, I specialize in administration, billing, and data analysis. My expertise lies in optimizing internal processes and ensuring efficient management. Recently, I've leveraged this administrative knowledge to design and develop custom applications that solve specific challenges in my current workplace.",
       description2:
-        "I've evolved into a Full Stack Developer specialized in modern web technologies. Combining administrative excellence with cutting-edge tech skills in React, Node.js, and cloud solutions, I deliver innovative digital experiences that drive results.",
+        "I've evolved into a Systems Analyst and Full Stack Developer specialized in modern web technologies. Combining administrative excellence with cutting-edge tech skills in React, Node.js, and cloud solutions, I deliver innovative digital experiences that drive results.",
       getInTouch: "Get In Touch",
       viewProjects: "View Projects",
       scrollDown: "Scroll down to explore",
@@ -205,10 +207,12 @@ export const translations = {
   },
   es: {
     navbar: {
+      logo: "Portfolio de Mario",
       home: "Inicio",
+      about: "Sobre Mi",
       skills: "Habilidades",
       languages: "Idiomas",
-      certifications: "Certificaciones",
+      certifications: "Certificados",
       projects: "Proyectos",
       freelance: "Freelance",
       contact: "Contacto",
@@ -225,7 +229,7 @@ export const translations = {
       description1:
         "Como profesional experimentado con más de 13 años de experiencia, me especializo en administración, facturación y análisis de datos. Mi experiencia radica en optimizar procesos internos y asegurar una gestión eficiente. Últimamente, he utilizado estos conocimientos administrativos para diseñar y desarrollar aplicaciones personalizadas que solucionan problemas puntuales en mi empleo actual.",
       description2:
-        "He evolucionado como Desarrollador Full Stack especializado en tecnologías web modernas. Combinando excelencia administrativa con habilidades tecnológicas de vanguardia en React, Node.js y soluciones en la nube, entrego experiencias digitales innovadoras que generan resultados.",
+        "He evolucionado como Analista de Sistemas y Desarrollador Full Stack especializado en tecnologías web modernas. Combinando excelencia administrativa con habilidades tecnológicas de vanguardia en React, Node.js y soluciones en la nube, entrego experiencias digitales innovadoras que generan resultados.",
       getInTouch: "Contáctame",
       viewProjects: "Ver Proyectos",
       scrollDown: "Desplázate para explorar",

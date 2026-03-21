@@ -1,5 +1,6 @@
 import { Navbar } from "./components/Navbar";
 import { Main } from "./components/Main";
+import { About } from "./components/About";
 import { Skills } from "./components/Skills";
 import { Languages } from "./components/Languages";
 import { Certifications } from "./components/Certifications";
@@ -77,6 +78,9 @@ function App() {
         <section id="main" className="scroll-mt-[72px]">
           <Main />
         </section>
+        <AnimatedSection id="about" direction="up">
+          <About />
+        </AnimatedSection>
         <AnimatedSection id="skills" direction="left">
           <Skills />
         </AnimatedSection>
