@@ -75,7 +75,7 @@ export const Navbar = () => {
               <Sparkles className="w-5 h-5 text-accent-600 group-hover:animate-spin" />
             </div>
             <h1 className="font-robotoslab text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-600 font-bold text-lg sm:text-xl transition-all duration-300 group-hover:scale-105">
-              Mario's Portfolio
+              Mario&apos;s Portfolio
             </h1>
           </a>
         </div>

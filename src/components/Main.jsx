@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import mariophoto from "../assets/img/mariophoto.png";
 import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
+import { useDarkMode } from "../context/DarkModeContext";
 import { translations } from "../translations";
 
 // Counter component for animated numbers
@@ -48,12 +49,21 @@ CounterStat.propTypes = {
 
 export const Main = () => {
   const { language } = useLanguage();
+  const { isDarkMode } = useDarkMode();
   const t = translations[language].main;
   return (
     <div className="relative overflow-hidden">
-      {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-500 via-accent-600 to-primary-700 opacity-90"></div>
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjEiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-20"></div>
+      {/* Animated background gradient - Light Mode */}
+      <div className={`absolute inset-0 transition-opacity duration-500 ${
+        isDarkMode ? 'opacity-0 pointer-events-none' : 'opacity-90'
+      } bg-gradient-to-br from-primary-500 via-accent-600 to-primary-700`}></div>
+      
+      {/* Animated background gradient - Dark Mode */}
+      <div className={`absolute inset-0 transition-opacity duration-500 ${
+        isDarkMode ? 'opacity-90' : 'opacity-0 pointer-events-none'
+      } bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950`}></div>
+      
+      <div className={`absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjEiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-20`}></div>
 
       {/* Content */}
       <div className="relative z-10">
@@ -120,17 +130,17 @@ export const Main = () => {
                 className="group relative px-8 py-4 bg-white text-primary-600 font-bold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  <Mail className="w-5 h-5" />
+                  <Mail className="w-5 h-5 group-hover:animate-bounce" />
                   {t.getInTouch}
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-accent-400 to-primary-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
               <a
                 href="#projects"
-                className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-primary-600 transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-2"
+                className="group px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-primary-600 transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-2"
               >
                 {t.viewProjects}
-                <ArrowDown className="w-5 h-5 animate-bounce" />
+                <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
               </a>
             </div>
 

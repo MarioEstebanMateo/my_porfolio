@@ -13,35 +13,60 @@ import logoGithub from "../assets/icons/logoGithub.svg";
 import logoFigma from "../assets/icons/logoFigma.svg";
 import logoIllustrator from "../assets/icons/logoIllustrator.svg";
 import logoPhotoshop from "../assets/icons/logoPhotoshop.svg";
-import { Code2, Database, GitBranch, Paintbrush } from "lucide-react";
+import wandIcon from "../assets/icons/wand.svg";
+import { Code2, Database, GitBranch, Paintbrush, Brain } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../translations";
 import { useInView } from "../hooks/useInView";
 
+// Tooltip Component
+const Tooltip = ({ text, children }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  return (
+    <div className="relative inline-block">
+      <div
+        onMouseEnter={() => setIsVisible(true)}
+        onMouseLeave={() => setIsVisible(false)}
+      >
+        {children}
+      </div>
+      {isVisible && (
+        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 dark:bg-gray-700 text-white text-xs rounded-lg shadow-lg whitespace-nowrap z-50">
+          {text}
+          <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-gray-900 dark:border-t-gray-700"></div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 // Animated Progress Bar Component
-const SkillBar = ({ skill, gradient }) => {
+const SkillBar = ({ skill, gradient, delay }) => {
   const [width, setWidth] = useState(0);
   const [ref, isVisible] = useInView({ threshold: 0.2 });
   const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
     if (isVisible && !hasAnimated) {
-      setHasAnimated(true);
-      setTimeout(() => {
+      const timer = setTimeout(() => {
+        setHasAnimated(true);
         setWidth(skill.level);
-      }, 100);
+      }, delay);
+      return () => clearTimeout(timer);
     }
-  }, [isVisible, hasAnimated, skill.level]);
+  }, [isVisible, hasAnimated, skill.level, delay]);
 
   return (
     <div ref={ref} className="group/skill">
       <div className="flex items-center gap-3 mb-2">
         <div className="relative">
-          <img
-            src={skill.logo}
-            alt={`${skill.name} logo`}
-            className="w-10 h-10 transform group-hover/skill:scale-110 transition-transform duration-300"
-          />
+          <Tooltip text={skill.yearsExperience}>
+            <img
+              src={skill.logo}
+              alt={`${skill.name} logo`}
+              className="w-10 h-10 transform group-hover/skill:scale-110 transition-transform duration-300 cursor-help"
+            />
+          </Tooltip>
         </div>
         <div className="flex-1">
           <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
@@ -73,10 +98,10 @@ export const Skills = () => {
       icon: Code2,
       gradient: "from-blue-500 to-cyan-500",
       skills: [
-        { name: "HTML", logo: logoHtml, level: 95 },
-        { name: "CSS", logo: logoCss, level: 90 },
-        { name: "JavaScript", logo: logoJavascript, level: 88 },
-        { name: "React", logo: logoReact, level: 85 },
+        { name: "HTML", logo: logoHtml, level: 95, yearsExperience: "8 years" },
+        { name: "CSS", logo: logoCss, level: 90, yearsExperience: "8 years" },
+        { name: "JavaScript", logo: logoJavascript, level: 88, yearsExperience: "8 years" },
+        { name: "React", logo: logoReact, level: 85, yearsExperience: "6 years" },
       ],
     },
     {
@@ -84,11 +109,11 @@ export const Skills = () => {
       icon: Database,
       gradient: "from-green-500 to-emerald-500",
       skills: [
-        { name: "Node JS", logo: logoNode, level: 82 },
-        { name: "Express", logo: logoExpress, level: 80 },
-        { name: "MySQL", logo: logoMySQL, level: 85 },
-        { name: "MongoDB", logo: logoMongoDB, level: 78 },
-        { name: "Supabase", logo: logoSupabase, level: 75 },
+        { name: "Node JS", logo: logoNode, level: 82, yearsExperience: "6 years" },
+        { name: "Express", logo: logoExpress, level: 80, yearsExperience: "6 years" },
+        { name: "MySQL", logo: logoMySQL, level: 85, yearsExperience: "6 years" },
+        { name: "MongoDB", logo: logoMongoDB, level: 78, yearsExperience: "6 years" },
+        { name: "Supabase", logo: logoSupabase, level: 75, yearsExperience: "2 years" },
       ],
     },
     {
@@ -96,8 +121,8 @@ export const Skills = () => {
       icon: GitBranch,
       gradient: "from-orange-500 to-red-500",
       skills: [
-        { name: "GIT", logo: logoGit, level: 90 },
-        { name: "GitHub", logo: logoGithub, level: 88 },
+        { name: "GIT", logo: logoGit, level: 90, yearsExperience: "8 years" },
+        { name: "GitHub", logo: logoGithub, level: 88, yearsExperience: "8 years" },
       ],
     },
     {
@@ -105,9 +130,18 @@ export const Skills = () => {
       icon: Paintbrush,
       gradient: "from-purple-500 to-pink-500",
       skills: [
-        { name: "Figma", logo: logoFigma, level: 85 },
-        { name: "Illustrator", logo: logoIllustrator, level: 80 },
-        { name: "Photoshop", logo: logoPhotoshop, level: 75 },
+        { name: "Figma", logo: logoFigma, level: 85, yearsExperience: "4 years" },
+        { name: "Illustrator", logo: logoIllustrator, level: 80, yearsExperience: "4 years" },
+        { name: "Photoshop", logo: logoPhotoshop, level: 75, yearsExperience: "4 years" },
+      ],
+    },
+    {
+      title: t.aiml,
+      icon: Brain,
+      gradient: "from-cyan-500 to-blue-500",
+      skills: [
+        { name: t.promptEngineering, logo: wandIcon, level: 80, yearsExperience: "1 year" },
+        { name: t.llmApis, logo: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%236366f1' width='100' height='100' rx='10'/%3E%3Ctext x='50' y='60' font-size='40' font-weight='bold' fill='white' text-anchor='middle'%3E⚡%3C/text%3E%3C/svg%3E", level: 75, yearsExperience: "1 year" },
       ],
     },
   ];
@@ -133,7 +167,8 @@ export const Skills = () => {
             return (
               <div
                 key={index}
-                className="group relative"
+                className="group relative animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Glow effect */}
                 <div className={`absolute -inset-0.5 bg-gradient-to-r ${category.gradient} rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200`}></div>
@@ -156,7 +191,8 @@ export const Skills = () => {
                       <SkillBar 
                         key={skillIndex} 
                         skill={skill} 
-                        gradient={category.gradient} 
+                        gradient={category.gradient}
+                        delay={skillIndex * 50}
                       />
                     ))}
                   </div>

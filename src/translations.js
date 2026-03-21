@@ -36,7 +36,10 @@ export const translations = {
       backend: "BACKEND",
       versionControl: "VERSION CONTROL",
       uxUiDesign: "UX/UI DESIGN",
+      aiml: "AI/ML",
       proficiency: "Proficiency",
+      promptEngineering: "Prompt Engineering",
+      llmApis: "LLM APIs",
       alwaysLearning: "Always Learning, Always Growing",
       learningDescription:
         "I'm constantly exploring new technologies and improving my skills to stay at the forefront of web development.",
@@ -237,6 +240,9 @@ export const translations = {
       backend: "BACKEND",
       versionControl: "CONTROL DE VERSIONES",
       uxUiDesign: "DISEÑO UX/UI",
+      aiml: "IA/ML",
+      promptEngineering: "Ingeniería de Prompts",
+      llmApis: "APIs LLM",
       alwaysLearning: "Siempre Aprendiendo, Siempre Creciendo",
       learningDescription:
         "Constantemente exploro nuevas tecnologías y mejoro mis habilidades para mantenerme a la vanguardia del desarrollo web.",

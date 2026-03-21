@@ -19,7 +19,7 @@ export const Projects = () => {
       description: t.items.webDesign.description,
       technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
       link: "https://proyecto-integrador-diseno-web-ten.vercel.app/",
-      github: "#",
+      github: "https://github.com/MarioEstebanMateo/Nucba_Proyectos_Integradores/tree/main/1%20-%20Proyecto%20Integrador%20%20Dise%C3%B1o%20Web",
       featured: true,
     },
     {
@@ -28,7 +28,7 @@ export const Projects = () => {
       description: t.items.eCommerceVanilla.description,
       technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
       link: "https://proyecto-integrador-javascript-neon.vercel.app/",
-      github: "#",
+      github: "https://github.com/MarioEstebanMateo/Nucba_Proyectos_Integradores/tree/main/2%20-%20Proyecto%20Integrador%20Javascript",
     },
     {
       title: t.items.eCommerceReact.title,
@@ -36,7 +36,7 @@ export const Projects = () => {
       description: t.items.eCommerceReact.description,
       technologies: ["HTML", "CSS", "Bootstrap", "React"],
       link: "https://proyecto-integrador-react-gamma.vercel.app/",
-      github: "#",
+      github: "https://github.com/MarioEstebanMateo/Nucba_Proyectos_Integradores/tree/main/3%20-%20Proyecto%20Integrador%20React/frontend",
     },
     {
       title: t.items.eCommerceNode.title,
@@ -44,7 +44,7 @@ export const Projects = () => {
       description: t.items.eCommerceNode.description,
       technologies: ["React", "Node.js", "Express", "CSS"],
       link: "https://proyecto-integrador-back-end.vercel.app/",
-      github: "#",
+      github: "https://github.com/MarioEstebanMateo/Nucba_Proyectos_Integradores_Back-End",
       featured: true,
     },
     {
@@ -53,7 +53,7 @@ export const Projects = () => {
       description: t.items.blackjack.description,
       technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
       link: "https://blackjack-drab.vercel.app/",
-      github: "#",
+      github: "https://github.com/MarioEstebanMateo/blackjack",
     },
     {
       title: t.items.cardGame.title,
@@ -61,7 +61,7 @@ export const Projects = () => {
       description: t.items.cardGame.description,
       technologies: ["HTML", "CSS", "React"],
       link: "https://poke-tcg-card-game.vercel.app/",
-      github: "#",
+      github: "https://github.com/MarioEstebanMateo/pokeTcgCardGame",
     },
     {
       title: t.items.aiEngineering.title,
@@ -69,7 +69,7 @@ export const Projects = () => {
       description: t.items.aiEngineering.description,
       technologies: ["React", "AI", "Grok", "Vite"],
       link: "https://proyecto-final-ai-engineering-mateo.vercel.app/",
-      github: "#",
+      github: "https://github.com/MarioEstebanMateo/proyecto_final_ai_engineering_mateo_mario_esteban",
       featured: true,
     },
   ];
@@ -104,11 +104,12 @@ export const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col h-full"
+              className="group relative bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col h-full animate-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Featured Badge */}
               {project.featured && (
-                <div className="absolute top-4 right-4 z-20 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                <div className="absolute top-4 right-4 z-20 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-pulse">
                   ⭐ Featured
                 </div>
               )}
@@ -120,16 +121,16 @@ export const Projects = () => {
                   alt={project.title}
                   className="w-full h-full object-contain p-4 transform group-hover:scale-110 transition-transform duration-500"
                 />
-                {/* Overlay */}
+                {/* Overlay with gradient and hover effect */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
 
               {/* Content */}
               <div className="p-6 flex-1 flex flex-col">
-                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2 font-robotoslab group-hover:text-primary-600 transition-colors">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2 font-robotoslab group-hover:text-primary-600 transition-colors line-clamp-2">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2">
+                <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-3">
                   {project.description}
                 </p>
 
@@ -138,7 +139,7 @@ export const Projects = () => {
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/30 dark:to-accent-900/30 text-primary-700 dark:text-primary-400 text-xs font-semibold rounded-full border border-primary-200 dark:border-primary-700"
+                      className="px-3 py-1 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/30 dark:to-accent-900/30 text-primary-700 dark:text-primary-400 text-xs font-semibold rounded-full border border-primary-200 dark:border-primary-700 hover:shadow-md transition-all"
                     >
                       {tech}
                     </span>
@@ -153,8 +154,18 @@ export const Projects = () => {
                     rel="noreferrer"
                     className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-primary-600 to-accent-600 text-white px-4 py-2 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
                   >
-                    View Live
                     <ExternalLink className="w-4 h-4" />
+                    View Live
+                  </a>
+                  <a
+                    href={project.github !== "#" ? project.github : "https://github.com/MarioEstebanMateo"}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2 bg-gray-100 dark:bg-slate-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200 dark:hover:bg-slate-600 transform hover:scale-105 transition-all duration-300"
+                    title={project.github !== "#" ? "View Source Code" : "Visit GitHub Profile"}
+                  >
+                    <Github className="w-4 h-4" />
+                    Code
                   </a>
                 </div>
               </div>

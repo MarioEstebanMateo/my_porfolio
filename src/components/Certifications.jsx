@@ -91,7 +91,8 @@ export const Certifications = () => {
           {certifications.map((cert, index) => (
             <div
               key={index}
-              className="group relative"
+              className="group relative animate-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Glow effect */}
               <div className={`absolute -inset-0.5 bg-gradient-to-r ${cert.color} rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200`}></div>
