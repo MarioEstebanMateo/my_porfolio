@@ -20,7 +20,6 @@ export const Projects = () => {
       technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
       link: "https://proyecto-integrador-diseno-web-ten.vercel.app/",
       github: "https://github.com/MarioEstebanMateo/Nucba_Proyectos_Integradores/tree/main/1%20-%20Proyecto%20Integrador%20%20Dise%C3%B1o%20Web",
-      featured: true,
     },
     {
       title: t.items.eCommerceVanilla.title,
