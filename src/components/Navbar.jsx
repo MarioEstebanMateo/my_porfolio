@@ -10,6 +10,9 @@ import { translations } from "../translations";
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showLanguageTooltip, setShowLanguageTooltip] = useState(() => {
+    return !localStorage.getItem('languageTooltipSeen');
+  });
   const { language, toggleLanguage } = useLanguage();
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const t = translations[language].navbar;
@@ -25,6 +28,22 @@ export const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Mostrar tooltip al cargar y ocultarlo después de 10 segundos
+  useEffect(() => {
+    if (showLanguageTooltip) {
+      const timer = setTimeout(() => {
+        setShowLanguageTooltip(false);
+        localStorage.setItem('languageTooltipSeen', 'true');
+      }, 10000);
+      return () => clearTimeout(timer);
+    }
+  }, [showLanguageTooltip]);
+
+  const handleCloseTooltip = () => {
+    setShowLanguageTooltip(false);
+    localStorage.setItem('languageTooltipSeen', 'true');
+  };
 
   const navigationLinks = [
     { name: t.home, href: "#main" },
@@ -110,13 +129,39 @@ export const Navbar = () => {
             </button>
 
             {/* Language Switcher */}
-            <button
-              onClick={toggleLanguage}
-              className="relative p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition-all duration-300 text-primary-600 dark:text-accent-400 font-bold text-xs"
-              title={language === 'en' ? 'Cambiar a Español' : 'Switch to English'}
-            >
-              {language === 'en' ? 'ES' : 'EN'}
-            </button>
+            <div className="relative">
+              <button
+                onClick={toggleLanguage}
+                className="relative p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition-all duration-300 text-primary-600 dark:text-accent-400 font-bold text-xs"
+                title={language === 'en' ? 'Cambiar a Español' : 'Switch to English'}
+              >
+                {language === 'en' ? 'ES' : 'EN'}
+              </button>
+
+              {/* Language Tooltip */}
+              {showLanguageTooltip && (
+                <div className="absolute -bottom-16 right-0 animate-fade-in">
+                  <div className="bg-gradient-to-r from-primary-600 to-accent-600 text-white text-xs font-bold py-2 px-4 rounded-lg shadow-lg flex items-center gap-3 whitespace-nowrap">
+                    <div>
+                      <div>🌍 Click to change language</div>
+                      <div>🌍 Clic para cambiar de idioma</div>
+                    </div>
+                    <button
+                      onClick={handleCloseTooltip}
+                      className="ml-2 hover:opacity-75 transition-opacity flex-shrink-0"
+                    >
+                      ✕
+                    </button>
+                  </div>
+                  {/* Arrow */}
+                  <div className="absolute bottom-full right-6 translate-y-1">
+                    <div className="border-4 border-transparent border-b-gradient-to-r from-primary-600 to-accent-600" style={{
+                      borderBottom: '6px solid #126699'
+                    }}></div>
+                  </div>
+                </div>
+              )}
+            </div>
 
             {/* Resume Button */}
             <a
