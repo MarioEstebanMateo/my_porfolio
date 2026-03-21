@@ -3,6 +3,7 @@ import utnDiplomaturaEnProgramacionWeb from "../assets/img/utnDiplomaturaEnProgr
 import nucbaProgramacionFullStack from "../assets/img/nucbaProgramacionFullStack.jpg";
 import utnDisenoGraficoDigital from "../assets/img/utnDisenoGraficoDigital.jpg";
 import nucbaUXUI from "../assets/img/nucbaUXUI.jpg";
+import nucbaAiEngineering from "../assets/img/nucbaAiEngineering.jpg";  
 import { Award, ExternalLink, GraduationCap } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../translations";
@@ -61,8 +62,8 @@ export const Certifications = () => {
       institution: "NUCBA",
       year: "2026",
       location: "Buenos Aires, Argentina",
-      image: "",
-      link: "#",
+      image: nucbaAiEngineering,
+      link: "https://res.cloudinary.com/dwxoq8n2m/image/upload/v1774129965/Nucba_Certificado_AI_Engineering_eibcpw.jpg",
       color: "from-teal-500 to-cyan-500",
     },
   ];

@@ -13,6 +13,10 @@ export const Navbar = () => {
   const { language, toggleLanguage } = useLanguage();
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const t = translations[language].navbar;
+  const resumeUrl =
+    language === "en"
+      ? "https://drive.google.com/file/d/1rh_bPJ6vH5IqFPW2QsUgLVVnBfJfyJix/view?usp=sharing"
+      : "https://drive.google.com/file/d/12WatdnVxvhFv4sZIASl5T_l2AAjzLDgQ/view?usp=sharing";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -122,7 +126,7 @@ export const Navbar = () => {
           </button>
 
           <a
-            href="https://drive.google.com/file/d/1FJiggbu3oYMD4eMeafORA6stazZny_Oq/view?usp=sharing"
+            href={resumeUrl}
             target="_blank"
             rel="noreferrer"
             className="group relative overflow-hidden bg-gradient-to-r from-primary-600 to-accent-600 text-white px-5 py-2.5 rounded-full font-bold text-sm transition-all duration-300 hover:shadow-lg hover:scale-105"
@@ -259,7 +263,7 @@ export const Navbar = () => {
 
             {/* Mobile Resume Button */}
             <a
-              href="https://drive.google.com/file/d/1FJiggbu3oYMD4eMeafORA6stazZny_Oq/view?usp=sharing"
+              href={resumeUrl}
               target="_blank"
               rel="noreferrer"
               className="flex items-center justify-center gap-2 bg-gradient-to-r from-primary-600 to-accent-600 text-white px-6 py-3 rounded-full font-bold text-sm hover:shadow-lg transition-all duration-300 w-full"
