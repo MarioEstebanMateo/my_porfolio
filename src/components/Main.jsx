@@ -67,54 +67,57 @@ export const Main = () => {
 
       {/* Content */}
       <div className="relative z-10">
-        {/* Hero Image Section */}
-        <div className="flex justify-center items-center pt-10 sm:pt-16">
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-accent-400 to-primary-400 rounded-3xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-slow"></div>
-            <div className="relative w-48 h-60 sm:w-64 sm:h-80 rounded-3xl border-4 border-white dark:border-slate-700 shadow-2xl overflow-hidden bg-white dark:bg-slate-800">
-              <img
-                src={mariophoto}
-                alt="Mario's profile"
-                className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-          </div>
-        </div>
+        <div className="flex flex-col items-center justify-center px-6 py-12 sm:px-20 sm:py-16 text-white min-h-screen">
+          <div className="max-w-3xl w-full space-y-8">
+            
+            {/* Image + Greeting + Name + Title - Horizontal Layout */}
+            <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12">
+              {/* Hero Image - Izquierda */}
+              <div className="flex-shrink-0">
+                <div className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-accent-400 to-primary-400 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-slow"></div>
+                  <div className="relative w-28 h-36 sm:w-40 sm:h-52 rounded-2xl border-4 border-white dark:border-slate-700 shadow-2xl overflow-hidden bg-white dark:bg-slate-800">
+                    <img
+                      src={mariophoto}
+                      alt="Mario's profile"
+                      className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                </div>
+              </div>
 
-        {/* Text Content */}
-        <div className="text-center px-6 py-12 sm:px-20 sm:py-16 text-white">
-          <div className="max-w-4xl mx-auto space-y-6">
-            {/* Greeting */}
-            <div className="space-y-2">
+              {/* Greeting + Name + Title - Derecha */}
+              <div className="text-center lg:text-left space-y-3">
               <p className="text-lg sm:text-xl font-opensans font-light tracking-wide animate-fade-in">
                 {t.greeting}
               </p>
-              <h1 className="font-robotoslab text-4xl sm:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-white animate-shimmer bg-[length:1000px_100%]">
+              <h1 className="font-robotoslab text-3xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-white animate-shimmer bg-[length:1000px_100%]">
                 {t.name}
               </h1>
-              <p className="text-xl sm:text-2xl font-opensans font-semibold text-blue-100">
+              <p className="text-base sm:text-xl font-opensans font-semibold text-blue-100 leading-relaxed px-4">
                 {t.title}
               </p>
+              </div>
             </div>
 
-            {/* Stats */}
-            <div className="flex flex-wrap justify-center gap-6 sm:gap-12 py-8">
-              <div className="flex flex-col items-center backdrop-blur-sm bg-white/10 rounded-xl px-6 py-4 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+            {/* Stats - Grid centrado */}
+            <div className="grid grid-cols-3 gap-3 sm:gap-6">
+              <div className="flex flex-col items-center backdrop-blur-sm bg-white/10 rounded-lg sm:rounded-xl px-3 sm:px-6 py-3 sm:py-4 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
                 <CounterStat end={13} suffix="+" duration={2000} />
-                <span className="text-sm sm:text-base font-opensans text-blue-100">{t.yearsExperience}</span>
+                <span className="text-xs sm:text-sm font-opensans text-blue-100 mt-2">{t.yearsExperience}</span>
               </div>
-              <div className="flex flex-col items-center backdrop-blur-sm bg-white/10 rounded-xl px-6 py-4 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+              <div className="flex flex-col items-center backdrop-blur-sm bg-white/10 rounded-lg sm:rounded-xl px-3 sm:px-6 py-3 sm:py-4 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
                 <CounterStat end={50} suffix="+" duration={2000} />
-                <span className="text-sm sm:text-base font-opensans text-blue-100">{t.projectsCompleted}</span>
+                <span className="text-xs sm:text-sm font-opensans text-blue-100 mt-2">{t.projectsCompleted}</span>
               </div>
-              <div className="flex flex-col items-center backdrop-blur-sm bg-white/10 rounded-xl px-6 py-4 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+              <div className="flex flex-col items-center backdrop-blur-sm bg-white/10 rounded-lg sm:rounded-xl px-3 sm:px-6 py-3 sm:py-4 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
                 <CounterStat end={100} suffix="%" duration={2000} />
-                <span className="text-sm sm:text-base font-opensans text-blue-100">{t.clientSatisfaction}</span>
+                <span className="text-xs sm:text-sm font-opensans text-blue-100 mt-2">{t.clientSatisfaction}</span>
               </div>
             </div>
 
             {/* Description */}
-            <div className="space-y-4 text-base sm:text-lg font-opensans leading-relaxed backdrop-blur-sm bg-white/5 rounded-2xl p-6 sm:p-8 border border-white/10">
+            <div className="space-y-4 text-sm sm:text-base font-opensans leading-relaxed backdrop-blur-sm bg-white/5 rounded-2xl p-6 sm:p-8 border border-white/10">
               <p className="text-blue-50">
                 {t.description1}
               </p>
@@ -124,12 +127,12 @@ export const Main = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
                 href="#contact"
-                className="group relative px-8 py-4 bg-white text-primary-600 font-bold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                className="group relative px-8 py-4 bg-white text-primary-600 font-bold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl w-full sm:w-auto"
               >
-                <span className="relative z-10 flex items-center gap-2">
+                <span className="relative z-10 flex items-center justify-center gap-2">
                   <Mail className="w-5 h-5 group-hover:animate-bounce" />
                   {t.getInTouch}
                 </span>
@@ -137,7 +140,7 @@ export const Main = () => {
               </a>
               <a
                 href="#projects"
-                className="group px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-primary-600 transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-2"
+                className="group px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-primary-600 transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center justify-center gap-2 w-full sm:w-auto"
               >
                 {t.viewProjects}
                 <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
@@ -145,7 +148,7 @@ export const Main = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex justify-center gap-6 pt-8">
+            <div className="flex justify-center gap-6">
               <a
                 href="https://github.com/MarioEstebanMateo"
                 target="_blank"
@@ -169,6 +172,7 @@ export const Main = () => {
                 <Mail className="w-6 h-6 text-white group-hover:text-primary-600 transition-colors" />
               </a>
             </div>
+
           </div>
         </div>
       </div>

@@ -9,14 +9,19 @@ A modern, fully responsive portfolio website showcasing my work as a Full Stack 
 
 ## ✨ Features
 
-- **🎨 Modern UI/UX** - Clean, professional design with smooth animations and transitions
-- **🌓 Dark Mode** - Toggle between light and dark themes with persistent storage
-- **🌍 Multi-language** - Support for English and Spanish with seamless switching
-- **📱 Fully Responsive** - Optimized for all devices from mobile to desktop
-- **⚡ Fast Performance** - Built with Vite for lightning-fast load times
+- **🎨 Modern UI/UX** - Clean, professional design with sophisticated animations and micro-interactions
+- **🌓 Dark Mode (Default)** - Dark theme enabled by default with light mode toggle and persistent storage
+- **🌍 Bilingual Support** - Full English/Spanish support with language persistence and context API
+- **📱 Fully Responsive** - Mobile-first design optimized for all devices (mobile, tablet, desktop)
+- **✨ Advanced Animations** - Staggered fade-in animations on grids, smooth scroll detection, hover effects
+- **🧮 Animated Statistics** - CounterStat component with smooth number animations on scroll
+- **🎯 Skill Tooltips** - Interactive tooltips showing years of experience on skill hover
 - **📧 Contact Form** - Integrated with EmailJS for direct communication
-- **🎯 Smooth Scrolling** - Enhanced navigation experience with animated sections
-- **♿ Accessible** - Following WCAG guidelines for accessibility
+- **🔗 GitHub Integration** - Direct links to each project on GitHub
+- **📄 Smart CV/Resume** - Language-aware CV/Resume downloads (English → Resume, Spanish → CV)
+- **⚡ Performance Optimized** - Built with Vite for lightning-fast load times and HMR
+- **🔍 SEO Optimized** - Complete meta tags, Open Graph, Twitter Cards, and structured data
+- **♿ Accessible** - PropTypes validation, semantic HTML, and WCAG compliance
 
 ## 🛠️ Tech Stack
 
@@ -131,16 +136,26 @@ Additional gradients and colors are used throughout for visual hierarchy and emp
 
 ### 1. Hero (Main)
 
-Dynamic introduction with animated statistics and call-to-action buttons.
+**Responsive Layout**: Image on left (mobile: top), text content on right with:
+
+- Animated greeting, name, and professional title
+- Three animated statistics (13+ years experience, 50+ projects, 100% client satisfaction)
+- Professional description with context-aware styling
+- Call-to-action buttons with hover animations
+- Social media links with icon transitions
+- Full dark mode integration with smooth gradient transitions
 
 ### 2. Skills
 
-Interactive skill cards with proficiency indicators for:
+Interactive skill cards with proficiency indicators and experience tooltips for:
 
-- Frontend Development
-- Backend Development
-- Version Control
-- UX/UI Design
+- **Frontend Development** - React, JavaScript, HTML5, CSS3, Tailwind CSS
+- **Backend Development** - Node.js, Express, Python, MySQL, MongoDB
+- **Version Control** - Git, GitHub, GitLab
+- **UX/UI Design** - Figma, Wireframing, Prototyping
+- **AI/ML** - Prompt Engineering, LLM APIs (newly acquired)
+
+Each skill displays years of experience on hover with animated progress bars and staggered animations.
 
 ### 3. Languages
 
@@ -157,7 +172,14 @@ Professional certifications and degrees with clickable certificates.
 
 ### 5. Projects
 
-Portfolio of personal and academic projects with live demos.
+Portfolio of 7+ projects with:
+
+- Featured/badge indicators
+- Technology tags for each project
+- Live demo and GitHub links per project
+- Staggered fade-in animations on scroll (0.1s delays)
+- Hover effects with shadow elevation and upward translation
+- Responsive card layout (1 col mobile, 2 tablets, 3 desktop)
 
 ### 6. Freelance
 
@@ -197,6 +219,20 @@ VITE_EMAILJS_TEMPLATE_ID=your_template_id
 VITE_EMAILJS_PUBLIC_KEY=your_public_key
 ```
 
+### Customization
+
+**Translations**: Edit `src/translations.js` for English/Spanish content
+
+**Colors**: Modify `tailwind.config.js` for theme colors:
+
+- Primary: `#126699`
+- Accent: `#6366f1`
+- Dark backgrounds: Slate grays
+
+**Resume/CV URLs**: Update resume links in `Navbar.jsx`
+
+**Skills & Experience**: Update data in respective component files
+
 ## 📱 Responsive Breakpoints
 
 - **Mobile**: < 640px
@@ -234,6 +270,7 @@ This project is [MIT](LICENSE) licensed.
 - Icons from [Lucide](https://lucide.dev/)
 - Font families: Open Sans, Roboto Slab, League Spartan
 - Color palette tools: [Tailwind Colors](https://tailwindcss.com/docs/customizing-colors)
+- Animation patterns and best practices from modern web development
 
 ---
 

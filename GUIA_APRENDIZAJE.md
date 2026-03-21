@@ -1,4 +1,4 @@
-# 📚 Guía de Aprendizaje - Mi Portfolio React
+# 📚 Guía de Aprendizaje - Mi Portfolio React v2 (Actualizado)
 
 ## Índice
 
@@ -6,29 +6,48 @@
 2. [React Hooks Básicos](#react-hooks-básicos)
 3. [Context API](#context-api)
 4. [Custom Hooks](#custom-hooks)
-5. [Intersection Observer](#intersection-observer)
-6. [LocalStorage](#localstorage)
-7. [Animaciones con Tailwind CSS](#animaciones-con-tailwind-css)
-8. [Navegación Suave](#navegación-suave)
-9. [Componentes Reutilizables](#componentes-reutilizables)
-10. [Internacionalización (i18n)](#internacionalización)
-11. [EmailJS](#emailjs)
-12. [Responsive Design](#responsive-design)
+5. [PropTypes - Validación de Props](#proptypes---validación-de-props)
+6. [Intersection Observer](#intersection-observer)
+7. [LocalStorage](#localstorage)
+8. [Animaciones Avanzadas](#animaciones-avanzadas)
+9. [Componentes Complejos](#componentes-complejos)
+10. [Layout Responsive](#layout-responsive)
+11. [Navegación Suave](#navegación-suave)
+12. [Internacionalización (i18n)](#internacionalización)
+13. [EmailJS](#emailjs)
+14. [Micro-interacciones](#micro-interacciones)
+15. [Optimización SEO](#optimización-seo)
 
 ---
 
 ## Introducción
 
-Este portfolio fue desarrollado con **React**, **Vite** y **Tailwind CSS**. Implementa varias funcionalidades modernas de desarrollo web. Aquí aprenderás cómo funciona cada una de manera simple.
+Este portfolio fue desarrollado con **React 18**, **Vite** y **Tailwind CSS 3.4**. Es una aplicación completamente bilingüe (EN/ES) con dark mode, animaciones sofisticadas, y múltiples mejoras UX/UI.
 
 ### Tecnologías Utilizadas
 
 - **React 18**: Biblioteca para interfaces de usuario
-- **Vite**: Herramienta de construcción rápida
-- **Tailwind CSS**: Framework CSS utility-first
-- **Lucide React**: Iconos modernos
+- **Vite**: Herramienta de construcción rápida y HMR
+- **Tailwind CSS 3.4**: Framework CSS utility-first con custom keyframes
+- **Lucide React**: Iconos modernos y coherentes
 - **EmailJS**: Envío de emails sin backend
-- **SweetAlert2**: Alertas bonitas
+- **SweetAlert2**: Alertas personalizadas y elegantes
+- **PropTypes**: Validación de tipos en componentes
+- **Intersection Observer API**: Detección de visibilidad para animaciones
+
+### Características Principales
+
+✅ Bilingual (English + Spanish) con persistencia en localStorage  
+✅ Dark Mode por defecto con toggle persistente  
+✅ Animaciones staggered en grillas (Skills, Projects, Certifications)  
+✅ Responsive design mobile-first (sm: 640px, lg: 1024px)  
+✅ CounterStat para animación de números al scroll  
+✅ Tooltips en skills mostrando años de experiencia  
+✅ GitHub links específicos por proyecto  
+✅ Download CV/Resume sensible al idioma  
+✅ Layout hero: imagen izquierda, contenido derecha  
+✅ Micro-interacciones: hover effects, bounce animations  
+✅ SEO optimizado (meta tags, Open Graph, Twitter Cards)
 
 ---
 
@@ -259,10 +278,11 @@ export const useDarkMode = () => {
 };
 
 export const DarkModeProvider = ({ children }) => {
-  // Estado: leer de localStorage
+  // Estado: leer de localStorage CON DEFAULT DARK MODE
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const saved = localStorage.getItem("darkMode");
-    return saved === "true";
+    // Si no hay guardado, usar dark mode (true)
+    return saved === null ? true : saved === "true";
   });
 
   // Efecto: guardar en localStorage y actualizar HTML
@@ -434,7 +454,593 @@ const AnimatedSection = ({ children, id }) => {
 
 ---
 
-## Intersection Observer
+## PropTypes - Validación de Props
+
+### ¿Qué es PropTypes?
+
+Librería para validar el tipo de datos que reciben los componentes. Ayuda a detectar errores en desarrollo.
+
+```bash
+npm install prop-types
+```
+
+### Validación Básica
+
+```jsx
+import PropTypes from "prop-types";
+
+function Card({ title, description, isActive }) {
+  return <div>{title}</div>;
+}
+
+Card.propTypes = {
+  title: PropTypes.string.isRequired, // String obligatorio
+  description: PropTypes.string, // String opcional
+  isActive: PropTypes.bool, // Boolean
+  children: PropTypes.node, // Cualquier contenido
+  onClick: PropTypes.func, // Función
+  items: PropTypes.array, // Array
+};
+
+Card.defaultProps = {
+  description: "Sin descripción",
+  isActive: false,
+};
+```
+
+### Ejemplo en Portfolio: CounterStat
+
+```jsx
+// components/Main.jsx
+import PropTypes from "prop-types";
+
+const CounterStat = ({ end, suffix = "", duration = 2000 }) => {
+  const [count, setCount] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
+
+  useEffect(() => {
+    if (!hasStarted) return;
+
+    let current = 0;
+    const increment = end / (duration / 16);
+    const interval = setInterval(() => {
+      current += increment;
+      if (current >= end) {
+        setCount(end);
+        clearInterval(interval);
+      } else {
+        setCount(Math.floor(current));
+      }
+    }, 16);
+
+    return () => clearInterval(interval);
+  }, [hasStarted, end, duration]);
+
+  // Iniciar animación cuando es visible
+  const [ref, isVisible] = useInView();
+  useEffect(() => {
+    if (isVisible && !hasStarted) {
+      setHasStarted(true);
+    }
+  }, [isVisible, hasStarted]);
+
+  return (
+    <span ref={ref} className="text-3xl sm:text-4xl font-bold font-robotoslab">
+      {count}
+      {suffix}
+    </span>
+  );
+};
+
+CounterStat.propTypes = {
+  end: PropTypes.number.isRequired,
+  suffix: PropTypes.string,
+  duration: PropTypes.number,
+};
+
+CounterStat.defaultProps = {
+  suffix: "",
+  duration: 2000,
+};
+```
+
+---
+
+## Componentes Complejos
+
+### CounterStat - Animación de Números
+
+Componente que anima números cuando se hace visible en pantalla.
+
+```jsx
+const CounterStat = ({ end, suffix = "", duration = 2000 }) => {
+  const [count, setCount] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
+  const [ref, isVisible] = useInView();
+
+  useEffect(() => {
+    if (isVisible && !hasStarted) {
+      setHasStarted(true);
+    }
+  }, [isVisible, hasStarted]);
+
+  useEffect(() => {
+    if (!hasStarted) return;
+
+    let current = 0;
+    const increment = end / (duration / 16);
+    const interval = setInterval(() => {
+      current += increment;
+      if (current >= end) {
+        setCount(end);
+        clearInterval(interval);
+      } else {
+        setCount(Math.floor(current));
+      }
+    }, 16);
+
+    return () => clearInterval(interval);
+  }, [hasStarted, end, duration]);
+
+  return (
+    <span ref={ref} className="text-3xl sm:text-4xl font-bold animate-fade-in">
+      {count}
+      {suffix}
+    </span>
+  );
+};
+```
+
+**Uso en Main.jsx:**
+
+```jsx
+<div className="grid grid-cols-3 gap-3 sm:gap-6">
+  <div className="flex flex-col items-center backdrop-blur-sm bg-white/10 rounded-lg px-3 py-3 border border-white/20">
+    <CounterStat end={13} suffix="+" duration={2000} />
+    <span className="text-xs sm:text-sm text-blue-100 mt-2">
+      {t.yearsExperience}
+    </span>
+  </div>
+  {/* Más stats... */}
+</div>
+```
+
+### Tooltip Component (Custom)
+
+Componente para mostrar información al pasar el cursor.
+
+```jsx
+// components/common/Tooltip.jsx
+import { useState } from "react";
+
+export const Tooltip = ({ children, text }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  return (
+    <div className="relative inline-block group">
+      <div
+        onMouseEnter={() => setIsVisible(true)}
+        onMouseLeave={() => setIsVisible(false)}
+      >
+        {children}
+      </div>
+
+      {isVisible && (
+        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 text-white text-xs rounded whitespace-nowrap pointer-events-none z-50">
+          {text}
+        </div>
+      )}
+    </div>
+  );
+};
+```
+
+**Uso en Skills.jsx:**
+
+```jsx
+import { Tooltip } from "./common/Tooltip";
+
+const SkillBar = ({ name, percentage, yearsExperience }) => {
+  return (
+    <Tooltip text={`${yearsExperience} years`}>
+      <div className="cursor-help">
+        <h4 className="font-semibold">{name}</h4>
+        <div className="w-full bg-gray-200 rounded h-2">
+          <div
+            className="bg-blue-500 h-2 rounded transition-all duration-1000"
+            style={{ width: `${percentage}%` }}
+          />
+        </div>
+      </div>
+    </Tooltip>
+  );
+};
+```
+
+---
+
+## Layout Responsive
+
+### Hero Section: Imagen Izquierda, Texto Derecha
+
+```jsx
+// Main.jsx
+export const Main = () => {
+  const { isDarkMode } = useDarkMode();
+  const { language } = useLanguage();
+  const t = translations[language].main;
+
+  return (
+    <div className="min-h-screen flex items-center">
+      <div className="max-w-3xl w-full space-y-8">
+        {/* Row: Image + (Greeting + Name + Title) */}
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12">
+          {/* Image - Izquierda */}
+          <div className="flex-shrink-0">
+            <div className="relative w-28 h-36 sm:w-40 sm:h-52 rounded-2xl overflow-hidden border-4">
+              <img
+                src={mariophoto}
+                alt="Mario's profile"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Text - Derecha */}
+          <div className="text-center lg:text-left space-y-3">
+            <p className="text-lg sm:text-xl font-light animate-fade-in">
+              {t.greeting}
+            </p>
+            <h1 className="text-3xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-white animate-shimmer">
+              {t.name}
+            </h1>
+            <p className="text-base sm:text-xl font-semibold text-blue-100">
+              {t.title}
+            </p>
+          </div>
+        </div>
+
+        {/* Stats - Centered */}
+        <div className="grid grid-cols-3 gap-3 sm:gap-6">
+          {/* Stats components */}
+        </div>
+
+        {/* Description - Centered */}
+        <div className="space-y-4 backdrop-blur-sm bg-white/5 rounded-2xl p-6">
+          {/* Description content */}
+        </div>
+
+        {/* CTA Buttons - Centered */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          {/* Buttons */}
+        </div>
+      </div>
+    </div>
+  );
+};
+```
+
+### Breakpoints Clave
+
+```
+Mobile: default (0px+)
+Tablet: sm: 640px
+Desktop: lg: 1024px
+```
+
+**Ejemplo de Responsive:**
+
+```jsx
+// 1 col mobile, 2 cols tablet, 3 cols desktop
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  {items.map(item => (
+    <div key={item.id}>{item.name}</div>
+  ))}
+</div>
+
+// Hidden en mobile, visible en desktop
+<div className="hidden lg:block">Desktop only</div>
+
+// Diferentes tamaños
+<img
+  src={image}
+  className="w-full sm:w-2/3 lg:w-1/2"
+/>
+```
+
+---
+
+## Micro-interacciones
+
+### Hover Effects en Botones
+
+```jsx
+// Botón con hover scale y shadow
+<button className="
+  px-8 py-4 bg-white text-blue-600 font-bold rounded-full
+  transition-all duration-300
+  hover:scale-105
+  hover:shadow-2xl
+  active:scale-95
+">
+  Click Me
+</button>
+
+// Botón con gradient background on hover
+<button className="
+  px-8 py-4 bg-transparent border-2 border-white text-white
+  transition-all duration-300
+  hover:bg-white
+  hover:text-blue-600
+">
+  Learn More
+</button>
+```
+
+### Icon Animations
+
+```jsx
+// Icon translate on hover
+<button className="group">
+  <ArrowDown className="group-hover:translate-y-1 transition-transform" />
+</button>
+
+// Icon rotate on hover
+<button className="group">
+  <Mail className="group-hover:animate-bounce" />
+</button>
+
+// Icon color change
+<a className="group">
+  <Github className="text-white group-hover:text-blue-500 transition-colors" />
+</a>
+```
+
+### Card Elevate on Hover
+
+```jsx
+<div
+  className="
+  p-6 rounded-xl bg-white/5 border border-white/10
+  transition-all duration-300
+  hover:shadow-2xl
+  hover:-translate-y-2
+  hover:bg-white/10
+"
+>
+  Card content
+</div>
+```
+
+### Tooltip with CSS
+
+```jsx
+<div className="group relative">
+  <span>Hover me</span>
+
+  {/* Tooltip appears on group hover */}
+  <div
+    className="
+    absolute bottom-full left-1/2 -translate-x-1/2 mb-2
+    px-2 py-1 bg-gray-900 text-white text-xs rounded
+    opacity-0 group-hover:opacity-100
+    transition-opacity duration-300
+    pointer-events-none whitespace-nowrap
+  "
+  >
+    I'm a tooltip!
+  </div>
+</div>
+```
+
+---
+
+## Optimización SEO
+
+### Meta Tags Esenciales
+
+```html
+<!-- index.html -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Full Stack Developer & AI Engineer..." />
+<meta name="keywords" content="react, javascript, portfolio, developer" />
+
+<!-- Open Graph (Social Media) -->
+<meta property="og:title" content="Mario Esteban Mateo - Portfolio" />
+<meta property="og:description" content="Full Stack Developer & AI Engineer" />
+<meta property="og:image" content="https://example.com/og-image.png" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Mario Esteban Mateo - Portfolio" />
+<meta name="twitter:description" content="Full Stack Developer & AI Engineer" />
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://miportfolio.com" />
+
+<title>Mario Esteban Mateo - Full Stack Developer & AI Engineer</title>
+```
+
+### Structured Data (JSON-LD)
+
+```html
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mario Esteban Mateo",
+    "url": "https://miportfolio.com",
+    "sameAs": [
+      "https://linkedin.com/in/marioestebanmateo",
+      "https://github.com/MarioEstebanMateo"
+    ],
+    "jobTitle": "Full Stack Developer & AI Engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelancer"
+    }
+  }
+</script>
+```
+
+---
+
+## Animaciones Avanzadas
+
+### Tailwind Fade-In con Stagger
+
+```jsx
+// tailwind.config.js
+export default {
+  theme: {
+    extend: {
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        "fade-in": "fadeIn 0.6s ease-in forwards",
+      },
+    },
+  },
+};
+```
+
+### Staggered Animations en Grids
+
+```jsx
+// projects/Projects.jsx
+const projects = [
+  { id: 1, title: "Project 1", ... },
+  { id: 2, title: "Project 2", ... },
+  // ... más proyectos
+];
+
+export const Projects = () => {
+  const [ref, isVisible] = useInView();
+
+  return (
+    <section ref={ref} className="py-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={project.id}
+            project={project}
+            className={`
+              transition-all duration-1000
+              ${isVisible ? "animate-fade-in opacity-100" : "opacity-0"}
+            `}
+            style={{
+              animationDelay: isVisible ? `${index * 0.1}s` : "0s",
+            }}
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
+```
+
+### Smooth Transitions en Navbar (Scroll Detection)
+
+```jsx
+export const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <nav
+      className={`
+        fixed top-0 w-full z-50
+        transition-all duration-300
+        ${
+          isScrolled
+            ? "bg-white/80 dark:bg-slate-800/80 backdrop-blur-lg shadow-lg"
+            : "bg-transparent shadow-none"
+        }
+      `}
+    >
+      {/* Navbar content */}
+    </nav>
+  );
+};
+```
+
+---
+
+## Resumen de Cambios Recientes (v2)
+
+### ✅ Implementado
+
+- [x] Hero layout responsive: imagen izquierda (sm: 40/52, lg: mantiene), texto derecha
+- [x] Dark mode por defecto (cambio en DarkModeContext.jsx)
+- [x] AI/ML skills category nueva con translations completas
+- [x] Staggered animations en todas las grillas (0.1s delay)
+- [x] Tooltips mostrando años de experiencia en skills
+- [x] CounterStat para animación de números
+- [x] GitHub links específicos por proyecto
+- [x] CV/Resume download sensible al idioma
+- [x] Bilingual translations completas (EN/ES)
+- [x] SEO optimization (meta tags, Open Graph, Twitter Cards)
+- [x] PropTypes validación en componentes críticos
+- [x] Micro-interacciones mejoradas (hover effects, icon animations)
+
+### 📊 Estadísticas del Proyecto
+
+- **Componentes**: 10+ (Main, Navbar, Skills, Projects, Contact, etc.)
+- **Traducciones**: 2 idiomas completamente soportados
+- **Animaciones**: 5+ tipos (fade-in, shimmer, staggered, bounce, pulse)
+- **Responsiveness**: Mobile-first con 2 breakpoints principales
+- **Accesibilidad**: PropTypes, semantic HTML, ARIA labels
+
+---
+
+## Tips de Desarrollo
+
+### Debugging React
+
+```jsx
+// React DevTools browser extension
+// Usar "Highlight updates when components render" para ver renders
+
+// Console.log de contextos
+const { language, toggleLanguage } = useLanguage();
+console.log("Current language:", language);
+```
+
+### Performance
+
+```jsx
+// Evitar renders innecesarios con React.memo
+const SkillCard = React.memo(({ skill }) => <div>{skill.name}</div>);
+
+// Usar useCallback para funciones en props
+const handleClick = useCallback(() => {
+  setCount(count + 1);
+}, [count]);
+
+// Lazy load componentes
+const Contact = React.lazy(() => import("./Contact"));
+```
+
+---
+
+**Última actualización**: Marzo 2026  
+**Versión**: 2.0 (Completa con todas las mejoras)  
+**Autor**: Mario Esteban Mateo
 
 ### ¿Qué es?
 

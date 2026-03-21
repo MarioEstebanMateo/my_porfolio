@@ -264,7 +264,7 @@ export const translations = {
       fluentCommunication: "Comunicación fluida en múltiples idiomas",
       viewCertificate: "Ver Certificado",
       spanishLanguage: "Idioma Español",
-      nativeSpeaker: "Hablante Nativo",
+      nativeSpeaker: "Idioma Nativo",
       myMotherTongue:
         "Mi lengua materna y el idioma que uso a diario para la comunicación personal y profesional.",
       englishLanguage: "Idioma Inglés",
