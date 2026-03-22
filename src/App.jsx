@@ -8,6 +8,7 @@ import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { BackToTop } from "./components/BackToTop";
+import { EasterEgg } from "./components/EasterEgg";
 import { useInView } from "./hooks/useInView";
 import { useEffect } from "react";
 import { Freelance } from "./components/Freelance";
@@ -102,6 +103,7 @@ function App() {
       </main>
       <Footer />
       <BackToTop />
+      <EasterEgg />
     </div>
   );
 }

@@ -204,6 +204,7 @@ export const translations = {
       connect: "Connect",
     },
     backToTop: "Back to top",
+    easterEgg: "Click me!",
   },
   es: {
     navbar: {
@@ -414,5 +415,6 @@ export const translations = {
       connect: "Conectar",
     },
     backToTop: "Volver arriba",
+    easterEgg: "¡Haz clic!",
   },
 };

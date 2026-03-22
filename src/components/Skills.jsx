@@ -174,7 +174,7 @@ export const Skills = () => {
                 <div className={`absolute -inset-0.5 bg-gradient-to-r ${category.gradient} rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200`}></div>
                 
                 {/* Card */}
-                <div className="relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-slate-700 h-full">
+                <div className="relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-slate-700 h-full min-h-[400px]">
                   {/* Header */}
                   <div className="flex items-center justify-between mb-6">
                     <h3 className={`text-lg font-bold font-opensans bg-gradient-to-r ${category.gradient} bg-clip-text text-transparent`}>
