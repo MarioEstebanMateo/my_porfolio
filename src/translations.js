@@ -135,6 +135,11 @@ export const translations = {
           description:
             "Advanced AI-powered application showcasing modern AI engineering practices and implementations",
         },
+        videoGameStore: {
+          title: "Video Game Store",
+          description:
+            "Full-stack video game store application with real-time inventory management and user authentication",
+        },
       },
     },
     freelance: {
@@ -344,6 +349,11 @@ export const translations = {
           title: "Proyecto Final AI Engineering",
           description:
             "Aplicación avanzada potenciada por IA que demuestra prácticas modernas de ingeniería de IA",
+        },
+        videoGameStore: {
+          title: "Tienda de Videojuegos",
+          description:
+            "Aplicación full-stack de tienda de videojuegos con gestión de inventario en tiempo real y autenticación de usuarios",
         },
       },
     },

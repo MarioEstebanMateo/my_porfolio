@@ -5,6 +5,7 @@ import eCommerceReactWithNodeBackEnd from "../assets/img/eCommerceReactWithNodeB
 import blackJack from "../assets/img/blackJack.png";
 import juegoDeCartasColeccionables from "../assets/img/juegoDeCartasColeccionables.png";
 import proyectoFinalAiEngineering from "../assets/img/proyectoFinalAiEngineering.png";
+import videoGameStoreByMario from "../assets/img/videoGameStoreByMario.png";
 import { ExternalLink, Github, Sparkles } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import { translations } from "../translations";
@@ -69,6 +70,15 @@ export const Projects = () => {
       technologies: ["React", "AI", "Grok", "Vite"],
       link: "https://proyecto-final-ai-engineering-mateo.vercel.app/",
       github: "https://github.com/MarioEstebanMateo/proyecto_final_ai_engineering_mateo_mario_esteban",
+      featured: true,
+    },
+    {
+      title: t.items.videoGameStore.title,
+      image: videoGameStoreByMario,
+      description: t.items.videoGameStore.description,
+      technologies: ["React", "Tailwind CSS", "Supabase", "Vite"],
+      link: "https://videogamestore-rho.vercel.app/",
+      github: "https://github.com/MarioEstebanMateo/videogamestore",
       featured: true,
     },
   ];
