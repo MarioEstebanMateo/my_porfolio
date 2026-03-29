@@ -113,15 +113,22 @@ export const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col h-full animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="group relative"
             >
-              {/* Featured Badge */}
-              {project.featured && (
-                <div className="absolute top-4 right-4 z-20 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-pulse">
-                  ⭐ Featured
-                </div>
-              )}
+              {/* Glow effect */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary-500 to-accent-500 rounded-2xl blur-lg opacity-25 group-hover:opacity-75 transition duration-1000"></div>
+              
+              {/* Card */}
+              <div
+                className="relative bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col h-full animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {/* Featured Badge */}
+                {project.featured && (
+                  <div className="absolute top-4 right-4 z-20 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg animate-pulse">
+                    ⭐ Featured
+                  </div>
+                )}
 
               {/* Image Container */}
               <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary-100 to-accent-100 dark:from-slate-700 dark:to-slate-600">
@@ -181,6 +188,7 @@ export const Projects = () => {
 
               {/* Bottom gradient line */}
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+              </div>
             </div>
           ))}
         </div>
