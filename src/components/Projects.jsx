@@ -21,6 +21,7 @@ export const Projects = () => {
       technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
       link: "https://proyecto-integrador-diseno-web-ten.vercel.app/",
       github: "https://github.com/MarioEstebanMateo/Nucba_Proyectos_Integradores/tree/main/1%20-%20Proyecto%20Integrador%20%20Dise%C3%B1o%20Web",
+      visible: false,
     },
     {
       title: t.items.eCommerceVanilla.title,
@@ -29,6 +30,7 @@ export const Projects = () => {
       technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
       link: "https://proyecto-integrador-javascript-neon.vercel.app/",
       github: "https://github.com/MarioEstebanMateo/Nucba_Proyectos_Integradores/tree/main/2%20-%20Proyecto%20Integrador%20Javascript",
+      visible: true,
     },
     {
       title: t.items.eCommerceReact.title,
@@ -37,6 +39,7 @@ export const Projects = () => {
       technologies: ["HTML", "CSS", "Bootstrap", "React"],
       link: "https://proyecto-integrador-react-gamma.vercel.app/",
       github: "https://github.com/MarioEstebanMateo/Nucba_Proyectos_Integradores/tree/main/3%20-%20Proyecto%20Integrador%20React/frontend",
+      visible: true,
     },
     {
       title: t.items.eCommerceNode.title,
@@ -46,6 +49,7 @@ export const Projects = () => {
       link: "https://proyecto-integrador-back-end.vercel.app/",
       github: "https://github.com/MarioEstebanMateo/Nucba_Proyectos_Integradores_Back-End",
       featured: true,
+      visible: true,
     },
     {
       title: t.items.blackjack.title,
@@ -54,6 +58,7 @@ export const Projects = () => {
       technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
       link: "https://blackjack-drab.vercel.app/",
       github: "https://github.com/MarioEstebanMateo/blackjack",
+      visible: true,
     },
     {
       title: t.items.cardGame.title,
@@ -62,6 +67,7 @@ export const Projects = () => {
       technologies: ["HTML", "CSS", "React"],
       link: "https://poke-tcg-card-game.vercel.app/",
       github: "https://github.com/MarioEstebanMateo/pokeTcgCardGame",
+      visible: false,
     },
     {
       title: t.items.aiEngineering.title,
@@ -71,6 +77,7 @@ export const Projects = () => {
       link: "https://proyecto-final-ai-engineering-mateo.vercel.app/",
       github: "https://github.com/MarioEstebanMateo/proyecto_final_ai_engineering_mateo_mario_esteban",
       featured: true,
+      visible: true,
     },
     {
       title: t.items.videoGameStore.title,
@@ -80,6 +87,7 @@ export const Projects = () => {
       link: "https://videogamestore-rho.vercel.app/",
       github: "https://github.com/MarioEstebanMateo/videogamestore",
       featured: true,
+      visible: true,
     },
   ];
 
@@ -110,7 +118,7 @@ export const Projects = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {projects.filter(p => p.visible).map((project, index) => (
             <div
               key={index}
               className="group relative"
