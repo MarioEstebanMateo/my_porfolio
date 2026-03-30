@@ -1,120 +1,83 @@
-# 🚀 Mario Esteban Mateo - Portfolio
+# 🚀 Portfolio - Full Stack Developer & AI Engineer
 
-A modern, fully responsive portfolio website showcasing my work as a Full Stack Developer, Systems Analyst, UX/UI Designer, and AI Engineer.
-
-[![React](https://img.shields.io/badge/React-18.2-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
-[![Vite](https://img.shields.io/badge/Vite-5.0-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+> Modern, responsive portfolio built with React + Vite + Tailwind CSS
 
 ## ✨ Features
 
-- **🎨 Modern UI/UX** - Clean design with animations and micro-interactions
-- **🌓 Dark Mode** - Enabled by default with persistent storage
-- **🌍 Bilingual** - Full English/Spanish support (EN/ES)
-- **📱 Fully Responsive** - Mobile-first design with modern navbar
-- **✨ Animated** - Staggered animations, smooth scrolling, hover effects
-- **📊 Interactive Skills** - Tooltips showing years of experience
-- **📧 Contact Form** - EmailJS integration
-- **🔗 GitHub Integration** - Links to live projects and source code
-- **⚡ Performance** - Optimized with Vite and lazy loading
-- **🔍 SEO Ready** - Meta tags, Open Graph, structured data
+🎨 **Modern Design** | 🌓 **Dark Mode** | 🌍 **Bilingual (EN/ES)** | 📱 **Fully Responsive**  
+✨ **Smooth Animations** | 📧 **Contact Form** | 🎯 **Interactive Projects** | 🔍 **SEO Optimized**
+
+**NEW**: 🎛️ **Project Visibility System** - Show/hide projects without deleting code
 
 ## 🛠️ Tech Stack
 
-- **React 18** - UI library
-- **Vite** - Build tool
-- **Tailwind CSS** - Styling
-- **EmailJS** - Contact form
-- **React Confetti** - Easter egg animations
-- **Lucide React** - Icons
-
-## 📂 Project Structure
-
 ```
-my_portfolio/
-├── src/
-│   ├── components/     # React components
-│   ├── context/        # Dark mode & language context
-│   ├── hooks/          # Custom hooks (useInView)
-│   ├── assets/         # Images & icons
-│   ├── translations.js # EN/ES translations
-│   └── App.jsx
-├── index.html
-├── tailwind.config.js
-└── package.json
+React 18 • Vite • Tailwind CSS • EmailJS • Lucide Icons
 ```
 
 ## 🚀 Quick Start
 
-### Install & Run
-
 ```bash
+# Clone and install
 git clone https://github.com/MarioEstebanMateo/my_portfolio.git
 cd my_portfolio
 npm install
-npm run dev
+
+# Development
+npm run dev      # http://localhost:5173
+
+# Production
+npm run build    # Build for deployment
 ```
 
-Open [http://localhost:5173](http://localhost:5173)
+## 📁 Structure
 
-### Build for Production
-
-```bash
-npm run build
+```
+src/
+├── components/   → React components (Main, Skills, Projects, Contact...)
+├── context/      → Dark mode & Language contexts
+├── hooks/        → Custom hooks (useInView for animations)
+├── assets/       → Images & icons
+└── translations.js → EN/ES translations
 ```
 
-## 🔧 Configuration
+## ⚙️ Customize
 
-### EmailJS Setup
+| What                   | Where                                              |
+| ---------------------- | -------------------------------------------------- |
+| **Translations**       | `src/translations.js`                              |
+| **Colors**             | `tailwind.config.js` (primary/accent)              |
+| **Projects**           | `src/components/Projects.jsx`                      |
+| **Resume URL**         | `src/components/Navbar.jsx`                        |
+| **Contact Form**       | Set up [EmailJS](https://emailjs.com/) credentials |
+| **Show/Hide Projects** | Change `visible: true/false` in Projects.jsx       |
 
-1. Create account at [EmailJS](https://www.emailjs.com/)
-2. Set up email service and template
-3. Update credentials in `src/components/Contact.jsx`
+## 📚 Learn More
 
-### Customize
+📖 **Full Documentation**: See [GUIA_APRENDIZAJE.md](GUIA_APRENDIZAJE.md) for complete learning guide, component docs, and React patterns.
 
-- **Translations**: `src/translations.js`
-- **Colors**: `tailwind.config.js`
-  - Primary: `#126699`
-  - Accent: `#6366f1`
-- **Resume URL**: `src/components/Navbar.jsx`
-- **Skills & Content**: Component files
+## 📋 Sections
 
-## 📱 Sections
+- **Hero** - Intro + stats + call-to-action
+- **About** - Timeline + professional journey
+- **Skills** - Interactive cards with experience levels
+- **Projects** - Portfolio with live demos & GitHub links _(with visibility system)_
+- **Certifications** - Degrees & professional achievements
+- **Contact** - EmailJS form
+- **Languages** - English & Spanish support
 
-| Section            | Details                                   |
-| ------------------ | ----------------------------------------- |
-| **Hero**           | Greeting, stats, bio, CTA buttons         |
-| **About**          | Timeline, highlights, journey             |
-| **Skills**         | Interactive cards with progress bars      |
-| **Languages**      | Spanish (native) & English (C2 certified) |
-| **Certifications** | Degrees and professional certs            |
-| **Projects**       | Portfolio with live links & GitHub        |
-| **Freelance**      | Client projects showcase                  |
-| **Contact**        | EmailJS form                              |
-
-## 📱 Responsive Breakpoints
-
-- Mobile: < 640px
-- Tablet: 640px - 1024px
-- Desktop: > 1024px
-
-## 👨‍💻 Author
+## 👨‍💻 About Me
 
 **Mario Esteban Mateo**
 
-- Portfolio: [marioestebanmateo.com](https://marioestebanmateo.com)
-- GitHub: [@MarioEstebanMateo](https://github.com/MarioEstebanMateo)
-- LinkedIn: [Mario Esteban Mateo](https://www.linkedin.com/in/marioestebanmateo/)
-- Email: memateo@gmail.com
+- 🔗 [GitHub](https://github.com/MarioEstebanMateo)
+- 💼 [LinkedIn](https://www.linkedin.com/in/marioestebanmateo/)
+- 📧 memateo@gmail.com
 
 ## 📝 License
 
-[MIT](LICENSE) - Feel free to use this project as inspiration!
+MIT © 2026 - Feel free to use as inspiration!
 
 ---
-
-⭐ If you find this helpful, please give it a star! ⭐
 
 Made with ❤️ by Mario Esteban Mateo

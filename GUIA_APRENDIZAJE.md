@@ -19,6 +19,10 @@
 15. [Micro-interacciones](#micro-interacciones)
 16. [Optimización SEO](#optimización-seo)
 17. [Novedades v2.1](#novedades-v21)
+18. [Estructura del Proyecto](#estructura-del-proyecto)
+19. [Inventario de Componentes](#inventario-de-componentes)
+20. [Sistema de Visibilidad de Proyectos](#sistema-de-visibilidad-de-proyectos-) ⭐ NUEVO
+21. [Instrucciones de Desarrollo](#instrucciones-de-desarrollo)
 
 ---
 
@@ -51,7 +55,12 @@ Este portfolio fue desarrollado con **React 18**, **Vite** y **Tailwind CSS 3.4*
 ✅ Download CV/Resume sensible al idioma  
 ✅ Layout hero: imagen izquierda, contenido derecha  
 ✅ Micro-interacciones: hover effects, bounce animations  
-✅ SEO optimizado (meta tags, Open Graph, Twitter Cards)
+✅ SEO optimizado (meta tags, Open Graph, Twitter Cards)  
+✅ **Sistema de visibilidad de proyectos** - Mostrar/ocultar proyectos sin eliminarlos  
+✅ Easter Egg oculto con animaciones especiales  
+✅ Formulario de contacto funcional con EmailJS  
+✅ Back to Top button automático  
+✅ Efectos visuales: confetti animations, gradient effects, blur effects
 
 ---
 
@@ -1143,6 +1152,30 @@ export const Navbar = () => {
 
 ---
 
+## Novedades v2.1 ⭐ NUEVO
+
+### ✨ Sistema de Visibilidad de Proyectos
+
+Nueva característica implementada en Marzo 2026:
+
+- [x] **Propiedad `visible`** en cada proyecto (true/false)
+- [x] **Filtro automático** - Solo renderiza proyectos con `visible: true`
+- [x] **Fácil de cambiar** - Modificar un parámetro para mostrar/ocultar
+- [x] **Sin eliminar código** - Los proyectos ocultos permanecen en el archivo
+- [x] **Perfectamente escalable** - Sistema simple pero extensible
+
+**Ventajas principales:**
+
+✅ Ocultar proyectos en desarrollo sin eliminar código  
+✅ Cambiar visibilidad en 1 segundo  
+✅ Reutilizar proyectos sin duplicar  
+✅ Control granular por proyecto  
+✅ Ideal para versiones/audiencias diferentes
+
+**Ver sección completa**: [Sistema de Visibilidad de Proyectos](#sistema-de-visibilidad-de-proyectos-)
+
+---
+
 ## Tips de Desarrollo
 
 ### Debugging React
@@ -1173,8 +1206,8 @@ const Contact = React.lazy(() => import("./Contact"));
 
 ---
 
-**Última actualización**: Marzo 2026  
-**Versión**: 2.0 (Completa con todas las mejoras)  
+**Última actualización**: Marzo 2026 - v2.1 (Con Sistema de Visibilidad de Proyectos)  
+**Versión**: 2.1 (Completa con todas las mejoras)  
 **Autor**: Mario Esteban Mateo
 
 ### ¿Qué es?
@@ -2667,6 +2700,471 @@ Agregar tipado estático a tu código React
 - Stack Overflow
 - Reddit r/reactjs
 - Discord de React
+
+---
+
+## Estructura del Proyecto
+
+### Estructura de Carpetas
+
+```
+src/
+├── assets/
+│   ├── icons/          # Iconos SVG
+│   └── img/            # Imágenes de proyectos y perfil
+├── components/
+│   ├── common/         # Componentes reutilizables
+│   ├── About.jsx       # Sección Acerca de
+│   ├── BackToTop.jsx   # Botón volver arriba
+│   ├── Certifications.jsx
+│   ├── Contact.jsx     # Formulario de contacto
+│   ├── EasterEgg.jsx   # Sorpresa oculta
+│   ├── Footer.jsx      # Pie de página
+│   ├── Freelance.jsx   # Sección de freelance
+│   ├── Languages.jsx   # Selector de idiomas
+│   ├── Main.jsx        # Hero section
+│   ├── Navbar.jsx      # Barra de navegación
+│   ├── Projects.jsx    # Grid de proyectos
+│   ├── Skills.jsx      # Habilidades y tecnologías
+│   └── ...
+├── context/
+│   ├── DarkModeContext.jsx   # Context para dark mode
+│   └── LanguageContext.jsx   # Context para idiomas
+├── hooks/
+│   └── useInView.jsx   # Hook personalizado para animaciones
+├── App.jsx             # Componente principal
+├── App.css             # Estilos globales
+├── main.jsx            # Punto de entrada
+├── index.css           # Estilos base
+└── translations.js     # Traducciones EN/ES
+```
+
+### Archivos de Configuración
+
+```
+├── vite.config.js      # Configuración de Vite
+├── tailwind.config.js  # Configuración de Tailwind CSS
+├── postcss.config.js   # Configuración de PostCSS
+├── package.json        # Dependencias y scripts
+└── index.html          # HTML principal
+```
+
+---
+
+## Inventario de Componentes
+
+### Componentes Principales
+
+#### 1. **Main** (`src/components/Main.jsx`)
+
+- Hero section con foto y nombre
+- Estadísticas animadas (CounterStat)
+- Descripción y call-to-action
+- Layout responsive: foto izquierda, texto derecha
+
+#### 2. **Navbar** (`src/components/Navbar.jsx`)
+
+- Navegación fija con scroll detection
+- Menú hamburguesa responsivo
+- Toggle de Dark Mode
+- Selector de idiomas
+
+#### 3. **Skills** (`src/components/Skills.jsx`)
+
+- Grid de habilidades con categorías
+- Tooltips mostrando años de experiencia
+- Animaciones staggered
+- Iconos con Lucide React
+
+#### 4. **Projects** (`src/components/Projects.jsx`) ⭐ **CON SISTEMA DE VISIBILIDAD**
+
+- Grid de proyectos (3 columnas en desktop, responsive)
+- Tarjetas animadas con hover effects
+- Badges "Featured" para proyectos destacados
+- Links a demo en vivo y código fuente en GitHub
+- **Sistema de visibilidad: `visible: true/false`**
+
+#### 5. **Contact** (`src/components/Contact.jsx`)
+
+- Formulario funcional con EmailJS
+- Validación básica
+- Loading states y feedback visual
+- Sensible al idioma
+
+#### 6. **About** (`src/components/About.jsx`)
+
+- Información biográfica
+- Timeline de experiencia
+- Descripción de trayectoria
+
+#### 7. **Certifications** (`src/components/Certifications.jsx`)
+
+- Grid de certificaciones
+- Iconos y descripciones
+- Animaciones al scroll
+
+#### 8. **BackToTop** (`src/components/BackToTop.jsx`)
+
+- Botón flotante para volver arriba
+- Aparece después de scroll
+- Scroll suave
+
+#### 9. **Footer** (`src/components/Footer.jsx`)
+
+- Links sociales
+- Copyright
+- Información de contacto
+
+#### 10. **Languages** (`src/components/Languages.jsx`)
+
+- Selector de idiomas
+- Muestra idioma actual
+
+#### 11. **EasterEgg** (`src/components/EasterEgg.jsx`)
+
+- Sorpresa oculta
+- Animaciones especiales
+- Confetti effects
+
+#### 12. **Freelance** (`src/components/Freelance.jsx`)
+
+- Información para contactar por freelance
+- Disponibilidad
+
+### Componentes contexto
+
+#### **DarkModeContext** (`src/context/DarkModeContext.jsx`)
+
+```jsx
+// Proporciona:
+- isDarkMode: boolean
+- toggleDarkMode: function
+
+// Persistencia: localStorage
+// Default: Dark mode activado
+```
+
+#### **LanguageContext** (`src/context/LanguageContext.jsx`)
+
+```jsx
+// Proporciona:
+- language: 'en' | 'es'
+- toggleLanguage: function
+- setLanguage: function
+
+// Persistencia: localStorage
+// Default: 'en'
+```
+
+### Custom Hooks
+
+#### **useInView** (`src/hooks/useInView.jsx`)
+
+```jsx
+// Detecta cuando un elemento entra en viewport
+const [ref, isVisible] = useInView();
+
+// Uso:
+<div ref={ref} className={isVisible ? "show" : "hidden"}>
+  Contenido que se anima al entrar en pantalla
+</div>;
+```
+
+---
+
+## Sistema de Visibilidad de Proyectos ⭐ NUEVO
+
+### ¿Qué es?
+
+Sistema para mostrar u ocultar proyectos sin eliminarlos del código. Perfecto para:
+
+- Ocultar proyectos en desarrollo
+- Mostrar/ocultar según la audiencia
+- Cambiar rápidamente sin editar el componente
+
+### Cómo Funciona
+
+Cada proyecto tiene una propiedad `visible`:
+
+```jsx
+const projects = [
+  {
+    title: "Mi Proyecto",
+    image: miProyecto,
+    description: "Descripción",
+    technologies: ["HTML", "CSS"],
+    link: "https://...",
+    github: "https://...",
+    visible: true, // ← MOSTRAR este proyecto
+  },
+  {
+    title: "Proyecto Oculto",
+    image: proyectoOculto,
+    description: "Descripción",
+    technologies: ["React"],
+    link: "https://...",
+    github: "https://...",
+    visible: false, // ← OCULTAR este proyecto
+  },
+];
+```
+
+El filtro `projects.filter(p => p.visible)` solo renderiza proyectos donde `visible === true`.
+
+### Cómo Cambiar Visibilidad
+
+1. Abre [Projects.jsx](src/components/Projects.jsx)
+2. Busca el proyecto que deseas ocultar/mostrar
+3. Cambia `visible: true` a `visible: false` (o viceversa)
+
+**Ejemplo:**
+
+```jsx
+// ANTES (Proyecto visible)
+{
+  title: t.items.blackjack.title,
+  image: blackJack,
+  visible: true,  // ✅ Aparece en la página
+  ...
+},
+
+// DESPUÉS (Proyecto oculto)
+{
+  title: t.items.blackjack.title,
+  image: blackJack,
+  visible: false,  // ❌ No aparece en la página
+  ...
+},
+```
+
+### Ventajas
+
+✅ **No eliminar código**: El proyecto sigue en el archivo  
+✅ **Fácil cambiar**: Solo modificar `visible: true/false`  
+✅ **Rápido reactivar**: Cambiar de `false` a `true` en segundos  
+✅ **Sin impacto visual**: El proyecto simplemente no se renderiza  
+✅ **Escalable**: Agregar más restricciones de visibilidad es fácil
+
+### Casos de Uso
+
+**Ocultar proyectos en desarrollo:**
+
+```jsx
+{
+  title: "Mi App en Desarrollo",
+  visible: false,  // Esperar a que esté listo
+}
+```
+
+**Mostrar solo para audiencia específica:**
+
+```jsx
+{
+  title: "Proyecto confidencial",
+  visible: false,  // Cambiar a true solo para clientes
+}
+```
+
+**Rotar proyectos destacados:**
+
+```jsx
+{
+  title: "Proyecto 1",
+  visible: true,
+  featured: true,
+}
+// Mañana cambiar a false y visible otro...
+```
+
+---
+
+## Instrucciones de Desarrollo
+
+### Configuración Inicial
+
+```bash
+# 1. Clonar o descargar el repositorio
+cd my_portfolio
+
+# 2. Instalar dependencias
+npm install
+
+# 3. Ejecutar en desarrollo
+npm run dev
+
+# La app estará en: http://localhost:5173
+```
+
+### Scripts Disponibles
+
+```json
+{
+  "dev": "vite", // Ejecutar servidor de desarrollo
+  "build": "vite build", // Compilar para producción
+  "lint": "eslint ...", // Validar código
+  "preview": "vite preview" // Preview de la build
+}
+```
+
+### Uso:
+
+```bash
+npm run dev      # Desarrollo con HMR
+npm run build    # Crear build para producción
+npm run preview  # Ver cómo se ve la build
+```
+
+### Stack Tecnológico
+
+| Tecnología     | Propósito        | Versión  |
+| -------------- | ---------------- | -------- |
+| React          | UI Framework     | ^18.2.0  |
+| Vite           | Build Tool       | ^5.2.0   |
+| Tailwind CSS   | Styling          | ^3.4.3   |
+| Lucide React   | Icons            | ^0.454.0 |
+| EmailJS        | Email Service    | ^4.3.3   |
+| SweetAlert2    | Alerts           | ^11.11.0 |
+| React Confetti | Confetti Effects | ^6.4.0   |
+
+### Agregar un Nuevo Proyecto
+
+1. Importar la imagen en `Projects.jsx`:
+
+```jsx
+import miProyecto from "../assets/img/miProyecto.png";
+```
+
+2. Agregar el objeto al array `projects`:
+
+```jsx
+{
+  title: "Mi Nuevo Proyecto",
+  image: miProyecto,
+  description: "Descripción del proyecto",
+  technologies: ["React", "Tailwind", "Vite"],
+  link: "https://demo.com",
+  github: "https://github.com/...",
+  visible: true,
+  featured: false, // Opcional
+}
+```
+
+3. Agregar traducciones en `translations.js`:
+
+```jsx
+projects: {
+  items: {
+    myNewProject: {
+      title: "My New Project",
+      description: "Description in English"
+    }
+  }
+}
+```
+
+### Agregar un Social Link
+
+1. Buscar el componente `Footer.jsx` o donde estén los links
+2. Agregar el nuevo link con icono de Lucide React
+3. Usar `target="_blank"` y `rel="noreferrer"`
+
+### Cambiar Colores Principales
+
+Los colores están definidos en `tailwind.config.js`:
+
+```js
+theme: {
+  colors: {
+    primary: {...},    // Color principal
+    accent: {...},     // Color secundario
+  }
+}
+```
+
+Cambiar `primary` y `accent` afectará todo el site.
+
+### Editar Traducciones
+
+Archivo: `src/translations.js`
+
+```jsx
+export const translations = {
+  en: {
+    navbar: { home: "Home", ... },
+    main: { greeting: "Hi", ... },
+    // ...
+  },
+  es: {
+    navbar: { home: "Inicio", ... },
+    main: { greeting: "Hola", ... },
+    // ...
+  }
+}
+```
+
+### Variables de Entorno
+
+Crear archivo `.env`:
+
+```
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+```
+
+Usar en código:
+
+```jsx
+emailjs.sendForm(
+  import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  // ...
+);
+```
+
+### Deployment
+
+**Vercel (Recomendado):**
+
+```bash
+npm install -g vercel
+vercel
+```
+
+**Netlify:**
+
+1. Conectar repo a Netlify
+2. Setting: Build command: `npm run build`
+3. Setting: Publish directory: `dist`
+
+**GitHub Pages:**
+
+```bash
+npm run build
+# Subir carpeta dist a rama gh-pages
+```
+
+---
+
+## Tips para Mantener el Proyecto
+
+### Performance
+
+- Usar React DevTools para detectar renders innecesarios
+- Implementar `React.memo()` en componentes que no cambian
+- Usar `useCallback` para funciones en props
+
+### Seguridad
+
+- Nunca guardar credenciales en el código
+- Usar variables de entorno (`.env`)
+- Validar inputs en formularios
+
+### SEO
+
+- Mantener meta tags actualizados en `index.html`
+- Usar semantic HTML
+- Alt text en todas las imágenes
 
 ---
 
